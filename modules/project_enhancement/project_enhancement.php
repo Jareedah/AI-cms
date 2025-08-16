@@ -25,6 +25,11 @@ if (file_exists(PROJECT_ENHANCEMENT_PATH . 'vendor/autoload.php')) {
     require_once(PROJECT_ENHANCEMENT_PATH . 'vendor/autoload.php');
 }
 
+// Load module helper functions
+if (file_exists(PROJECT_ENHANCEMENT_PATH . 'helpers/project_enhancement_helper.php')) {
+    require_once(PROJECT_ENHANCEMENT_PATH . 'helpers/project_enhancement_helper.php');
+}
+
 /**
  * Register module activation hook
  */
