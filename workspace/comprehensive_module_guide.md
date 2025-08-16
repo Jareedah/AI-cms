@@ -71,6 +71,10 @@ modules/
 ### Module Init File Template
 ```php
 <?php
+
+/**
+ * Ensures that the module init file can't be accessed directly, only within the application.
+ */
 defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
@@ -263,10 +267,27 @@ if (!$CI->db->table_exists(db_prefix() . 'your_module_items')) {
     ) ENGINE=InnoDB DEFAULT CHARSET=' . $CI->db->char_set . ';');
 }
 
-// Add module options
-add_option('your_module_enabled', '1');
-add_option('your_module_setting', 'default_value');
+// Add module options with proper autoload settings
+add_option('your_module_enabled', '1', 1); // Autoloaded
+add_option('your_module_setting', 'default_value', 0); // Not autoloaded
 ```
+
+**Module Options System**:
+```php
+// Add option (won't create if already exists)
+add_option($name, $value, $autoload = 1);
+
+// Get option from database
+$value = get_option('option_name');
+
+// Update option (creates if doesn't exist since v2.3.3)
+update_option('option_name', 'new_value');
+```
+
+**Important Notes**:
+- Option names must be unique (prefix with module name)
+- Set `$autoload = 1` for frequently used options to prevent multiple queries
+- Set `$autoload = 0` for rarely used options to optimize performance
 
 **Model Implementation**:
 ```php

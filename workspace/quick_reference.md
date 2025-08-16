@@ -50,6 +50,11 @@ db_prefix(); // Returns 'tbl' by default
 add_option($name, $value, $autoload = 1);
 get_option($option_name);
 update_option($option_name, $new_value);
+
+// Module path functions
+module_dir_url($module, $segment = '');
+module_dir_path($module, $concat = '');
+module_libs_path($module, $concat = '');
 ```
 
 ### Menu System

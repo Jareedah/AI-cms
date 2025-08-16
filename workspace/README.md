@@ -11,6 +11,8 @@ This workspace contains comprehensive documentation and tools for developing Per
 - **`module_architecture_notes.md`** - Detailed insights from studying existing modules
 - **`functional_mapping.md`** - Maps PerfexCRM features to their code locations
 - **`quick_reference.md`** - Quick lookup for common functions and patterns
+- **`additional_insights.md`** - Enhanced details from official plugin documentation
+- **`system_requirements.md`** - Complete system requirements and environment setup
 
 ### 🛠️ Development Tools
 - **`notes.md`** - Development notes, gotchas, and important observations
