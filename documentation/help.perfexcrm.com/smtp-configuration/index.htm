@@ -1,0 +1,698 @@
+﻿<!DOCTYPE html>
+
+<html dir="ltr" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+<head>
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width">
+
+  <meta name="format-detection" content="telephone=no">
+
+  <title>Email/SMTP Configuration | Perfex CRM</title>
+	<style>img:is([sizes="auto" i], [sizes^="auto," i]) { contain-intrinsic-size: 3000px 1500px }</style>
+	
+		<!-- All in One SEO 4.8.1.1 - aioseo.com -->
+	<meta name="description" content="You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc... the SMTP config will act as a general email from Perfex CRM for all emails that will be sent. In order to configure the send email feature in Perfex CRM navigate to Setup-&gt;Settings-&gt;Email. Outlook/Office">
+	<meta name="robots" content="max-image-preview:large">
+	<meta name="author" content="MSTdev">
+	<link rel="canonical" href="index.htm">
+	<meta name="generator" content="All in One SEO (AIOSEO) 4.8.1.1">
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"Article","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#article","name":"Email\/SMTP Configuration | Perfex CRM","headline":"Email\/SMTP Configuration","author":{"@id":"https:\/\/help.perfexcrm.com\/author\/marjan\/#author"},"publisher":{"@id":"https:\/\/help.perfexcrm.com\/#organization"},"image":{"@type":"ImageObject","url":"https:\/\/help.perfexcrm.com\/wp-content\/uploads\/2017\/02\/restroct-outgoing-smtp-to-root-exim.png","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#articleImage","width":1024,"height":56,"caption":"Restrict outgoing smtp to root exim"},"datePublished":"2017-02-10T14:22:01+00:00","dateModified":"2022-11-07T12:04:54+00:00","inLanguage":"en-US","mainEntityOfPage":{"@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#webpage"},"isPartOf":{"@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#webpage"},"articleSection":"Email Config &amp; Templates"},{"@type":"BreadcrumbList","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/help.perfexcrm.com\/#listItem","position":1,"name":"Home","item":"https:\/\/help.perfexcrm.com\/","nextItem":{"@type":"ListItem","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#listItem","name":"Email\/SMTP Configuration"}},{"@type":"ListItem","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#listItem","position":2,"name":"Email\/SMTP Configuration","previousItem":{"@type":"ListItem","@id":"https:\/\/help.perfexcrm.com\/#listItem","name":"Home"}}]},{"@type":"Organization","@id":"https:\/\/help.perfexcrm.com\/#organization","name":"Perfex CRM","description":"Help Center","url":"https:\/\/help.perfexcrm.com\/"},{"@type":"Person","@id":"https:\/\/help.perfexcrm.com\/author\/marjan\/#author","url":"https:\/\/help.perfexcrm.com\/author\/marjan\/","name":"MSTdev","image":{"@type":"ImageObject","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/1dfcb308e6c7ac9d28eb6ba85f492ec2?s=96&d=mm&r=g","width":96,"height":96,"caption":"MSTdev"}},{"@type":"WebPage","@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#webpage","url":"https:\/\/help.perfexcrm.com\/smtp-configuration\/","name":"Email\/SMTP Configuration | Perfex CRM","description":"You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc... the SMTP config will act as a general email from Perfex CRM for all emails that will be sent. In order to configure the send email feature in Perfex CRM navigate to Setup->Settings->Email. Outlook\/Office","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/help.perfexcrm.com\/#website"},"breadcrumb":{"@id":"https:\/\/help.perfexcrm.com\/smtp-configuration\/#breadcrumblist"},"author":{"@id":"https:\/\/help.perfexcrm.com\/author\/marjan\/#author"},"creator":{"@id":"https:\/\/help.perfexcrm.com\/author\/marjan\/#author"},"datePublished":"2017-02-10T14:22:01+00:00","dateModified":"2022-11-07T12:04:54+00:00"},{"@type":"WebSite","@id":"https:\/\/help.perfexcrm.com\/#website","url":"https:\/\/help.perfexcrm.com\/","name":"Perfex CRM","description":"Help Center","inLanguage":"en-US","publisher":{"@id":"https:\/\/help.perfexcrm.com\/#organization"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<link rel="amphtml" href="amp/index.htm"><meta name="generator" content="AMP for WP 1.1.4"><link rel='dns-prefetch' href='//fonts.googleapis.com'>
+<link rel="alternate" type="application/rss+xml" title="Perfex CRM &raquo; Feed" href="../feed/index.htm">
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/help.perfexcrm.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\uddfa\ud83c\uddf3","\ud83c\uddfa\u200b\ud83c\uddf3")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!n(e,"\ud83d\udc26\u200d\u2b1b","\ud83d\udc26\u200b\u2b1b")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+/* ]]> */
+</script>
+<style id='wp-emoji-styles-inline-css' type='text/css'>
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel='stylesheet' id='wp-block-library-css' href='../wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all'>
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='contact-form-7-css' href='../wp-content/plugins/contact-form-7/includes/css/styles.css' type='text/css' media='all'>
+<link rel='stylesheet' id='cookie-notice-front-css' href='../wp-content/plugins/cookie-notice/css/front.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='dashicons-css' href='../wp-includes/css/dashicons.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='post-views-counter-frontend-css' href='../wp-content/plugins/post-views-counter/css/frontend.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='achored-header-css' href='../wp-content/plugins/wp-anchor-header/css/achored-header.css' type='text/css' media='all'>
+<link rel='stylesheet' id='theme-style-css' href='../wp-content/themes/knowhow-childtheme/style.css' type='text/css' media='all'>
+<style id='theme-style-inline-css' type='text/css'>
+ 
+				/* Links */
+				a, 
+				a:visited { color:#027ef2; }
+				a:hover, 
+				.widget a:hover,
+				#primary-nav ul a:hover,
+				#footer-nav a:hover,
+				#breadcrumbs a:hover { color:#026bce; }
+				
+				/* Theme Color */
+				#commentform #submit, 
+				.st_faq h2.active .action, 
+				.widget_categories ul span, 
+				.pagination .current, 
+				.tags a, 
+				.page-links span,
+				#comments .comment-meta .author-badge,
+				input[type="reset"],
+				input[type="submit"],
+				input[type="button"] { background: #03a9f4; }
+				#live-search #searchsubmit, input[type="submit"] { background-color: #03a9f4; }
+				.tags a:before { border-color: transparent #03a9f4 transparent transparent; }
+
+				
+				
+				
+</style>
+<link rel='stylesheet' id='theme-font-css' href='../css?family=Open+Sans:400,400italic,600,700&#038;subset=latin,latin-ext' type='text/css' media='all'>
+<link rel='stylesheet' id='font-awesome-css' href='../wp-content/themes/knowhow/css/font-awesome.min.css' type='text/css' media='all'>
+<link rel='stylesheet' id='shortcodes-css' href='../wp-content/themes/knowhow/framework/shortcodes/shortcodes.css' type='text/css' media='all'>
+<script type="text/javascript" id="cookie-notice-front-js-before">
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/help.perfexcrm.com\/wp-admin\/admin-ajax.php","nonce":"2781ad102e","hideEffect":"fade","position":"bottom","onScroll":false,"onScrollOffset":100,"onClick":true,"cookieName":"cookie_notice_accepted","cookieTime":2592000,"cookieTimeRejected":2592000,"globalCookie":false,"redirection":false,"cache":true,"revokeCookies":false,"revokeCookiesOpt":"automatic"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../wp-content/plugins/cookie-notice/js/front.min.js" id="cookie-notice-front-js"></script>
+<script type="text/javascript" id="post-views-counter-frontend-js-before">
+/* <![CDATA[ */
+var pvcArgsFrontend = {"mode":"js","postID":24,"requestURL":"https:\/\/help.perfexcrm.com\/wp-admin\/admin-ajax.php","nonce":"3056b4b710","dataStorage":"cookies","multisite":false,"path":"\/","domain":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../wp-content/plugins/post-views-counter/js/frontend.min.js" id="post-views-counter-frontend-js"></script>
+<script type="text/javascript" src="../wp-includes/js/jquery/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="../wp-includes/js/jquery/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<link rel="https://api.w.org/" href="../wp-json/index.htm"><link rel="alternate" title="JSON" type="application/json" href="../wp-json/wp/v2/posts/24"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://help.perfexcrm.com/xmlrpc.php?rsd">
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="../wp-json/oembed/1.0/embed-64?url=https%3A%2F%2Fhelp.perfexcrm.com%2Fsmtp-configuration%2F">
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="../wp-json/oembed/1.0/embed-65?url=https%3A%2F%2Fhelp.perfexcrm.com%2Fsmtp-configuration%2F&#038;format=xml">
+<!--[if lt IE 9]><script src="https://help.perfexcrm.com/wp-content/themes/knowhow/js/html5.js"></script><![endif]--><!--[if (gte IE 6)&(lte IE 8)]><script src="https://help.perfexcrm.com/wp-content/themes/knowhow/js/selectivizr-min.js"></script><![endif]--><link rel="icon" href="../wp-content/uploads/2017/02/cropped-favicon-32x32.jpg" sizes="32x32">
+<link rel="icon" href="../wp-content/uploads/2017/02/cropped-favicon-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="../wp-content/uploads/2017/02/cropped-favicon-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-270x270.jpg">
+
+<!-- START - Open Graph and Twitter Card Tags 3.3.5 -->
+ <!-- Facebook Open Graph -->
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Perfex CRM">
+  <meta property="og:title" content="Email/SMTP Configuration">
+  <meta property="og:url" content="https://help.perfexcrm.com/smtp-configuration/">
+  <meta property="og:type" content="article">
+  <meta property="og:description" content="You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc... the SMTP config will act as a general email from Perfex CRM for all emails that will be sent.
+
+In order to configure the send email feature in Perfex CRM navigate to Setup-&amp;">
+  <meta property="og:image" content="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-og-default.jpg">
+  <meta property="og:image:url" content="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-og-default.jpg">
+  <meta property="og:image:secure_url" content="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-og-default.jpg">
+  <meta property="article:published_time" content="2017-02-10T14:22:01+00:00">
+  <meta property="article:modified_time" content="2022-11-07T12:04:54+00:00">
+  <meta property="og:updated_time" content="2022-11-07T12:04:54+00:00">
+  <meta property="article:section" content="Email Config &amp; Templates">
+ <!-- Google+ / Schema.org -->
+  <meta itemprop="name" content="Email/SMTP Configuration">
+  <meta itemprop="headline" content="Email/SMTP Configuration">
+  <meta itemprop="description" content="You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc... the SMTP config will act as a general email from Perfex CRM for all emails that will be sent.
+
+In order to configure the send email feature in Perfex CRM navigate to Setup-&amp;">
+  <meta itemprop="image" content="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-og-default.jpg">
+  <meta itemprop="datePublished" content="2017-02-10">
+  <meta itemprop="dateModified" content="2022-11-07T12:04:54+00:00">
+  <meta itemprop="author" content="MSTdev">
+  <!--<meta itemprop="publisher" content="Perfex CRM"/>--> <!-- To solve: The attribute publisher.itemtype has an invalid value -->
+ <!-- Twitter Cards -->
+  <meta name="twitter:title" content="Email/SMTP Configuration">
+  <meta name="twitter:url" content="https://help.perfexcrm.com/smtp-configuration/">
+  <meta name="twitter:description" content="You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc... the SMTP config will act as a general email from Perfex CRM for all emails that will be sent.
+
+In order to configure the send email feature in Perfex CRM navigate to Setup-&amp;">
+  <meta name="twitter:image" content="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-og-default.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+ <!-- SEO -->
+ <!-- Misc. tags -->
+ <!-- is_singular -->
+<!-- END - Open Graph and Twitter Card Tags 3.3.5 -->
+	
+  
+  <script type="text/javascript">(function(){d=document;s=d.createElement("script");s.src="https://aidlify.com/chatbot/widget/oDcAHHvpDKLhZXiO2Fqdd3cw7KAlMJEI";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+</head>
+
+<body data-rsssl="1" class="post-template-default single single-post postid-24 single-format-standard cookies-not-set">
+<div id="top_buy"><div itemscope="" itemtype="http://schema.org/Product"><div class="ht-container"><h2 class="top_buy_text"><span itemprop="name">Perfex CRM - Customers Relationship & Project Management</span></h2><a href="https://1.envato.market/c/1226883/275988/4415?subId1=help&u=https%3A%2F%2Fcodecanyon.net%2Fitem%2Fperfex-crm%2F14013737%3Fref%3DMSTdev%26utm_content%3DHelpWebsiteTopNavTryDemo%26utm_source%3Dmain_web%26utm_medium%3DHelpWebsiteTryDemo%26utm_campaign%3DWeb">
+            <div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+            <span itemprop="price" content="59.00">TRY DEMO<span style="display:none;" itemprop="priceCurrency" content="USD">$</span></span>
+              <link itemprop="availability" href="https://schema.org/InStock">
+          </div>
+        </a></div><div class="clearfix"></div></div></div>
+
+<!-- #site-container -->
+
+<div id="site-container" class="clearfix">
+
+
+
+
+<!-- #primary-nav-mobile -->
+
+<nav id="primary-nav-mobile">
+
+<a class="menu-toggle clearfix" href="#"><i class="fa fa-reorder"></i></a>
+
+<ul id="mobile-menu" class="clearfix"><li id="menu-item-134" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-134"><a href="../index.htm">Docs</a></li>
+<li id="menu-item-135" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135"><a href="../faq/index.htm">FAQ</a></li>
+<li id="menu-item-4033" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4033"><a href="https://partners.inmotionhosting.com/c/1226883/353729/4222">Hosting</a></li>
+<li id="menu-item-136" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-136"><a href="https://my.perfexcrm.com">Open Ticket</a></li>
+</ul>
+</nav>
+
+<!-- /#primary-nav-mobile -->
+
+
+
+
+<!-- #header -->
+
+<header id="site-header" class="clearfix" role="banner">
+
+<div class="ht-container">
+
+
+
+<!-- #logo -->
+
+  <div id="logo">
+
+    
+      <a title="Perfex CRM" href="../index.htm">
+
+      
+      <img alt="Perfex CRM" src="../wp-content/uploads/2017/03/perfex-crm-logo.jpg">
+
+      
+      </a>
+
+     
+  </div>
+
+<!-- /#logo -->
+
+
+
+
+<!-- #primary-nav -->
+
+<nav id="primary-nav" role="navigation" class="clearfix">
+
+  <ul id="menu-main-menu" class="nav sf-menu clearfix"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-134"><a href="../index.htm">Docs</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-135"><a href="../faq/index.htm">FAQ</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4033"><a href="https://partners.inmotionhosting.com/c/1226883/353729/4222">Hosting</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-136"><a href="https://my.perfexcrm.com">Open Ticket</a></li>
+</ul>
+</nav>
+
+<!-- #primary-nav -->
+
+
+
+
+</div>
+
+</header>
+
+<!-- /#header -->
+
+
+
+<!-- #live-search -->
+
+    <div id="live-search">
+
+    <div class="ht-container">
+
+    <div id="search-wrap">
+
+      <form role="search" method="get" id="searchform" class="clearfix" action="https://help.perfexcrm.com/">
+
+        <input type="text" onfocus="if (this.value == 'Have a question? Ask or enter a search term.') {this.value = '';}" onblur="if (this.value == '')  {this.value = 'Have a question? Ask or enter a search term.';}" value="Have a question? Ask or enter a search term." name="s" id="s" autocapitalize="off" autocorrect="off" autocomplete="off">
+
+        <i class="live-search-loading fa fa-spinner fa-spin"></i>
+
+        <button type="submit" id="searchsubmit">
+
+                <i class='fa fa-search'></i><span>Search</span>
+
+            </button>
+
+      </form>
+
+      </div>
+
+    </div>
+
+    </div>
+
+<!-- /#live-search -->
+
+
+<!-- #primary -->
+<div id="primary" class="sidebar-right clearfix"> 
+<!-- .ht-container -->
+<div class="ht-container">
+
+  <!-- #content -->
+  <section id="content" role="main">
+  
+<!-- #page-header -->
+<header id="page-header" class="clearfix">
+  <h1 class="page-title">Email/SMTP Configuration</h1>
+  <div id="breadcrumbs"><a href="../index.htm"><icon class="fa fa-home"></icon></a><span class="sep">/</span><a href="../category/email-config-and-templates/index.htm" title="View all posts in Email Config &amp; Templates">Email Config &amp; Templates</a> <span class="sep">/</span>Email/SMTP Configuration</div></header>
+<!-- /#page-header --> 
+
+ 
+
+    
+  
+<ul class="entry-meta clearfix">
+
+<li class="date"> 
+    <i class="fa fa-time"></i>
+    <time datetime="2017-02-10" itemprop="datePublished">February 10, 2017</time>
+</li>
+
+
+
+<li class="category">
+    <i class="fa fa-folder-close"></i>
+    <a href="../category/email-config-and-templates/index.htm" rel="category tag">Email Config &amp; Templates</a>    </li>
+
+
+</ul>
+  
+    <article id="post-24" class="clearfix post-24 post type-post status-publish format-standard hentry category-email-config-and-templates">
+    
+	<!-- .entry-header -->
+	<header class="entry-header">
+    
+        	    
+	</header>
+	<!-- /.entry-header -->
+      
+        
+        <div class="entry-content">
+          <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body data-rsssl="1"><p>You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc&hellip; the SMTP config will act as a general email from Perfex CRM for all emails that will be sent.</p>
+<p>In order to configure the send email feature in Perfex CRM navigate to <strong>Setup-&gt;Settings-&gt;Email.</strong></p>
+<div class="st-alert st-alert-info ">Outlook/Office accounts are not supported for sending emails via SMTP as Microsoft dropped support for the regular SMTP connection.</div>
+<h3 id="config">Configuration options<a class="anchorlink dashicons-before" href="#config"></a></h3>
+<p>Below you can read about the email configuration option to get more familiar with, however, in most cases, you will need to adjust only a few of them as mentioned in our <a href="#examples">examples</a> below.</p>
+<h4 id="mail-engine"><strong>Mail Engine</strong><a class="anchorlink dashicons-before" href="#mail-engine"></a></h4>
+<p>Perfex CRM offers two email engines, by default PHPMailer will be selected. The difference between mail engine is the libraries used to send emails from Perfex CRM.</p>
+<p>If you decide to use PHPMailer (which is recommended), the responsible library for this will the popular php email library PHPMailer, you can read more about the library by clicking <a href="https://github.com/PHPMailer/PHPMailer">here</a></p>
+<p>The other mail engine is the default Codeigniter framework library, more info can be found by clicking <a href="https://www.codeigniter.com/user_guide/libraries/email.html">here</a></p>
+<p>However, you should not worry about this that much, just select the one that you think fits for you.</p>
+<h4 id="email-protocol"><strong>Email Protocol</strong><a class="anchorlink dashicons-before" href="#email-protocol"></a></h4>
+<p>SMTP, Sendmail, and Mail.</p>
+<p><strong>It&rsquo;s highly recommended to configure the SMTP protocol</strong> for sending emails if you don&rsquo;t want to encounter issues with emails going to spam or encoding, the examples below will be strictly for the SMTP protocol as it&rsquo;s the recommended one.</p>
+<h4 id="email-encryption"><strong>Email Encryption</strong><a class="anchorlink dashicons-before" href="#email-encryption"></a></h4>
+<ul>
+<li><strong>SSL</strong> &ndash; Select if you are configuring SMTP with port <strong>465</strong></li>
+<li><strong>TLS</strong> &ndash; Select if you are configuring SMTP with port <strong>587</strong></li>
+<li><strong>None</strong> &ndash; Select if you are configuring SMTP with port <strong>25</strong></li>
+</ul>
+<p>Summarized, SSL works with port 465, TLS works with port 587 and if you are trying to configure the SMTP config with port 25 (non-secure) there will be no encryption and you should select None.</p>
+<h4 id="smtp-host"><strong>SMTP Host</strong><a class="anchorlink dashicons-before" href="#smtp-host"></a></h4>
+<p>Enter your SMTP hostname.</p>
+<h4 id="smtp-port"><strong>SMTP Port</strong><a class="anchorlink dashicons-before" href="#smtp-port"></a></h4>
+<p>Enter your SMTP port</p>
+<p><strong>Don&rsquo;t mix up</strong> these modes; Email encryption set to SSL on port 587 or TLS on port 465 will not work.</p>
+<h4 id="email"><strong>Email</strong><a class="anchorlink dashicons-before" href="#email"></a></h4>
+<p>Enter the SMTP email you are trying to configure as a general email for Perfex CRM, in most cases, this will be a mail only used for sending emails from Perfex CRM, e.q. you can create an email account with name no-reply@ or info@, however, this is up to you to determine how best fit for your needs.</p>
+<h4 id="smtp-username"><strong>SMTP Username</strong><a class="anchorlink dashicons-before" href="#smtp-username"></a></h4>
+<p>Fill only if your email client use username for SMTP login, mostly you will fill this field if you are using an exchange mailbox.</p>
+<p>In most cases when you are using&nbsp; exchange server, you will need to log in with username not with the email address, in this case, Perfex CRM will use the <strong>SMTP Username field to log in to your mail server instead of the email address</strong>, however the Email address you filled above will be still used as a FROM header.</p>
+<h4 id="smtp-password"><strong>SMTP Password</strong><a class="anchorlink dashicons-before" href="#smtp-password"></a></h4>
+<p>Fill the password for login, you should already know your password.</p>
+<h4 id="email-charset"><strong>Email Charset</strong><a class="anchorlink dashicons-before" href="#email-charset"></a></h4>
+<p>The default is UTF-8, you won&rsquo;t need to change this ever, because in most cases this works fine, however, if you decide to change the encoding it&rsquo;s highly recommended perform few researches to see what encoding is best fit for you.</p>
+<h4 id="bcc-all-emails-to"><strong>BCC All Emails To</strong><a class="anchorlink dashicons-before" href="#bcc-all-emails-to"></a></h4>
+<p>You can add email to be added as BCC header if you want to keep track and get copies of all emails sent from Perfex CRM if you need to add multiple BCC emails, separate them by a comma.</p>
+<h4 id="email-signature"><strong>Email Signature</strong><a class="anchorlink dashicons-before" href="#email-signature"></a></h4>
+<p>Global email signature for all emails sent, can be used as merge field added in&nbsp;<a href="../email-templates/index.htm">email templates</a> in <strong>Setup-&gt;Email Templates</strong>, keep in mind <strong>this option can be overridden</strong> if e.q. the staff that is sending an invoice to an email have configured custom email signature in his profile.</p>
+<h4 id="predefined-header-predefined-footer"><strong>Predefined Header &amp;&nbsp;Predefined Footer</strong><a class="anchorlink dashicons-before" href="#predefined-header-predefined-footer"></a></h4>
+<p>Perfex CRM installation by default comes with a predefined header and predefined footer for all email templates, the predefined header and footer is pretty clean but if you need something more then this, feel free to adjust the code.</p>
+<p>The <strong>email message contents are merged in between</strong> the predefined header and footer e.q.</p>
+<hr>
+<p>[predefined header code]</p>
+<p>The email message</p>
+<p>[predefined footer code]</p>
+<hr>
+<p>So for example, if you opened a &lt;div&gt; in the header and you did not close the &lt;div&gt; HTML while formatting the header, you MUST close&nbsp; (&lt;/div&gt;) the HTML tag in the footer.</p>
+<p>Click <a href="https://www.w3schools.com/Html/">here</a> to learn more about HTML</p>
+<h3 id="aws-email-smtp-setup">AWS Email SMTP Setup<a class="anchorlink dashicons-before" href="#aws-email-smtp-setup"></a></h3>
+<p>In case you are using AWS for sending emails, click <a href="../aws-email-smtp-setup/index.htm">here</a> to learn more.</p>
+<h3 id="email-queue">Email Queue<a class="anchorlink dashicons-before" href="#email-queue"></a></h3>
+<p>If you are looking in the Email Queue option, click <a href="../email-queue/index.htm">here</a> to read more.</p>
+<h3 id="email-templates">Email Templates<a class="anchorlink dashicons-before" href="#email-templates"></a></h3>
+<p>Click <a href="../email-templates/index.htm">here</a> to read more about the email templates in Perfex CRM</p>
+<h3 id="examples">Examples<a class="anchorlink dashicons-before" href="#examples"></a></h3>
+<p>The below examples are general examples how to configure SMTP to send an email, keep in mind that the examples may be different then your actual server requirements, the best is to consult with your hosting provider to provide you the correct SMTP configuration.</p>
+<h4 id="smtp-server-over-port-25"><strong>SMTP server over port 25</strong><a class="anchorlink dashicons-before" href="#smtp-server-over-port-25"></a></h4>
+<p>Encryption: None<br>
+SMTP Host: yoursmtphost.com<br>
+SMTP Port : 25<br>
+SMTP Email:&nbsp;Your email<br>
+SMTP Password: Your password</p>
+<h4 id="smtp-servers-that-require-ssl-connection"><strong>SMTP servers that require SSL connection</strong><a class="anchorlink dashicons-before" href="#smtp-servers-that-require-ssl-connection"></a></h4>
+<p>Encryption: SSL<br>
+SMTP Host: yoursmtphost.com<br>
+SMTP Port :&nbsp;465<br>
+SMTP Email:&nbsp;Your email<br>
+SMTP Password: Your password</p>
+<h4 id="for-gmail-use-the-following-configuration"><b>For Gmail use the following configuration:</b><a class="anchorlink dashicons-before" href="#for-gmail-use-the-following-configuration"></a></h4>
+<p>Encryption: SSL<br>
+SMTP Host: smtp.gmail.com<br>
+SMTP Port :&nbsp;465&nbsp;/ For TLS encryption use port 587<br>
+SMTP Email:&nbsp;youremail@gmail.com<br>
+SMTP Password: Your password</p>
+<div class="st-alert st-alert- ">If you are using your<strong> Google Account</strong> password to connect to SMTP, it&rsquo;s highly recommended to <strong>update your password with an App Password</strong> to avoid any email sending disruptions, find more information on how to generate App Password for your Google Account at the following link: <a href="https://support.google.com/accounts/answer/185833?hl=en">https://support.google.com/accounts/answer/185833?hl=en</a></div>
+<h3 id="testing-smtp-setup">Testing SMTP Setup<a class="anchorlink dashicons-before" href="#testing-smtp-setup"></a></h3>
+<p>If you need to test your SMTP setup&nbsp;just go to&nbsp;<strong>Setup -&gt; Settings -&gt; Email</strong>&nbsp;and scroll down to&nbsp;<strong>Send Test Email&nbsp;</strong>to enter your email address and click the submit button. If the SMTP is setup correctly you will receive green notifications saying that your email is set up correctly also an email will be sent to the email address you entered otherwise&nbsp;debug message from the email client will be shown.</p>
+<p>After you configure the SMTP settings, you will need to test if the configuration is properly configured and it is working fine.</p>
+<p>While you are in <strong>Setup-&gt;Settings-&gt;Email and&nbsp;</strong>scroll down to&nbsp;<strong>Send Test Email</strong>&nbsp;to enter your email address and click the submit button. If the SMTP is setup correctly you will receive green notifications saying that your email is set up correctly also an email will be sent to the email address you entered otherwise&nbsp;debug message from the email client will be shown.</p>
+<h2 id="common_issues">Common Issues &amp; Troubleshooting<a class="anchorlink dashicons-before" href="#common_issues"></a></h2>
+<p>When you try to send a test email, if the configuration is not successfully, you will be able to see an error block on the top, please read the debug block message carefully so you can determine what is causing your issue, the debug block message will contain the error message returned from your email server, in most cases will be something like: <strong>&ldquo;Connection failed. Error #2: stream_socket_client(): unable to connect to ssl://smtp.gmail.com:465 (Connection refused) &rdquo; </strong>but this will depend on your mail server and the mail engine you are using (PHPmailer or Codeigniter), however, most of the error messages will be similar.</p>
+<p><strong>We highly recommend you to consult with your hosting provider if you are not able to configure SMTP for Perfex CRM</strong>, the problem in most cases is related to your server config e.q. DNS failure, firewall blocking, hosting provider is blocking outbound connections etc&hellip; you should talk to them, read their docs, in this case, only your hosting provider can help you!</p>
+<p>You may want to perform a few types of research about the specific error message you are getting to get more familiar with how you can resolve this. <strong>ServerSMTP</strong> posted a good <a href="https://serversmtp.com/smtp-error/">article</a> and guides for common SMTP errors and codes, also <strong>it&rsquo;s highly recommended to check the</strong> <strong>PHPMailer troubleshooting guide</strong> by clicking <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting">here</a></p>
+<h3 id="email-settings-not-saving-or-getting-404-error-when-saving"><strong>Email settings not saving or getting 404 error when saving</strong><a class="anchorlink dashicons-before" href="#email-settings-not-saving-or-getting-404-error-when-saving"></a></h3>
+<div class="tm">This can happen because of firewall rules configured on your web server, because in Setup-&gt;Settings-&gt;Email in the predefined option header and footer there is an HTML and the firewall is preventing this HTML saves into the database.</div>
+<div class="tm"></div>
+<div class="tm">To test this you can navigate to Setup-&gt;Settings-&gt;Email and<strong> leave blank the predefined header and footer options </strong>then try to save the settings to see if this will work fine.</div>
+<div class="tm"></div>
+<div class="tm">If the save is successful, you should try to consult with your hosting provider to disable such firewall rules, in most cases, this can happen because of the <b>mod_security </b>or <b>Suhosin.</b></div>
+<h3 id="failed-to-connect-to-server-111-connection-refused">Failed to connect to server: 111 Connection refused<a class="anchorlink dashicons-before" href="#failed-to-connect-to-server-111-connection-refused"></a></h3>
+<p><strong>Connection refused</strong> error is thrown directly from your mail server and may happen if your hosting provider is blocking outbound ports, SMTP, in most cases happens because of blocked ports via a firewall.</p>
+<p>If you are configuring SMTP on ports 465 or 587, make sure that the ports 465 and 587 are open, if you are not managing the server, <strong>contact your hosting provider to check this</strong> directly.</p>
+<p>More information:</p>
+<p><a href="https://github.com/PHPMailer/PHPMailer/issues/295#issuecomment-155147551">https://github.com/PHPMailer/PHPMailer/issues/295#issuecomment-155147551</a></p>
+<p><a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting">https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting</a></p>
+<h3 id="connection-timeout-error-and-dns-failures">Connection Timeout Error and DNS Failures<a class="anchorlink dashicons-before" href="#connection-timeout-error-and-dns-failures"></a></h3>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#dns-failures">here</a> to read more.</p>
+<h3 id="godaddy-email-config-issues">GoDaddy Email Config Issues<a class="anchorlink dashicons-before" href="#godaddy-email-config-issues"></a></h3>
+<p>GoDaddy blocks outbound SMTP; you have to use GoDaddy&rsquo;s own mail servers.</p>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#godaddy">here</a> to read more.</p>
+<h3 id="authentication-failures">Authentication failures<a class="anchorlink dashicons-before" href="#authentication-failures"></a></h3>
+<p>If your authentication is failing, there are several likely causes:</p>
+<ul>
+<li>You have the wrong username or password</li>
+<li>Your connection is being diverted to a different server (as above)</li>
+<li>You have specified authentication without encryption</li>
+</ul>
+<p>Generally, you do not want to send username or password over an unencrypted link. Some SMTP authentication schemes do add a minimal level of security (sending short hashes rather than clear text), but these provide only minimal protection, and so most servers do not allow authentication without encryption. Fix this by setting SMTP Encryption to TLS and Port to 587 as well as filling the Email and Password field.</p>
+<h3 id="common-issues-with-gmail-or-g-suite-invalid-username-or-password"><strong>Common issues with Gmail or G Suite &ndash; Invalid username or password</strong><a class="anchorlink dashicons-before" href="#common-issues-with-gmail-or-g-suite-invalid-username-or-password"></a></h3>
+<p>Invalid username or password when use Gmail or G-Suite can be a common error if you haven&rsquo;t turned Less Secure Apps to ON, however, it&rsquo;s recommended first to check if your password is correct.</p>
+<h4 id="g-suite"><strong>G-Suite</strong><a class="anchorlink dashicons-before" href="#g-suite"></a></h4>
+<ol>
+<li>Sign in to the Google Admin console.</li>
+<li>Click Security &gt; Basic settings.</li>
+<li>Under Less secure apps, select Go to settings for less secure apps.</li>
+<li>In the subwindow, select the Allow users to manage their access to less secure apps radio button.</li>
+<li>In case you are not receiving the emails and your SMTP configuration test email is showing that the configuration is working properly, take a look at the following articles:
+<ol>
+<li><a href="https://productforums.google.com/forum/#!topic/Apps/M7TiKQAWhq4">https://productforums.google.com/forum/#!topic/Apps/M7TiKQAWhq4</a></li>
+<li><a href="https://support.google.com/a/answer/55299?hl=en">https://support.google.com/a/answer/55299?hl=en</a></li>
+</ol>
+</li>
+</ol>
+<h4 id="gmail-regular-account"><strong>Gmail Regular Account</strong><a class="anchorlink dashicons-before" href="#gmail-regular-account"></a></h4>
+<ol>
+<li>Log in to your user account.</li>
+<li>Visit: <a href="https://www.google.com/settings/security/lesssecureapps" target="_blank" rel="nofollow noopener noreferrer">https://www.google.com/settings/security/lesssecureapps</a></li>
+<li>Toggle on.</li>
+</ol>
+<h4 id="2-factor-authentication-enabled"><strong>2 Factor Authentication Enabled</strong><a class="anchorlink dashicons-before" href="#2-factor-authentication-enabled"></a></h4>
+<p>If you are<strong> have enabled 2-factor authentication</strong> on your Google Account, you <strong>MUST</strong> generate application password and add the password in the password field in Perfex CRM located in Setup-&gt;Settings-&gt;Email</p>
+<p>Click <a href="https://support.google.com/accounts/answer/185833?hl=en">here</a> to read how to generate App Password.</p>
+<hr>
+<p>If you are still getting <strong>invalid username or password and you are managing the server</strong> try this:</p>
+<ol>
+<li>Log in as cPanel user, go to MX Entry, select domain, set to the remote exchanger.</li>
+<li>Log into WHM, go to Tweak Settings, disable &ldquo;Restrict outgoing SMTP&rdquo;</li>
+</ol>
+<p><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-26" src="../wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-1024x56.png" alt="Restrict outgoing smtp to root exim" width="980" height="54" srcset="../wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim.png 1024w, ../wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-300x16.png 300w, ../wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-768x42.png 768w, ../wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-60x3.png 60w, ../wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-150x8.png 150w" sizes="(max-width: 980px) 100vw, 980px"></p>
+<h3 id="could-not-instantiate-mail-function">Could not instantiate mail function<a class="anchorlink dashicons-before" href="#could-not-instantiate-mail-function"></a></h3>
+<p>This error is also known as &ldquo;<strong>Unable to send email using PHP mail()</strong>&rdquo; if you are using the Codeigniter mail engine and means that your PHP installation is not configured to call the <strong>mail()</strong> function correctly (e.g. sendmail_path is not set correctly in your php.ini), or you have no local mail server installed and configured.</p>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#could-not-instantiate-mail-function">here</a> to read more.</p>
+<p>However, the error may be shown if you are trying to configure the <strong>Mail</strong> protocol, which is not recommended.</p>
+<h3 id="selinux-blocking">SELinux blocking<a class="anchorlink dashicons-before" href="#selinux-blocking"></a></h3>
+<p>If you see an error like&nbsp;<strong>SMTP -&gt; ERROR: Failed to connect to server: Permission denied (13)</strong>, you may be running into SELinux preventing PHP or the web server from sending an email.</p>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#selinux-blocking">here</a> to read more.</p>
+</body></html>
+                  </div>
+        
+         
+</article>
+
+    
+	     
+     <section id="related-posts" class="clearfix">
+     <h3 id="related-posts-title">Related Articles</h3>
+     	<ul class="clearfix">        
+		<li class="standard">
+        <h4 class="entry-title"><a href="../configure-email-with-microsoft-azure-and-oauth-2/index.htm" rel="bookmark" title="Configure email with Microsoft Azure and OAUTH 2">Configure email with Microsoft Azure and OAUTH 2</a></h4>
+        </li>
+
+        
+		<li class="standard">
+        <h4 class="entry-title"><a href="../configure-email-with-google-oauth-2-0/index.htm" rel="bookmark" title="Configure email with Google OAuth 2.0">Configure email with Google OAuth 2.0</a></h4>
+        </li>
+
+        
+		<li class="standard">
+        <h4 class="entry-title"><a href="../email-queue/index.htm" rel="bookmark" title="Email Queue">Email Queue</a></h4>
+        </li>
+
+        
+		<li class="standard">
+        <h4 class="entry-title"><a href="../email-templates/index.htm" rel="bookmark" title="Email Templates">Email Templates</a></h4>
+        </li>
+
+        
+		<li class="standard">
+        <h4 class="entry-title"><a href="../aws-email-smtp-setup/index.htm" rel="bookmark" title="AWS Email SMTP Setup">AWS Email SMTP Setup</a></h4>
+        </li>
+
+</ul></section>
+      
+    
+    
+</section>
+<!-- #content -->
+
+<!-- #sidebar -->
+<aside id="sidebar" role="complementary">
+<div id="search-2" class="widget widget_search clearfix"><form role="search" method="get" id="searchform" action="https://help.perfexcrm.com/">
+        <input type="text" value="Search..." name="s" id="s" onblur="if (this.value == '')  {this.value = 'Search...';}" onfocus="if (this.value == 'Search...')  
+{this.value = '';}">
+</form></div><div id="block-3" class="widget widget_block widget_text clearfix">
+<p>Looking for <strong>affordable and reliable hosting</strong> for <strong>Perfex CRM</strong>? We've partnered with <a href="https://partners.inmotionhosting.com/c/1226883/353729/4222">InMotion Hosting</a> to spare you from <strong>any troubles</strong>! Up to <strong>75%OFF </strong>Business Hosting plans for Perfex CRM visitors.</p>
+</div><div id="block-7" class="widget widget_block clearfix"><a rel="sponsored" href="https://partners.inmotionhosting.com/c/1226883/2156548/4222" target="_top" id="2156548">
+<img loading="lazy" decoding="async" src="../display-ad/4222-2156548" border="0" alt="" width="300" height="250"></a><img loading="lazy" decoding="async" height="0" width="0" src="../i/1226883/2156548/4222" style="position:absolute;visibility:hidden;" border="0"></div><div id="categories-2" class="widget widget_categories clearfix"><h4 class="widget-title"><span>Categories</span></h4><form action="https://help.perfexcrm.com" method="get"><label class="screen-reader-text" for="cat">Categories</label><select name='cat' id='cat' class='postform'>
+	<option value='-1'>Select Category</option>
+	<option class="level-0" value="1">Uncategorized</option>
+	<option class="level-0" value="4">Payment Gateways</option>
+	<option class="level-0" value="8">System Update</option>
+	<option class="level-0" value="17">Invoices</option>
+	<option class="level-0" value="26">General Informations</option>
+	<option class="level-0" value="29">Installation</option>
+	<option class="level-0" value="18">Estimates</option>
+	<option class="level-0" value="19">Proposals</option>
+	<option class="level-0" value="31">Setup &amp; Configuration</option>
+	<option class="level-0" value="20">General/Setup</option>
+	<option class="level-0" value="54">Modules</option>
+	<option class="level-0" value="36">Common Issues &amp; Troubleshooting</option>
+	<option class="level-0" value="23">Changelog</option>
+	<option class="level-0" value="25">Email Config &amp; Templates</option>
+	<option class="level-0" value="15">Customers</option>
+	<option class="level-0" value="16">Sales</option>
+	<option class="level-0" value="3">Projects</option>
+	<option class="level-0" value="2">Tasks</option>
+	<option class="level-0" value="12">Support Tickets</option>
+	<option class="level-0" value="14">Leads</option>
+	<option class="level-0" value="7">Expenses</option>
+	<option class="level-0" value="13">Contracts</option>
+	<option class="level-0" value="28">Knowledge Base</option>
+	<option class="level-0" value="5">Surveys</option>
+	<option class="level-0" value="22">Customization</option>
+</select>
+</form><script type="text/javascript">
+/* <![CDATA[ */
+
+(function() {
+	var dropdown = document.getElementById( "cat" );
+	function onCatChange() {
+		if ( dropdown.options[ dropdown.selectedIndex ].value > 0 ) {
+			dropdown.parentNode.submit();
+		}
+	}
+	dropdown.onchange = onCatChange;
+})();
+
+/* ]]> */
+</script>
+</div><div id="st_articles_widget-2" class="widget st_articles_widget clearfix"> 
+        <h4 class="widget-title"><span>Latest Articles</span></h4>                            
+                <ul class="clearfix">
+                
+					                                        <li class="clearfix format-standard">
+
+					<a href="../version-3-3-1/index.htm" rel="bookmark">Version 3.3.1</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../version-3-3-0/index.htm" rel="bookmark">Version 3.3.0</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../capture-utm-parameters-with-attributer/index.htm" rel="bookmark">Capture UTM parameters with Attributer</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../configure-email-with-microsoft-azure-and-oauth-2/index.htm" rel="bookmark">Configure email with Microsoft Azure and OAUTH 2</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../version-3-2-1/index.htm" rel="bookmark">Version 3.2.1</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../version-3-2-0/index.htm" rel="bookmark">Version 3.2.0</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../version-3-1-6/index.htm" rel="bookmark">Version 3.1.6</a>
+                    
+                    </li>
+                                        <li class="clearfix format-standard">
+
+					<a href="../version-3-1-5/index.htm" rel="bookmark">Version 3.1.5</a>
+                    
+                    </li>
+                                        
+                    
+                </ul>
+		
+		</div><!-- #sidebar -->
+</aside>
+
+</div>
+<!-- .ht-container -->
+</div>
+<!-- /#primary -->
+
+<!-- #footer-widgets -->
+<!-- /#footer-widgets -->
+
+<!-- #site-footer -->
+<footer id="site-footer" class="clearfix" role="contentinfo">
+<div class="ht-container">
+
+  
+
+  <small id="copyright">
+    © Copyright, Perfex CRM    </small>
+  
+</div>
+<!-- /.ht-container -->
+</footer> 
+<!-- /#site-footer -->
+
+<!-- /#site-container -->
+</div>
+
+         <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-71600314-1', 'auto');
+          ga('send', 'pageview');
+        </script>
+    	<script type="text/javascript">
+	jQuery(document).ready(function() {
+	jQuery('#live-search #s').liveSearch({url: 'https://help.perfexcrm.com/index.php?ajax=1&s='});
+	});
+	</script>
+<script type="text/javascript" src="../wp-includes/js/dist/hooks.min.js" id="wp-hooks-js"></script>
+<script type="text/javascript" src="../wp-includes/js/dist/i18n.min.js" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+/* <![CDATA[ */
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+/* ]]> */
+</script>
+<script type="text/javascript" src="../wp-content/plugins/contact-form-7/includes/swv/js/index.js" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-before">
+/* <![CDATA[ */
+var wpcf7 = {
+    "api": {
+        "root": "https:\/\/help.perfexcrm.com\/wp-json\/",
+        "namespace": "contact-form-7\/v1"
+    },
+    "cached": 1
+};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../wp-content/plugins/contact-form-7/includes/js/index.js" id="contact-form-7-js"></script>
+<script type="text/javascript" src="../wp-content/themes/knowhow/js/functions.js" id="st_theme_custom-js"></script>
+<script type="text/javascript" src="../wp-content/themes/knowhow/framework/shortcodes/shortcodes.js" id="st_shortcodes-js"></script>
+<script type="text/javascript" src="../wp-content/themes/knowhow/js/jquery.livesearch.js" id="st_live_search-js"></script>
+
+<!-- This site is optimized with Phil Singleton's WP SEO Structured Data Plugin v2.7.11 - https://kcseopro.com/wordpress-seo-structured-data-schema-plugin/ -->
+
+<!-- / WP SEO Structured Data Plugin. -->
+
+
+		<!-- Cookie Notice plugin v2.5.6 by Hu-manity.co https://hu-manity.co/ -->
+		<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: rgba(50,50,58,1);"><div class="cookie-notice-container" style="color: #fff"><span id="cn-notice-text" class="cn-text-container">We use cookies to ensure that we give you the best experience on our website. If you continue to use this site we will assume that you are happy with it.</span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="Ok" style="background-color: #00a99d">Ok</a></span><span id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" title="No"></span></div>
+			
+		</div>
+		<!-- / Cookie Notice plugin --></body>
+</html>
+<!-- Dynamic page generated in 0.194 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2025-08-14 14:07:49 -->
+
+<!-- Compression = gzip -->

@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Leads | Perfex CRM</title>
+	<atom:link href="https://help.perfexcrm.com/category/leads/feed/" rel="self" type="application/rss+xml" />
+	<link>https://help.perfexcrm.com</link>
+	<description>Help Center</description>
+	<lastBuildDate>Fri, 06 Dec 2024 11:08:20 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-32x32.jpg</url>
+	<title>Leads | Perfex CRM</title>
+	<link>https://help.perfexcrm.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Capture UTM parameters with Attributer</title>
+		<link>https://help.perfexcrm.com/capture-utm-parameters-with-attributer/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 04 Dec 2024 18:12:07 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4371</guid>
+
+					<description><![CDATA[<p>Attributer is a tool that can pass marketing attribution data (like the fact a lead came from Paid Search, Organic Search, Paid Social, etc) into Perfex. In this article, we will show you how to set up Attributer on your website and get the data into Perfex. What is Attributer? Attributer is a small piece [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/capture-utm-parameters-with-attributer/">Capture UTM parameters with Attributer</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p><a href="https://attributer.io/">Attributer</a> is a tool that can pass marketing attribution data (like the fact a lead came from Paid Search, Organic Search, Paid Social, etc) into Perfex.</p>
+
+
+
+<p>In this article, we will show you how to set up Attributer on your website and get the data into Perfex.</p>
+
+
+
+<h2 class="wp-block-heading">What is Attributer?</h2>
+
+
+
+<p>Attributer is a small piece of code that you place on your company&#8217;s website.</p>
+
+
+
+<p>When a visitor lands on your site, Attributer looks at a bunch of technical information (same things as tools like Google Analytics look at) to determine where the visitor came from.</p>
+
+
+
+<p>It then categorizes the visitor into a standardized set of marketing channels (the same channels you see in tools like Google Analytics, such as Organic Search, Paid Social, Paid Search, etc) and saves the data in the user&#8217;s browser.</p>
+
+
+
+<p>Then when the visitor completes a form on your website, Attributer writes the attribution data into hidden fields in your forms and it is captured by your form tool.</p>
+
+
+
+<p>Finally, you can then send this data into Perfex where you can view it on the Lead record, use it to run reports, etc.&nbsp;</p>
+
+
+
+<h2 class="wp-block-heading">Setup Instructions</h2>
+
+
+
+<p>Follow these step-by-step instructions below to start using Attributer with Perfex.</p>
+
+
+
+<h3 class="wp-block-heading">Step 1: Add the Attributer code to your website</h3>
+
+
+
+<p>When you start a 14-day free trial, you will be given a snippet of code to add to your website. The process for adding this code differs depending on what CMS system you are using, but full instructions (with screenshots) can be seen here:</p>
+
+
+
+<ul class="wp-block-list">
+<li><a href="https://help.attributer.io/articles/add-the-attributer-code-to-your-wordpress-website/">WordPress</a></li>
+
+
+
+<li><a href="https://help.attributer.io/articles/add-attributer-code-to-your-webflow-website/">Webflow</a></li>
+
+
+
+<li><a href="https://help.attributer.io/articles/add-attributer-code-to-your-squarespace-website/">Squarespace</a></li>
+
+
+
+<li><a href="https://help.attributer.io/articles/add-attributer-code-to-your-wix-website/">Wix</a></li>
+
+
+
+<li><a href="https://help.attributer.io/add-code-to-website/">Other</a></li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Step 2: Add hidden fields to your forms</h3>
+
+
+
+<p>The next thing you need to do is add a series of hidden fields to your forms. This will give Attributer a place to write the UTM parameters and other lead source data into.</p>
+
+
+
+<p>Attributer works with 50+ different form builders and the process is slightly different for all of them, but generally speaking, you just need to add 6x hidden fields to your forms and then give them a specific name and default value.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfGMdECp0Ztkkr16MSFmhfzytP7p9TrgYVV5jorfc5FDY7v8SuBZCCzDeBrxf-V9uQ6EMFHetea_QrXLhbnRlDVmMh2sRvNmJiMUsdd50QpsO75pYePZKzA9Ebnv5YxRa80hW5D?key=euCTjwvMJg1e7nMewOmmTDb9" alt=""/></figure>
+
+
+
+<p>The fields you need to add are as follows:</p>
+
+
+
+<p><strong>Hidden Field #1</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Name = Channel</li>
+
+
+
+<li>Default Value = [channel]</li>
+</ul>
+
+
+
+<p><strong>Hidden Field #2</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Name = Channel Drilldown 1</li>
+
+
+
+<li>Default Value = [channeldrilldown1]</li>
+</ul>
+
+
+
+<p><strong>Hidden Field #3</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Name = Channel Drilldown 2</li>
+
+
+
+<li>Default Value = [channeldrilldown2]</li>
+</ul>
+
+
+
+<p><strong>Hidden Field #4</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Name = Channel Drilldown 3</li>
+
+
+
+<li>Default Value = [channeldrilldown3]</li>
+</ul>
+
+
+
+<p><strong>Hidden Field #5</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Name = Landing Page</li>
+
+
+
+<li>Default Value = [landingpage]</li>
+</ul>
+
+
+
+<p><strong>Hidden Field #6</strong></p>
+
+
+
+<ul class="wp-block-list">
+<li>Name = Landing Page Group</li>
+
+
+
+<li>Default Value = [landingpagegroup]</li>
+</ul>
+
+
+
+<p>You ultimately want your form to look a bit like this:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc7ZNVMhMk0u_CfbdAM6KkjXNAECIdRArmCM0dDx0ZjZadgB7nuILo23sqQM_GpRGtxZS5My1jRIRUpQCFb2axre0_yku8MB04t9OQ7Nz98-Y2lJa7bJRpZc_p5zrPyWxJ3N_yCFg?key=euCTjwvMJg1e7nMewOmmTDb9" alt=""/></figure>
+
+
+
+<h3 class="wp-block-heading">Step 3: Send the data into Perfex CRM</h3>
+
+
+
+<p>Now that you have added the Attributer code to your website and added the hidden fields to your forms, the UTM parameters and other attribution should be getting captured by your form tool.</p>
+
+
+
+<p>You can check this by looking at the Submissions. They should look a bit like this:</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXdjX1FGY0rKD2oIBh4HFCm6VE8zZ488Ik9EvQc1PoBqx3axK_sqVPYPRNiD530wIdS0cmgTn5Sj8cXtYnyO84Vxh8yiuEa2-OaA6onaajS8is8PuqD56PxM5ife2FtA-s0SpKQMWw?key=euCTjwvMJg1e7nMewOmmTDb9" alt=""/></figure>
+
+
+
+<p>If that’s the case, then the final step is to send the data from your form tool to Perfex.</p>
+
+
+
+<p>Suppose you already have an integration set up (via Zapier or Perfex’s email integration). In that case, you just need to update the field mappings to send the additional data captured by your form tool into Perfex.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXc6oo9HU0XwpehFmYlqBt5Nnps9-zKU72D5SszaU5_l7_tWg7Nu14gQ0SaD7aLeotegnCbm9LQ2gUdEkX07i7zsXOCsbL90CyvZY29jgqFg6hDbUd8Ot_Gzy9hXux3GM6madAteDw?key=euCTjwvMJg1e7nMewOmmTDb9" alt=""/></figure>
+
+
+
+<h2 class="wp-block-heading">How to use this data</h2>
+
+
+
+<p>Now that you have attribution data on each new lead coming into Perfex, let’s look at different&nbsp; ways you can use this data to help grow your business:</p>
+
+
+
+<h3 class="wp-block-heading">Tailor your lead follow-up</h3>
+
+
+
+<p>When you have information about what channel the lead came from, what ad they clicked, and what pages they landed on, you can use it to send more targeted follow-up messages.</p>
+
+
+
+<p>For example, if we had a lead from Organic Search, their landing page was our homepage, and they submitted a demo form request, we could probably assume they were interested in Perfex and in a later stage of the buying cycle. As a result, the messaging in our emails should probably be focused on getting the demo set up, educating them on the features, etc.</p>
+
+
+
+<p>Alternatively, if we saw someone came from a Facebook Ad, landed on our blog post about ‘10 ways to grow your business’ and became a lead by downloading our eBook on business growth, we could probably assume they are not familiar with Perfex or even looking for a CRM, so the messaging should be more focused on how using a CRM can help them grow.</p>
+
+
+
+<h3 class="wp-block-heading">Report on the channels driving leads, customers, and revenue</h3>
+
+
+
+<p>When you have the data about where each lead came from in Perfex, you can run reports showing which channels, campaigns, etc are driving your leads.</p>
+
+
+
+<p>For instance, you could run a report that shows the number of leads you got by channel.</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" src="https://lh7-rt.googleusercontent.com/docsz/AD_4nXfgaKTLDLAYkMJ2gvynd3kBdb1dF9VaD0naKGFbxNoDj6d7hMBkNun6KtWB2u_0D0UmvOlkH8Udb8lMmHRxbs4hDOxlAF_T3ZpL8Ux3-I2gJcykBuF5HY9Vl6lcQnyvFBmF1Pr9Pg?key=euCTjwvMJg1e7nMewOmmTDb9" alt=""/></figure>
+
+
+
+<p>This would allow you to see which channels (Paid Search, Paid Social, Organic Search, etc) are generating you the most leads (and subsequently where you should be focusing your efforts to get more).</p>The post <a href="https://help.perfexcrm.com/capture-utm-parameters-with-attributer/">Capture UTM parameters with Attributer</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Import Leads From WordPress Contact Form 7</title>
+		<link>https://help.perfexcrm.com/import-leads-from-wordpress-contact-form-7/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 24 Nov 2017 13:37:57 +0000</pubDate>
+				<category><![CDATA[Setup & Configuration]]></category>
+		<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=2451</guid>
+
+					<description><![CDATA[<p>Perfex CRM has the ability to import/capture leads from the most popular contact form (and any other customizable forms) for WordPress Contact Form 7 together with the Email Integration feature which is built in Perfex CRM. The process is very easy, once you configure the contact form to be compatible with the email integration, you [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/import-leads-from-wordpress-contact-form-7/">Import Leads From WordPress Contact Form 7</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Perfex CRM has the ability to <strong>import/capture leads</strong> from the most popular contact form (and any other customizable forms) for <strong>WordPress Contact Form 7</strong> together with the <a href="https://help.perfexcrm.com/leads-email-integration/">Email Integration</a> feature which is built in Perfex CRM.</p>
+<p>The process is very easy, once you configure the contact form to be compatible with the email integration, you will import leads in no time with the fields filled in contact form automatically added for the imported lead.</p>
+<p><strong>We recommend you first to read this whole setup article to get the idea how the contact form fields will be mapped and how the leads will be imported in Perfex CRM to get familiar with the steps you need to perform in order to make this config working, then you can move on to configure the full setup.</strong></p>
+<p><div class="st-alert st-alert-info ">Prerequisite for this setup is to have previously configured properly working lead email integration in Perfex CRM, click <a href="https://help.perfexcrm.com/leads-email-integration/">here</a> to read more how to configure.</div></p>
+<p>For the simplicity of this example and setup, we will use a minimal example for Contact Form config with fields Name, Email, Message<strong> (see below for more detailed example).</strong></p>
+<h4>Install Contact Form 7</h4>
+<p><strong>If you already have Contact Form 7 installed and you are familiar with Contact Corm 7 you can skip this step.</strong></p>
+<p>If you haven&#8217;t already installed Contact Form 7, you must install the plugin from your WordPress dashboard area, from the left menu navigate to <strong>Plugins-&gt;Add New</strong> and search for <strong>Contact Form 7</strong>, after you find the Contact Form 7 plugin click on <strong>Install</strong> and after installation click on <strong>Activate</strong>.</p>
+<p>We assume that you are already familiar how Contact Form 7 works and how you can embed the form into custom page eq. Contact Us, in case you are not, you can read more by clicking <a href="https://contactform7.com/docs/">here</a>.</p>
+<h4>Configure Contact Form 7</h4>
+<p>In this example, we will use the basic Contact Form 7 config which comes with the form after installation.</p>
+<p>After you install and activate the plugin from the WordPress admin menu click on <strong>Contact-&gt;Contact Forms</strong></p>
+<p>Chose the form you want to configure and click on the name.</p>
+<p><img fetchpriority="high" decoding="async" class="alignnone wp-image-2454 size-full" src="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-e1511517541823.png" alt="" width="721" height="127" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-e1511517541823.png 721w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-e1511517541823-300x53.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-e1511517541823-60x11.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-e1511517541823-150x26.png 150w" sizes="(max-width: 721px) 100vw, 721px" /></p>
+<p>Click on the <strong>Mail tab</strong> in the contact form to <strong>configure the contact form email to be compatible with Perfex CRM.</strong></p>
+<p><img decoding="async" class="alignnone wp-image-4237 size-full" src="https://help.perfexcrm.com/wp-content/uploads/2017/11/Opp4MI5.png" alt="" width="709" height="768" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/11/Opp4MI5.png 709w, https://help.perfexcrm.com/wp-content/uploads/2017/11/Opp4MI5-277x300.png 277w, https://help.perfexcrm.com/wp-content/uploads/2017/11/Opp4MI5-55x60.png 55w, https://help.perfexcrm.com/wp-content/uploads/2017/11/Opp4MI5-138x150.png 138w" sizes="(max-width: 709px) 100vw, 709px" /></p>
+<p><div class="st-alert st-alert-info ">It&#8217;s highly recommended always to include the <strong>email</strong> field in the message and Reply-To header in the Additional Headers section with the merge fields [your-email]</div></p>
+<p><strong>Additional Hea</strong><strong>ders</strong></p>
+<p>Add your Perfex CRM integration email configured in <strong>Setup-&gt;Leads-&gt;Email Integration</strong>.</p>
+<p>In new line add eq. <strong>Bcc: yourleadsintegrationemail@example.com</strong></p>
+<p><strong>Make sure that the Reply-To header is set as shown in the image.</strong></p>
+<p>This is <strong>the important part</strong>, in this case when a user fills out the form, the contact form plugin will add BCC your leads email integration email and the Perfex CRM CRON job will be able to catch this email and import the lead with the provided fields.</p>
+<p><strong>Message Body</strong></p>
+<p><strong>The point here is to wrap all form values and include in the email message/body with:</strong></p>
+<pre class="lang:xhtml decode:true">&lt;div id="field_LEAD_FIELD"&gt;[your-CONTACT-FORM-FIELD]&lt;/div&gt;</pre>
+<p>After the email is sent this field will be populated with the actual field value and will become eq.</p>
+<pre class="lang:default decode:true">&lt;div id="field_LEAD_FIELD"&gt;John Doe&lt;/div&gt;</pre>
+<p><strong>You will need to replace LEAD_FIELD with the actual <a href="#available_lead_fields">lead field.</a></strong></p>
+<p><div class="st-alert st-alert- ">You will need actually to create a contact form field in order to add the fields in the email body.</div></p>
+<h4><strong>Use HTML content type</strong></h4>
+<p>In Contact Form 7 mail tab check <strong>Use HTML Content Type</strong>, in this case, the email will be HTML.</p>
+<h4 id="available_lead_fields"><strong>Available lead fields</strong></h4>
+<pre class="lang:default decode:true">field_name
+field_title
+field_email
+field_website
+field_phonenumber
+field_company
+field_description
+field_address
+field_city
+field_state
+field_country
+field_zip
+field_lead_value (v2.5.0)</pre>
+<h4><strong>Country Field</strong></h4>
+<p>If you are passing a <strong>country field</strong>, keep in mind that the country must be ID from Perfex CRM database table for countries (tblcountries) <strong>or</strong> the name Eq. United States (without typos) because Perfex CRM script will compare the country name passed in the message body and find suitable country id from Perfex CRM countries table.</p>
+<p>Eq user writes United States, this will work fine, but if a user writes a country name that does not exist in countries table or makes a typo eq. <strong>Untited</strong> States, Perfex CRM won&#8217;t be able to identify the ID of the country from countries table.</p>
+<h4><strong>Custom Fields</strong></h4>
+<p>In case you want to integrate a custom field for a lead, you can use custom_field_<strong>ID, </strong><strong>Replace the ID</strong> with the actual custom field ID which can be found in<strong> Setup-&gt;Custom Fields.</strong></p>
+<p>If you use a custom field the email message markup should look like this:</p>
+<pre class="lang:default decode:true ">&lt;div id="custom_field_ID"&gt;[your-CONTACT-FORM-FIELD]&lt;/div&gt;
+</pre>
+<p><div class="st-alert st-alert- ">Note that if you are adding custom fields of type <strong>Checkbox</strong> or <strong>Select</strong>, the options must be the same like the one you added in Perfex CRM custom field option in Setup-&gt;Custom Fields. Also for<strong> dates fields</strong>, the <strong>dates custom fields must be passed in Y-m-d</strong> format.</div></p>
+<p>Eq. example for a custom field of type <strong>Select in Perfex CRM</strong> &#8211; Click <a href="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-crm-custom-field-leads.png" target="_blank" rel="noopener noreferrer">here</a> to see the options config.</p>
+<p>Eq. example for a custom field of type <strong>Select in Contact Form 7</strong> &#8211; Click <a href="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-crm-contact-form7-select.png">here</a> to see options config.</p>
+<h4><strong>Attachments</strong></h4>
+<p>In the Mail Tab in Contact Form 7 simply <strong>add the field tag</strong> <strong>in the File Attachments</strong> Area.</p>
+<p>Keep in mind that only attachment extensions allowed in Setup-&gt;Settings-&gt;General (Perfex CRM installation) will be added while importing the lead.</p>
+<p><img decoding="async" class="alignnone size-full wp-image-2465" src="https://help.perfexcrm.com/wp-content/uploads/2017/11/contactform7-file-attachments.png" alt="" width="880" height="124" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/11/contactform7-file-attachments.png 880w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contactform7-file-attachments-300x42.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contactform7-file-attachments-768x108.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contactform7-file-attachments-60x8.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contactform7-file-attachments-150x21.png 150w" sizes="(max-width: 880px) 100vw, 880px" /></p>
+<h3>Full example with more fields</h3>
+<p>Let&#8217;s say our Contact Form 7 have fields:</p>
+<ul>
+<li>Subject</li>
+<li>Name</li>
+<li>Email</li>
+<li>Website</li>
+<li>Phone number</li>
+<li>Company</li>
+<li>Message</li>
+</ul>
+<h4><strong>Contact Form Fields</strong></h4>
+<p>Our contact form fields config should look like this (<strong>you can format it however you like</strong>):</p>
+<p><div class="row"><div class="column col-half"></p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-2458 size-full" src="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-fields-e1511526950102.png" alt="" width="402" height="560" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-fields-e1511526950102.png 402w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-fields-e1511526950102-215x300.png 215w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-fields-e1511526950102-43x60.png 43w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-fields-e1511526950102-108x150.png 108w" sizes="auto, (max-width: 402px) 100vw, 402px" /></p>
+<p></div></p>
+<p><div class="column col-half"></p>
+<pre class="lang:default decode:true">&lt;label&gt; Subject
+    [text* your-subject] &lt;/label&gt;
+
+&lt;label&gt; Your Name (required)
+    [text* your-name] &lt;/label&gt;
+
+&lt;label&gt; Your Email (required)
+    [email* your-email] &lt;/label&gt;
+
+&lt;label&gt; Website
+    [text your-website] &lt;/label&gt;
+
+&lt;label&gt; Phone Number
+    [text your-phonenumber] &lt;/label&gt;
+
+&lt;label&gt; Company
+    [text your-company] &lt;/label&gt;
+
+&lt;label&gt; Your Message
+    [textarea your-message] &lt;/label&gt;
+
+[submit "Send"]</pre>
+<p></div></p>
+<p></div></p>
+<h4>Mail Tab Config</h4>
+<p>Click on the mail tab to configure the email body content.</p>
+<p>You can get the available shortcodes of the field values at the top of the Mail Tab Config where it says <strong>&#8220;In the following fields, you can use these mail-tags&#8221;</strong></p>
+<p>The email body content should look like this:</p>
+<p><a href="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-1024x319.png" target="_blank" rel="noopener noreferrer"><img loading="lazy" decoding="async" class="alignnone size-large wp-image-2459" src="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-1024x319.png" alt="" width="980" height="305" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-1024x319.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-300x93.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-768x239.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-60x19.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config-150x47.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/11/contact-form-7-perfex-email-tempalte-config.png 1379w" sizes="auto, (max-width: 980px) 100vw, 980px" /></a></p>
+<pre class="lang:default decode:true">From: [your-name] &lt;[your-email]&gt;
+Subject: [your-subject]
+
+Name:
+&lt;div id="field_name"&gt;[your-name]&lt;/div&gt;
+
+Email:
+&lt;div id="field_email"&gt;[your-email]&lt;/div&gt;
+
+Website:
+&lt;div id="field_website"&gt;[your-website]&lt;/div&gt;
+
+Phone Number:
+&lt;div id="field_phonenumber"&gt;[your-phonenumber]&lt;/div&gt;
+
+Company:
+&lt;div id="field_company"&gt;[your-company]&lt;/div&gt;
+
+Message Body:
+&lt;div id="field_description"&gt;[your-message]&lt;/div&gt;
+
+-- 
+This e-mail was sent from a contact form on Perfex CRM (https://help.perfexcrm.com)</pre>
+<p>You can see how <strong>all field values are wrapped within div with id=&#8221;field_LEAD_FIELD&#8221;</strong>, the <strong>LEAD_FIELD</strong> is actually from the <a href="#available_lead_fields">available lead fields</a></p>
+<p><strong>In this example the message that the user will write in the contact form we are populating the lead description text area, which is suitable for this case.</strong></p>
+<p>Keep in mind that <strong>the subject won&#8217;t be added to the leads section</strong> of Perfex CRM because the subject is not suitable for any field that belongs to lead, you can either create a custom field or you will be able to view the subject by clicking on the <strong>Email Activity tab</strong> in the lead modal, click <a href="https://help.perfexcrm.com/wp-content/uploads/2017/11/perfex-crm-leads-email-integration-subject.png" target="_blank" rel="noopener noreferrer">here</a> to check how this will look.</p>
+<hr />
+<p>Now when a user fills Contact Form 7 the plugin will add your email integration email as BCC header and this email will be sent too to the email integration email.</p>
+<p>The Perfex CRM cron job will read this email and map all fields provided within the email message and import the lead in Perfex CRM leads section.</p>
+<hr />
+<p><div class="st-alert st-alert-success ">You can apply this logic to any WordPress contact/form plugin which allows you to change the email content and add BCC, you can even use this with a pure PHP email form, you just need to BCC your leads email integration and format the email body as mentioned above, isn&#8217;t this awesome?</div></p>The post <a href="https://help.perfexcrm.com/import-leads-from-wordpress-contact-form-7/">Import Leads From WordPress Contact Form 7</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Sending proposal to customer or lead</title>
+		<link>https://help.perfexcrm.com/sending-proposal-to-customer-or-lead/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 21:13:38 +0000</pubDate>
+				<category><![CDATA[Proposals]]></category>
+		<category><![CDATA[Customers]]></category>
+		<category><![CDATA[Sales]]></category>
+		<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=582</guid>
+
+					<description><![CDATA[<p>We assume that you already have created the proposal. Click on the mail icon from the right side and popup with with the preview email template will be shown. You can include the proposal link inside the email template and let your customer view it without login. This is also useful for leads. After you send [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/sending-proposal-to-customer-or-lead/">Sending proposal to customer or lead</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>We assume that you already have created the proposal. Click on the mail icon from the right side and popup with with the preview email template will be shown.</p>
+<p>You can include the proposal link inside the email template and let your customer view it without login. This is also useful for leads.</p>
+<p>After you send the proposal a lead/customer can open it an make action ex/ accept, decline, make comments. The creator of the proposal and the assigned sale agent will get notification in the CRM and email that customer commented or accept/decline the proposal</p>
+<p><figure id="attachment_923" aria-describedby="caption-attachment-923" style="width: 957px" class="wp-caption alignnone"><img loading="lazy" decoding="async" class="size-full wp-image-923" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/send-proposal-to-email.png" alt="" width="957" height="546" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/send-proposal-to-email.png 957w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-proposal-to-email-300x171.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-proposal-to-email-768x438.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-proposal-to-email-60x34.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-proposal-to-email-150x86.png 150w" sizes="auto, (max-width: 957px) 100vw, 957px" /><figcaption id="caption-attachment-923" class="wp-caption-text">Send proposal to email</figcaption></figure></p>The post <a href="https://help.perfexcrm.com/sending-proposal-to-customer-or-lead/">Sending proposal to customer or lead</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Leads email integration</title>
+		<link>https://help.perfexcrm.com/leads-email-integration/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:47:30 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=473</guid>
+
+					<description><![CDATA[<p>Leads email integration is powerful Perfex feature who allow you to integrate leads from your email address. You can set up email forwarder from any form you are using and you will get the leads into the CRM. Eq. You are using 4 forms on &#160;different websites, you set in your cPanel forwarders when you [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/leads-email-integration/">Leads email integration</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Leads email integration is powerful Perfex feature who allow you to integrate leads from your email address. You can set up <a href="http://www.inmotionhosting.com/support/edu/everything-email/email-features/set-up-email-forwarder" target="_blank" rel="noopener noreferrer">email forwarder</a> from any form you are using and you will get the leads into the CRM.</p>
+
+
+
+<p>Eq. You are using 4 forms on &nbsp;different websites, you set in your cPanel forwarders when you receive an email from&nbsp;any of these forms to forward to the leads email which you have set up in <strong>Setup -&gt; Leads -&gt; Email Integration</strong></p>
+
+
+
+<p><strong>This feature is very sensitive so make sure you read the explanation carefully.</strong><br><strong><div class="st-alert st-alert-danger ">Its recommended to start with a new brand email for this feature which will be used only for leads integration forwarding. No replies, composing emails from this email account. Meanwhile, it&#8217;s your responsibility for the unwanted results.</div></strong><br>Navigate to<strong> Setup-&gt; Leads -&gt; Email Integration</strong>.</p>
+
+
+
+<p>By default, this feature will be inactive. When you configure the email integration you can set to active so the cron can process emails if any found.</p>
+
+
+
+<ol class="wp-block-list"><li><strong>IMAP Server</strong> &#8211; Your leads email IMAP Server.</li><li><strong>Email address</strong> (Login)</li><li><strong>Password</strong></li><li><strong>Encryption</strong> (SSL/TLS/No Encryption)</li><li><strong>Delete email after import &#8211;</strong>&nbsp;If you check this option the mail will be deleted after a successful import.</li><li><strong>Auto mark as public</strong> &#8211; Auto mark this lead as public, public leads are visible to all staff members.</li><li><strong>Folder</strong> &#8211; Default is INBOX &#8211; If you are using Gmail you cant change to&nbsp;ex. Social, forums, update leave it to INBOX</li><li><strong>Check Every (minutes)</strong> &#8211; The cron will check for new emails every X minutes you set up here. Its recommended this field to be bigger than 10 minutes. Don&#8217;t hard change in the database.</li><li><strong>Only check none opened emails</strong> &#8211; By default the cron will check only none opened emails. <strong>After checking the email will set this&nbsp;email as opened so the next time won&#8217;t be checked.</strong>&nbsp;This is used to prevent checking&nbsp;all the emails again and again in each cron run. Example if you have 40000 emails there the CRON will be very slow and you won&#8217;t be satisfied with the results. In this case, if this field is checked everything will work fine.</li><li><strong>Default Source</strong> &#8211; After lead importing <a href="https://help.perfexcrm.com/lead-sources/">add source</a>. Ex. Email Integration</li><li><strong>Default Status</strong> &#8211; The default <a href="https://help.perfexcrm.com/lead-statuses/">status</a> to be assigned after import</li><li><strong>Responsible for the new lead</strong> &#8211; auto assigns responsibility for this lead.<br><img loading="lazy" decoding="async" class="wp-image-474 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration-notifications-300x264.png" alt="leads email integration" width="413" height="364" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration-notifications-300x264.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration-notifications-60x53.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration-notifications-150x132.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration-notifications.png 451w" sizes="auto, (max-width: 413px) 100vw, 413px" /></li><li><strong>Notify when lead imported</strong> &#8211; Do you want to be notified when new lead is imported from the email integration</li><li><strong>Notify if lead sends email multiple times</strong> &#8211; This is used when a lead send email multiple times. Ex. the lead sends an email and is imported after that send another email but the lead already exists in the database so when viewing this lead on the right side you can view all emails from this lead send. If this option is checked and lead sends multiple emails you will be notified. </li></ol>
+
+
+<div class="st-alert st-alert-info "><strong> If the lead is with status CLIENT nothing will happen and no email will be saved in the database.</div>
+
+
+
+<li><strong>Notification &#8211;</strong>&nbsp;Staff Members with a role or&nbsp;Specific Staff Members &#8211; If you don&#8217;t select any staff or roles no one will be notified no matter if the notification fields above is checked. </li>
+
+
+<div class="st-alert st-alert-info "><strong>Admins won&#8217;t be notified when a lead is imported from email if they are not checked.</div>
+
+
+
+<p>After you set up, all the fields <strong>SAVE</strong> the email configuration and test the connection clicking on the <strong>TEST IMAP CONNECTION</strong> button on the right side</p>
+
+
+
+<h3 class="wp-block-heading" id="authentication-failures">Authentication failures</h3>
+
+
+
+<p>If your authentication is failing, there are several likely causes:</p>
+
+
+
+<ul class="wp-block-list"><li>You have the wrong username or password</li><li>Your connection is being diverted to a different server (as above)</li><li>You have specified authentication without encryption</li></ul>
+
+
+
+<h4 class="wp-block-heading" id="common-issues-with-gmail-or-g-suite-invalid-username-or-password"><strong>Common issues with Gmail or G Suite – Invalid username or password</strong></h4>
+
+
+
+<p>Invalid username or password when use Gmail or G-Suite can be a common error if you haven’t turned Less Secure Apps to ON, however, it’s recommended first to check if your password is correct.</p>
+
+
+
+<h4 class="wp-block-heading" id="g-suite"><strong>G-Suite</strong></h4>
+
+
+
+<ol class="wp-block-list"><li>Sign in to the Google Admin console.</li><li>Click Security &gt; Basic settings.</li><li>Under Less secure apps, select Go to settings for less secure apps.</li><li>In the subwindow, select the Allow users to manage their access to less secure apps radio button.</li><li>In case you are not receiving the emails and your SMTP configuration test email is showing that the configuration is working properly, take a look at the following articles:<ol><li><a href="https://productforums.google.com/forum/#!topic/Apps/M7TiKQAWhq4">https://productforums.google.com/forum/#!topic/Apps/M7TiKQAWhq4</a></li><li><a href="https://support.google.com/a/answer/55299?hl=en">https://support.google.com/a/answer/55299?hl=en</a></li></ol></li></ol>
+
+
+
+<h4 class="wp-block-heading" id="gmail-regular-account"><strong>Gmail Regular Account</strong></h4>
+
+
+
+<ol class="wp-block-list"><li>Log in to your user account.</li><li>Visit:&nbsp;<a href="https://www.google.com/settings/security/lesssecureapps" target="_blank" rel="noreferrer noopener">https://www.google.com/settings/security/lesssecureapps</a></li><li>Toggle on.</li></ol>
+
+
+
+<h4 class="wp-block-heading" id="2-factor-authentication-enabled"><strong>2 Factor Authentication Enabled</strong></h4>
+
+
+
+<p>If you are<strong>&nbsp;have enabled 2-factor authentication</strong>&nbsp;on your Google Account, you&nbsp;<strong>MUST</strong>&nbsp;generate an application password and add the password in the password field.</p>
+
+
+
+<p>Click&nbsp;<a href="https://support.google.com/accounts/answer/185833?hl=en">here</a>&nbsp;to read how to generate App Password.</p>
+
+
+
+<h4 class="wp-block-heading">Notes</h4>
+
+
+
+<ul class="wp-block-list"><li>After the lead is imported the email will be set to open.</li><li>This feature does not auto-populate the leads fields, only the email and the name will be auto-populated. If the sender has setup NAME in the email client will be auto-populated in the lead name field otherwise the email will be taken as a name because the email clients add the email as a name if no name is specified. If you want additional fields to be populated you need to format your email HTML as explain <a href="https://help.perfexcrm.com/import-leads-from-wordpress-contact-form-7/">here</a></li><li>Set lead to junk if the imported lead is not accurate for you to prevent double importing. If you delete the lead and this lead send an email again will be imported again. Better to set it to junk.</li><li>If you have unchecked <strong>Only check none opened emails &#8211; </strong>all emails will be checked again and again meanwhile only will be checked non opened emails.</li><li>If the email integration feature is set to active and the CRON cant connect to the IMAP server activity will be logged. To check the activity go to Utilities -> Activity Log and find [CRON] Failed to connect to IMAP lead email integration</li><li>If the lead exists in the Perfex CRM after checking the email and this lead is with status <strong>junk</strong> the email won&#8217;t be saved into the database and no notifications will be received.</li><li>If the lead is already manually added into Perfex CRM you will receive notification that this lead sends an email and the email subject and body will be logged into the lead profile.</li></ul>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="999" height="279" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration2.png" alt="leads email integration" class="wp-image-475" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration2.png 999w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration2-300x84.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration2-768x214.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration2-60x17.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/leads-email-integration2-150x42.png 150w" sizes="auto, (max-width: 999px) 100vw, 999px" /></figure></div>
+
+
+
+<ul class="wp-block-list"><li>If any <strong>attachments found in the email</strong> will be auto imported for this lead.</li></ul>
+
+
+
+<h4 class="wp-block-heading">Importing emails from existing email address</h4>
+
+
+
+<p>If you dont want to use brand new email address for this feature you have to configure the leads email integration in different way.</p>
+
+
+
+<ol class="wp-block-list"><li>Uncheck the field&nbsp;<strong>Only check non opened emails</strong></li><li>Navigate to <strong>Setup-&gt;Email Templates</strong> and <strong>disable</strong> the email template (<strong>New Lead Assigned to Staff Member</strong>) to send notification when lead is assigned.</li><li>If you have ex 1000 emails uncheck all notifications settings to prevent receiving 1000 notifications in the CRM.</li><li>Let the cron <strong>run 1 time</strong> and check all the emails. After all leads from your email is imported <strong>revert to back to the old settings mentioned above.</strong></li></ol>The post <a href="https://help.perfexcrm.com/leads-email-integration/">Leads email integration</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Generate Lead Report</title>
+		<link>https://help.perfexcrm.com/generate-lead-report/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:29:29 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=467</guid>
+
+					<description><![CDATA[<p>To view your leads report navigate to menu item Reports from the aside menu and click Leads. You can view the following reports: Weekly Sources Monthly Staff Only leads that belongs in the default status Customer will be taken as converted leads, if the lead belongs to the default status customer and its not converted to [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/generate-lead-report/">Generate Lead Report</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>To view your leads report navigate to menu item <strong>Reports</strong> from the aside menu and click <strong>Leads</strong>.</p>
+<p>You can view the following reports:</p>
+<ol>
+<li>Weekly</li>
+<li>Sources</li>
+<li>Monthly</li>
+<li>Staff</li>
+</ol>
+<p>Only leads that belongs in the default status Customer will be taken as converted leads, if the lead belongs to the default status customer and its not converted to customer will be still counted as converted lead</p>
+<p><strong><div class="st-alert st-alert-info "></strong> If you want the reports to be accurate you need to assign the lead to the default system status <strong>Customer </strong>if you have conversion.</div></p>The post <a href="https://help.perfexcrm.com/generate-lead-report/">Generate Lead Report</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Convert Lead to Customer</title>
+		<link>https://help.perfexcrm.com/convert-lead-to-customer/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:27:10 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=461</guid>
+
+					<description><![CDATA[<p>Convert Lead to a Customer Click on the lead and wait for the modal to be opened, on the top button click Convert to a customer. The convert to customer modal will be shown and the system will try to auto-populate some fields like first name, last name.. If custom fields found for lead will [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/convert-lead-to-customer/">Convert Lead to Customer</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<h4>Convert Lead to a Customer</h4>
+<ol>
+<li>Click on the lead and wait for the modal to be opened, on the top button click Convert to a customer.</li>
+<li>The convert to customer modal will be shown and the system will try to auto-populate some fields like first name, last name..</li>
+<li>If custom fields found for lead will be shown as well in the convert to customer modal and you will have the ability to merge the custom fields in the customer profile as custom fields or database fields. If you are merging as a custom field and this field not exist will be auto-created.</li>
+</ol>
+<p><b></b><img loading="lazy" decoding="async" class="wp-image-462 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Lead-To-Customer-768x704-300x275.png" alt="lead to customer" width="627" height="574" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Lead-To-Customer-768x704-300x275.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Lead-To-Customer-768x704.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Lead-To-Customer-768x704-60x55.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Lead-To-Customer-768x704-150x138.png 150w" sizes="auto, (max-width: 627px) 100vw, 627px" /></p>
+<p>&nbsp;</p>
+<h4>What will happen after I convert the lead to a customer?</h4>
+<p>After you convert the lead to a client the lead will be auto-moved to the default system status <strong>Customer </strong>if is not already there.</p>
+<p>In leads table, by default, the leads that have status &#8220;Customer&#8221; will be excluded because they are converted to a customer and no longer needed to be seen in the table on table load if you want to list them you will need to apply the filters.</p>
+<p><div class="st-alert st-alert- ">Make sure you don&#8217;t rename the default system <a href="https://help.perfexcrm.com/lead-statuses/">status</a> Customer to something else to avoid confusions.</div></p>
+<p>&nbsp;</p>The post <a href="https://help.perfexcrm.com/convert-lead-to-customer/">Convert Lead to Customer</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Lead Activity Log</title>
+		<link>https://help.perfexcrm.com/lead-activity-log/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:24:21 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=454</guid>
+
+					<description><![CDATA[<p>To track lead activity open a lead modal and click on the Activity log tab. All importand actions will be saved as activity log for this lead. When activity will be logged for specific lead? After lead is created. When making a note and click contacted today an activity will be logged that you contacted [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/lead-activity-log/">Lead Activity Log</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>To track lead activity open a lead modal and click on the Activity log tab.</p>
+<p>All importand actions will be saved as activity log for this lead.</p>
+<p><strong>When activity will be logged for specific lead?</strong></p>
+<ul>
+<li>After lead is created.</li>
+<li>When making a note and click contacted today an activity will be logged that you contacted the lead on specific chosen date from the calendar.</li>
+<li>Added attachment.</li>
+<li>Attachment deleted.</li>
+<li>When lead is assigned to staff member.</li>
+<li>When lead status is changed from kanban with drag and drop or manualy from the modal.</li>
+<li>Lead marked/unmarked as lost</li>
+<li>Lead marked/unmarked as junk</li>
+</ul>
+<p><img loading="lazy" decoding="async" class="wp-image-455 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/lead-activity-1-300x121.png" alt="lead activity" width="598" height="241" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/lead-activity-1-300x121.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/lead-activity-1-768x309.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/lead-activity-1-60x24.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/lead-activity-1-150x60.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/lead-activity-1.png 942w" sizes="auto, (max-width: 598px) 100vw, 598px" /></p>The post <a href="https://help.perfexcrm.com/lead-activity-log/">Lead Activity Log</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Assign lead to staff member</title>
+		<link>https://help.perfexcrm.com/assign-lead-to-staff-member/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:21:00 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=451</guid>
+
+					<description><![CDATA[<p>Open a lead and simply select the staff member you want to assign the lead. After submiting the staff member will receive notification that you have assigned this lead.</p>
+The post <a href="https://help.perfexcrm.com/assign-lead-to-staff-member/">Assign lead to staff member</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Open a lead and simply select the staff member you want to assign the lead.</p>
+<p>After submiting the staff member will receive notification that you have assigned this lead.</p>
+<p><strong><div class="st-alert st-alert- ">Everyone can manage leads. But only administrators can view all the leads. Others staff that are not administrators can view leads that are assigned to him/her or if this staff member created this lead no matter to who is assigned.</div></strong></p>The post <a href="https://help.perfexcrm.com/assign-lead-to-staff-member/">Assign lead to staff member</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Lead Statuses</title>
+		<link>https://help.perfexcrm.com/lead-statuses/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:14:37 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=437</guid>
+
+					<description><![CDATA[<p>You can easily customize leads statuses so they can fit into your workflow. To add new lead status you will have to go to Setup -&#62; Leads -&#62; Statuses and click New Lead Status. To setup default lead status navigate to Setup-&#62;Settings-&#62;Leads and chose Default Status. The default lead status is used to auto-populate the status field [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/lead-statuses/">Lead Statuses</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>You can easily customize leads statuses so they can fit into your workflow.</p>
+<ul>
+<li>To add new lead status you will have to go to <strong>Setup -&gt; Leads -&gt; Statuses</strong> and click <b>New Lead Status</b>.</li>
+<li>To setup default lead status navigate to <strong>Setup-&gt;Settings-&gt;Leads </strong>and chose <strong>Default Status.</strong></li>
+</ul>
+<p>The default lead status is used to <strong>auto-populate the status field when creating a new lead</strong>, each time you add new lead this status will be auto-selected.</p>
+<hr />
+<h4>System Status</h4>
+<p>Perfex CRM installation comes with 1 lead status, this is the <strong>system status for converted leads</strong>, the status will have name <strong>Customer</strong>, this status is mostly used for reports, for recognition that specific lead is <a href="https://help.perfexcrm.com/convert-lead-to-customer/">converted to a customer</a>.</p>
+<p><strong><div class="st-alert st-alert-danger ">Do not rename</strong> this status to some other name like <strong>NEW</strong> to prevent <strong>confusion</strong>.</div></p>
+<p>&nbsp;</p>The post <a href="https://help.perfexcrm.com/lead-statuses/">Lead Statuses</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Lead Sources</title>
+		<link>https://help.perfexcrm.com/lead-sources/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Mar 2017 19:10:46 +0000</pubDate>
+				<category><![CDATA[Leads]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=433</guid>
+
+					<description><![CDATA[<p>You will always need a way to know from where you got the lead. Go to Setup -&#62; Leads -&#62; Sources and add new source depending on your needs. To setup default lead source navigate to Setup-&#62;Settings-&#62;Leads and chose Default Source. You can assign a source per lead and you will know from where your leads coming and from [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/lead-sources/">Lead Sources</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>You will always need a way to know from where you got the lead.</p>
+<ul>
+<li>Go to <strong>Setup -&gt; Leads -&gt; Sources</strong> and add new source depending on your needs.</li>
+<li>To setup default lead source navigate to <strong>Setup-&gt;Settings-&gt;Leads </strong>and chose <strong>Default Source.</strong></li>
+</ul>
+<p>You can assign a source per lead and you will know from where your leads coming and from where you have the most leads converted to clients when generating report.<br />
+<strong><br />
+</strong>The default lead source is used to <strong>auto populate the source field when creating new lead</strong>, each time you add new lead this source will be auto selected.</p>The post <a href="https://help.perfexcrm.com/lead-sources/">Lead Sources</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

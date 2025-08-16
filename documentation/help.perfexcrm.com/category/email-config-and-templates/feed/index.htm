@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Email Config &amp; Templates | Perfex CRM</title>
+	<atom:link href="https://help.perfexcrm.com/category/email-config-and-templates/feed/" rel="self" type="application/rss+xml" />
+	<link>https://help.perfexcrm.com</link>
+	<description>Help Center</description>
+	<lastBuildDate>Tue, 26 Nov 2024 18:04:17 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-32x32.jpg</url>
+	<title>Email Config &amp; Templates | Perfex CRM</title>
+	<link>https://help.perfexcrm.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Configure email with Microsoft Azure and OAUTH 2</title>
+		<link>https://help.perfexcrm.com/configure-email-with-microsoft-azure-and-oauth-2/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Tue, 26 Nov 2024 17:59:39 +0000</pubDate>
+				<category><![CDATA[Email Config & Templates]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4366</guid>
+
+					<description><![CDATA[<p>Starting from version 3.0.5, you can configure a general Microsoft email using OAuth2, to do this on your Perfex CRM installation follow the steps below, note that you will need to create an Azure application and authorize it in the Perfex CRM email configuration section at Setup -&#62; Settings-&#62; Email Notes For more detailed information, [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/configure-email-with-microsoft-azure-and-oauth-2/">Configure email with Microsoft Azure and OAUTH 2</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Starting from version 3.0.5, you can configure a general Microsoft email using OAuth2, to do this on your Perfex CRM installation follow the steps below, note that you will need to create an <a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" target="_blank" rel="noopener" title="Azure application">Azure application</a> and authorize it in the Perfex CRM email configuration section at<strong> Setup -&gt; Settings-&gt; Email</strong></p>
+
+
+<div class="st-alert st-alert- ">Microsoft Azure client secrets expires after a maximum of between 3 and 24 months (you can select the length yourself).<br />
+<br />
+If your authentication suddenly doesn&#8217;t work anymore, please check the if the Client Secret has expired.<br />
+</div>
+
+
+
+<h3 class="wp-block-heading">Notes</h3>
+
+
+
+<ul class="wp-block-list">
+<li><strong>New App Registration Requirement</strong>: As of the update, personal Microsoft accounts (e.g., @outlook.com, @hotmail.com) cannot register apps outside of a directory. Ensure you are working within an AAD tenant.</li>
+
+
+
+<li><strong>OAuth Consent</strong>: Users may need to authorize your app the first time they use it.</li>
+</ul>
+
+
+
+<p>For more detailed information, refer to <a href="https://learn.microsoft.com/en-us/answers/questions/1663127/question-regarding-notification-about-being-requir">Microsoft Documentation</a>.</p>
+
+
+
+<h3 class="wp-block-heading">Steps</h3>
+
+
+
+<h4 class="wp-block-heading">1. Register an Application in Azure Active Directory</h4>
+
+
+
+<ul class="wp-block-list">
+<li>Log in to the <strong>Azure Portal</strong>: <a href="https://portal.azure.com">https://portal.azure.com</a>.</li>
+
+
+
+<li>Navigate to <strong>Azure Active Directory</strong> &gt; <strong><a href="https://portal.azure.com/#view/Microsoft_AAD_RegisteredApps/ApplicationsListBlade" title="">App Registrations</a></strong>.</li>
+
+
+
+<li>Click <strong>+ New Registration</strong>.</li>
+
+
+
+<li>Provide:
+<ul class="wp-block-list">
+<li><strong>Name</strong>: Enter a recognizable name (e.g., Perfex CRM Email Integration).</li>
+
+
+
+<li>Select who should be able to use this application:</li>
+
+
+
+<li><strong>Supported Account Types</strong>: Select who should be able to use this application:
+<ul class="wp-block-list">
+<li><strong>Accounts in this organizational directory only</strong> (Single tenant) for internal use.</li>
+
+
+
+<li><strong>Accounts in any organizational directory</strong> (Multi-tenant) if you want to support other AAD tenants.</li>
+
+
+
+<li>If you are not sure about this option, select: <strong>Accounts in any organizational directory (Any Microsoft Entra ID tenant &#8211; Multitenant) and personal Microsoft accounts (e.g. Skype, Xbox)</strong></li>
+</ul>
+</li>
+
+
+
+<li><strong>Redirect URI</strong>: Enter https://perfex-crm-url.com/admin/smtp_oauth_microsoft/token.</li>
+
+
+
+<li><em>Ensure to replace perfex-crm-url.com with your Perfex CRM installation.</em></li>
+
+
+
+<li>Ensure <strong>Web </strong>is select in the redirect URI dropdown.</li>
+</ul>
+</li>
+
+
+
+<li>Click <strong>Register</strong>.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">2. Configure API Permissions</h4>
+
+
+
+<ul class="wp-block-list">
+<li>Go to <strong>API Permissions</strong> in your app&#8217;s settings <em>(Manage -&gt; Certificates &amp; secrets)</em>.</li>
+
+
+
+<li>Click <strong>+ Add a permission</strong>.</li>
+
+
+
+<li>Select <strong>Microsoft Graph</strong> &gt; <strong>Delegated permissions</strong>.</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1024" height="402" src="https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions-1024x402.png" alt="" class="wp-image-4369" srcset="https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions-1024x402.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions-300x118.png 300w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions-768x302.png 768w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions-60x24.png 60w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions-150x59.png 150w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-add-permissions.png 1313w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<ul class="wp-block-list">
+<li>Add the following permissions:
+<ul class="wp-block-list">
+<li><mark style="background-color:#8ed1fc" class="has-inline-color has-black-color">offline_access</mark></li>
+
+
+
+<li><mark style="background-color:#8ed1fc" class="has-inline-color has-black-color">SMTP.Send</mark></li>
+</ul>
+</li>
+
+
+
+<li>(Optional) If admin consent is required, click <strong>Grant admin consent</strong> and confirm.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">3. Set Up Secret</h4>
+
+
+
+<ul class="wp-block-list">
+<li>In your app, go to <strong>Certificates &amp; secrets</strong> <em>(Manage -&gt; Certificates &amp; secrets)</em>.</li>
+
+
+
+<li>Click <strong>+ New client secret</strong>.</li>
+
+
+
+<li>Add a description (e.g., <em>Perfex CRM Secret</em>) and choose an expiration period.</li>
+
+
+
+<li>Click <strong>Add</strong> and copy the <strong>Value</strong>. This is your <strong>Client Secret</strong>.</li>
+</ul>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="414" src="https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value-1024x414.png" alt="" class="wp-image-4368" srcset="https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value-1024x414.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value-300x121.png 300w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value-768x310.png 768w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value-60x24.png 60w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value-150x61.png 150w, https://help.perfexcrm.com/wp-content/uploads/2024/11/azure-client-secret-value.png 1300w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading">4. Note Key Details</h4>
+
+
+
+<p>Save the following information for Perfex CRM configuration:</p>
+
+
+
+<ul class="wp-block-list">
+<li><strong>Application (client) ID</strong>: Found on the app&#8217;s Overview page.</li>
+
+
+
+<li><strong>Directory (tenant) ID</strong> (<em><mark style="background-color:rgba(0, 0, 0, 0);color:#a9a9a9" class="has-inline-color">if applicable</mark></em>): Found on the app&#8217;s Overview page.</li>
+
+
+
+<li><strong>Client Secret</strong>: Copied from the previous step.</li>
+</ul>
+
+
+
+<h4 class="wp-block-heading">5. Enable Email Sending in Perfex CRM</h4>
+
+
+
+<ul class="wp-block-list">
+<li>Log in to Perfex CRM.</li>
+
+
+
+<li>Navigate to <strong>Setup -&gt; Settings -&gt; Email</strong>.</li>
+
+
+
+<li>Select <strong>Microsoft Azure XOAUTH2</strong> as the email protocol.</li>
+
+
+
+<li>Ensure <strong>Mail Engine</strong> is set to <strong>PHPMailer</strong>.&nbsp;</li>
+
+
+
+<li>Ensure the <strong>Email Protocol</strong> is set to <strong>Microsoft OAuth 2.0</strong>.</li>
+
+
+
+<li>Enter the following:
+<ul class="wp-block-list">
+<li><strong>Client ID</strong>: Your Application (client) ID.</li>
+
+
+
+<li><strong>Client Secret</strong>: Your Client Secret.</li>
+
+
+
+<li><strong>Tenant ID</strong>: Your Directory (tenant) ID (<em><mark style="background-color:rgba(0, 0, 0, 0);color:#a9a9a9" class="has-inline-color">if applicable</mark></em>).</li>
+
+
+
+<li><strong>SMTP Host</strong>: smtp.office365.com.</li>
+
+
+
+<li><strong>SMTP Port</strong>: 587.</li>
+
+
+
+<li><strong>Encryption</strong>: TLS.</li>
+
+
+
+<li><strong>Email</strong>: The e-mail address you will use to send emails from Perfex CRM, usually this is the e-mail address associated with the Azure application.</li>
+</ul>
+</li>
+</ul>
+
+
+
+<p></p>The post <a href="https://help.perfexcrm.com/configure-email-with-microsoft-azure-and-oauth-2/">Configure email with Microsoft Azure and OAUTH 2</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Configure email with Google OAuth 2.0</title>
+		<link>https://help.perfexcrm.com/configure-email-with-google-oauth-2-0/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 07 Jul 2023 08:38:50 +0000</pubDate>
+				<category><![CDATA[Email Config & Templates]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4341</guid>
+
+					<description><![CDATA[<p>Starting from version 3.0.5, you can configure a general Google email using OAuth 2.0, to do this on your Perfex CRM installation follow the steps below. Go to the Google Developer Console. Create a new project. You can also select an existing project. Add a name to your project. Google Console will generate a unique Project [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/configure-email-with-google-oauth-2-0/">Configure email with Google OAuth 2.0</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Starting from version 3.0.5, you can configure a general Google email using OAuth 2.0, to do this on your Perfex CRM installation follow the steps below.</p>
+
+
+
+<ul class="wp-block-list"><li>Go to the <a rel="noreferrer noopener" href="https://console.developers.google.com/" target="_blank">Google Developer Console</a>.</li><li>Create a new project. You can also select an existing project.</li><li>Add a name to your project. Google Console will generate a unique Project ID for it.</li><li>Your project will appear on top of the left sidebar.</li><li>Click on <strong>Library</strong>. You will see a list of Google APIs.</li><li>Enable <strong>Gmail API</strong>.</li><li>Click on the <strong>Credentials</strong>. Select <strong>OAuth Client ID </strong>under Create credentials. Choose the radio button for the Web Application.<ul><li>If asked to consent, choose <strong>External</strong></li><li>Enter app name, for example, Perfex CRM Mailer</li><li>Enter support email</li><li>In the authorized domains section, click Add Domain</li><li>Enter our Perfex CRM installation domain</li></ul></li><li>Copy the redirect URL in <strong>Setup->Settings->Email->Gmail OAuth 2.0, usually,</strong> it looks like <strong>https://your-installation-url.com/admin/smtp_oauth_google/token</strong></li><li>Give the Name. Under Authorized JavaScript origins enter your domain URL. In the ‘Authorized redirect URIs’ add the link of the redirect URL.</li></ul>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" src="https://i.imgur.com/3JyfuJO.png" alt=""/></figure></div>
+
+
+
+<ul class="wp-block-list"><li>Click on the Create button. You will get a client ID and client secret in the pop-up. Copy these details.</li><li>Add the client id and client secret to your Perfex CRM installation</li></ul>
+
+
+
+<div class="wp-block-image"><figure class="aligncenter size-large"><img decoding="async" src="https://i.imgur.com/pHe3P68.png" alt=""/></figure></div>
+
+
+
+<ul class="wp-block-list"><li>Save the email settings.</li><li>After saving the Client ID and Client Secret, Click <strong>Authenticate</strong>.</li></ul>The post <a href="https://help.perfexcrm.com/configure-email-with-google-oauth-2-0/">Configure email with Google OAuth 2.0</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Email Queue</title>
+		<link>https://help.perfexcrm.com/email-queue/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Nov 2017 11:38:50 +0000</pubDate>
+				<category><![CDATA[Email Config & Templates]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=2337</guid>
+
+					<description><![CDATA[<p>If you are using at least version 1.9.4, we have added a feature for email queue to speed up the email sending process. Very common issue is when the system is sending a lot of emails, eq when a new comment on task, or task status is changed, the system will send an email to [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/email-queue/">Email Queue</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p><strong>If you are using at least version 1.9.4,</strong> we have added a feature for email queue to speed up the email sending process.</p>
+<p>Very common issue is when the system is sending a lot of emails, eq when a new comment on task, or task status is changed, the system will send an email to task creator, task followers, task assignees etc&#8230;</p>
+<p>This action may be time-consuming when it&#8217;s related to email sending, the system will need time to connect to the email server and sends the emails, the time taken for this action really depends from email server to email server, some servers performs the action faster.</p>
+<p>The email queue feature <strong>will store the emails and all contents in the database </strong>and <strong>when the cron job will run</strong>, the emails will be sent in the background, in this case, the users won&#8217;t notice any slowness.</p>
+<p>To enable email queue feature you need to navigate to <strong>Setup-&gt;Settings-&gt;Email</strong> and click on the <strong>Email Queue</strong> tab and set <strong>Enable Email Queue</strong> to YES.</p>
+<p><div class="st-alert st-alert- ">Keep in mind that after enabling the email queue feature the emails won&#8217;t be sent immediately, there will be a time difference in 5 minutes till the cron job run.</div></p>
+<h4><strong>Do not add emails with attachments in the queue</strong></h4>
+<p>Most likely you will encounter problems with the email queue if the system needs to add big files to the queue. If you plan to use this option consult with your server administrator/hosting provider to increase the <strong>max_allowed_packet and wait_timeout </strong>options in your server config, otherwise when this option is set to yes the system won&#8217;t add emails with attachments in the queue and will be sent immediately.</p>
+<p>This is mostly applied to eq pdf documents or when sending some files manually, this process is straightforward, it&#8217;s recommended to leave this option to No if you are not sure what are you doing.</p>
+<p><div class="st-alert st-alert- ">Before enabling email queue feature make sure that your cron job is running properly each 1 minute.</div></p>The post <a href="https://help.perfexcrm.com/email-queue/">Email Queue</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Email Templates</title>
+		<link>https://help.perfexcrm.com/email-templates/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Feb 2017 14:34:12 +0000</pubDate>
+				<category><![CDATA[Setup & Configuration]]></category>
+		<category><![CDATA[Email Config & Templates]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=35</guid>
+
+					<description><![CDATA[<p>To set up email templates navigate to Setup -> Email templates and change the content according to your needs. You can set up a general email signature in Setup-> Settings-> Email, this signature will be used on all email representing your company. All email templates will be sent from the general email that is configured in Setup->Settings->Email. How [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/email-templates/">Email Templates</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>To set up email templates navigate to <strong>Setup -> Email templates</strong> and change the content according to your needs.<br><br>You can set up a <strong>general email signature</strong> in <strong>Setup-> Settings-> Email, </strong>this signature will be used on all email representing your company.</p>
+
+
+
+<p>All email templates will be sent from the general email that is configured in <strong>Setup->Settings->Email</strong>.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>How multi-language for email templates is used?</strong></h4>
+
+
+
+<ul class="wp-block-list"><li><strong>Customer&nbsp;1</strong> have language English</li><li><strong>Customer&nbsp;</strong><strong>2</strong> have language Dutch</li></ul>
+
+
+
+<p>When an email template will be sent to <strong>Customer&nbsp;</strong><strong>1</strong> the content will be taken from <strong>English</strong> email template, for staff <strong>Customer&nbsp;</strong><strong>2</strong> the content will be taken from <strong>Dutch</strong> email template.</p>
+
+
+
+<p>The same procedure is applied for staff members.</p>
+
+
+<div class="st-alert st-alert-info ">When sending<strong> email template to lead</strong> eq. proposal the system default language will be used.</div>
+
+
+
+<h3 class="wp-block-heading"><strong>What will happen if the content is empty for email template and user use this language?</strong></h3>
+
+
+
+<p>In case the content for the template is empty for a specific language which is not the default system language the content from the email template will be taken from the default system language setup in Setup->Settings ->Localization. <strong>Make sure you always populate the default system language template.</strong></p>
+
+
+
+<p>The system will auto slide down the languages that are used over the system based on staff and customers when you navigate to edit specific email template.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>Disabling email templates</strong></h4>
+
+
+
+<p>Open&nbsp;email template and <strong>check</strong> the <strong>disabled field</strong>. If the disabled field is checked this email wont be sent ever.</p>
+
+
+
+<p>Eq. If you want to disable sending welcome email when creating contact navigate to <strong>Setup-&gt;Email Templates</strong> and find the template with name:&nbsp;<strong>New Customer Added/Registered (Welcome Email) </strong>check the disabled checkbox and save.</p>The post <a href="https://help.perfexcrm.com/email-templates/">Email Templates</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Email/SMTP Configuration</title>
+		<link>https://help.perfexcrm.com/smtp-configuration/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Feb 2017 14:22:01 +0000</pubDate>
+				<category><![CDATA[Email Config & Templates]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=24</guid>
+
+					<description><![CDATA[<p>You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc&#8230; the SMTP config will act as a general email from Perfex CRM for all emails that will be sent. In order to configure the send email feature in Perfex CRM navigate to Setup-&#62;Settings-&#62;Email. Configuration [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/smtp-configuration/">Email/SMTP Configuration</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>You will need to configure SMTP settings for Perfex CRM if you want to send e.q. invoices, estimates, overdue reminders etc&#8230; the SMTP config will act as a general email from Perfex CRM for all emails that will be sent.</p>
+<p>In order to configure the send email feature in Perfex CRM navigate to <strong>Setup-&gt;Settings-&gt;Email.</strong></p>
+<p><div class="st-alert st-alert-info ">Outlook/Office accounts are not supported for sending emails via SMTP as Microsoft dropped support for the regular SMTP connection.</div></p>
+<h3 id="config">Configuration options</h3>
+<p>Below you can read about the email configuration option to get more familiar with, however, in most cases, you will need to adjust only a few of them as mentioned in our <a href="#examples">examples</a> below.</p>
+<h4><strong>Mail Engine</strong></h4>
+<p>Perfex CRM offers two email engines, by default PHPMailer will be selected. The difference between mail engine is the libraries used to send emails from Perfex CRM.</p>
+<p>If you decide to use PHPMailer (which is recommended), the responsible library for this will the popular php email library PHPMailer, you can read more about the library by clicking <a href="https://github.com/PHPMailer/PHPMailer">here</a></p>
+<p>The other mail engine is the default Codeigniter framework library, more info can be found by clicking <a href="https://www.codeigniter.com/user_guide/libraries/email.html">here</a></p>
+<p>However, you should not worry about this that much, just select the one that you think fits for you.</p>
+<h4><strong>Email Protocol</strong></h4>
+<p>SMTP, Sendmail, and Mail.</p>
+<p><strong>It&#8217;s highly recommended to configure the SMTP protocol</strong> for sending emails if you don&#8217;t want to encounter issues with emails going to spam or encoding, the examples below will be strictly for the SMTP protocol as it&#8217;s the recommended one.</p>
+<h4><strong>Email Encryption</strong></h4>
+<ul>
+<li><strong>SSL</strong> &#8211; Select if you are configuring SMTP with port <strong>465</strong></li>
+<li><strong>TLS</strong> &#8211; Select if you are configuring SMTP with port <strong>587</strong></li>
+<li><strong>None</strong> &#8211; Select if you are configuring SMTP with port <strong>25</strong></li>
+</ul>
+<p>Summarized, SSL works with port 465, TLS works with port 587 and if you are trying to configure the SMTP config with port 25 (non-secure) there will be no encryption and you should select None.</p>
+<h4><strong>SMTP Host</strong></h4>
+<p>Enter your SMTP hostname.</p>
+<h4><strong>SMTP Port</strong></h4>
+<p>Enter your SMTP port</p>
+<p><strong>Don&#8217;t mix up</strong> these modes; Email encryption set to SSL on port 587 or TLS on port 465 will not work.</p>
+<h4><strong>Email</strong></h4>
+<p>Enter the SMTP email you are trying to configure as a general email for Perfex CRM, in most cases, this will be a mail only used for sending emails from Perfex CRM, e.q. you can create an email account with name no-reply@ or info@, however, this is up to you to determine how best fit for your needs.</p>
+<h4><strong>SMTP Username</strong></h4>
+<p>Fill only if your email client use username for SMTP login, mostly you will fill this field if you are using an exchange mailbox.</p>
+<p>In most cases when you are using  exchange server, you will need to log in with username not with the email address, in this case, Perfex CRM will use the <strong>SMTP Username field to log in to your mail server instead of the email address</strong>, however the Email address you filled above will be still used as a FROM header.</p>
+<h4><strong>SMTP Password</strong></h4>
+<p>Fill the password for login, you should already know your password.</p>
+<h4><strong>Email Charset</strong></h4>
+<p>The default is UTF-8, you won&#8217;t need to change this ever, because in most cases this works fine, however, if you decide to change the encoding it&#8217;s highly recommended perform few researches to see what encoding is best fit for you.</p>
+<h4><strong>BCC All Emails To</strong></h4>
+<p>You can add email to be added as BCC header if you want to keep track and get copies of all emails sent from Perfex CRM if you need to add multiple BCC emails, separate them by a comma.</p>
+<h4><strong>Email Signature</strong></h4>
+<p>Global email signature for all emails sent, can be used as merge field added in <a href="https://help.perfexcrm.com/email-templates/">email templates</a> in <strong>Setup-&gt;Email Templates</strong>, keep in mind <strong>this option can be overridden</strong> if e.q. the staff that is sending an invoice to an email have configured custom email signature in his profile.</p>
+<h4><strong>Predefined Header &amp; Predefined Footer</strong></h4>
+<p>Perfex CRM installation by default comes with a predefined header and predefined footer for all email templates, the predefined header and footer is pretty clean but if you need something more then this, feel free to adjust the code.</p>
+<p>The <strong>email message contents are merged in between</strong> the predefined header and footer e.q.</p>
+<hr />
+<p>[predefined header code]</p>
+<p>The email message</p>
+<p>[predefined footer code]</p>
+<hr />
+<p>So for example, if you opened a &lt;div&gt; in the header and you did not close the &lt;div&gt; HTML while formatting the header, you MUST close  (&lt;/div&gt;) the HTML tag in the footer.</p>
+<p>Click <a href="https://www.w3schools.com/Html/">here</a> to learn more about HTML</p>
+<h3>AWS Email SMTP Setup</h3>
+<p>In case you are using AWS for sending emails, click <a href="https://help.perfexcrm.com/aws-email-smtp-setup/">here</a> to learn more.</p>
+<h3>Email Queue</h3>
+<p>If you are looking in the Email Queue option, click <a href="https://help.perfexcrm.com/email-queue/">here</a> to read more.</p>
+<h3>Email Templates</h3>
+<p>Click <a href="https://help.perfexcrm.com/email-templates/">here</a> to read more about the email templates in Perfex CRM</p>
+<h3 id="examples">Examples</h3>
+<p>The below examples are general examples how to configure SMTP to send an email, keep in mind that the examples may be different then your actual server requirements, the best is to consult with your hosting provider to provide you the correct SMTP configuration.</p>
+<h4><strong>SMTP server over port 25</strong></h4>
+<p>Encryption: None<br />
+SMTP Host: yoursmtphost.com<br />
+SMTP Port : 25<br />
+SMTP Email: Your email<br />
+SMTP Password: Your password</p>
+<h4><strong>SMTP servers that require SSL connection</strong></h4>
+<p>Encryption: SSL<br />
+SMTP Host: yoursmtphost.com<br />
+SMTP Port : 465<br />
+SMTP Email: Your email<br />
+SMTP Password: Your password</p>
+<h4><b>For Gmail use the following configuration:</b></h4>
+<p>Encryption: SSL<br />
+SMTP Host: smtp.gmail.com<br />
+SMTP Port : 465 / For TLS encryption use port 587<br />
+SMTP Email: youremail@gmail.com<br />
+SMTP Password: Your password</p>
+<p><div class="st-alert st-alert- ">If you are using your<strong> Google Account</strong> password to connect to SMTP, it&#8217;s highly recommended to <strong>update your password with an App Password</strong> to avoid any email sending disruptions, find more information on how to generate App Password for your Google Account at the following link: <a href="https://support.google.com/accounts/answer/185833?hl=en">https://support.google.com/accounts/answer/185833?hl=en</a></div></p>
+<h3>Testing SMTP Setup</h3>
+<p>If you need to test your SMTP setup just go to <strong>Setup -&gt; Settings -&gt; Email</strong> and scroll down to <strong>Send Test Email </strong>to enter your email address and click the submit button. If the SMTP is setup correctly you will receive green notifications saying that your email is set up correctly also an email will be sent to the email address you entered otherwise debug message from the email client will be shown.</p>
+<p>After you configure the SMTP settings, you will need to test if the configuration is properly configured and it is working fine.</p>
+<p>While you are in <strong>Setup-&gt;Settings-&gt;Email and </strong>scroll down to <strong>Send Test Email</strong> to enter your email address and click the submit button. If the SMTP is setup correctly you will receive green notifications saying that your email is set up correctly also an email will be sent to the email address you entered otherwise debug message from the email client will be shown.</p>
+<h2 id="common_issues">Common Issues &amp; Troubleshooting</h2>
+<p>When you try to send a test email, if the configuration is not successfully, you will be able to see an error block on the top, please read the debug block message carefully so you can determine what is causing your issue, the debug block message will contain the error message returned from your email server, in most cases will be something like: <strong>&#8220;Connection failed. Error #2: stream_socket_client(): unable to connect to ssl://smtp.gmail.com:465 (Connection refused) &#8221; </strong>but this will depend on your mail server and the mail engine you are using (PHPmailer or Codeigniter), however, most of the error messages will be similar.</p>
+<p><strong>We highly recommend you to consult with your hosting provider if you are not able to configure SMTP for Perfex CRM</strong>, the problem in most cases is related to your server config e.q. DNS failure, firewall blocking, hosting provider is blocking outbound connections etc&#8230; you should talk to them, read their docs, in this case, only your hosting provider can help you!</p>
+<p>You may want to perform a few types of research about the specific error message you are getting to get more familiar with how you can resolve this. <strong>ServerSMTP</strong> posted a good <a href="https://serversmtp.com/smtp-error/">article</a> and guides for common SMTP errors and codes, also <strong>it&#8217;s highly recommended to check the</strong> <strong>PHPMailer troubleshooting guide</strong> by clicking <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting">here</a></p>
+<h3><strong>Email settings not saving or getting 404 error when saving</strong></h3>
+<div class="tm">This can happen because of firewall rules configured on your web server, because in Setup-&gt;Settings-&gt;Email in the predefined option header and footer there is an HTML and the firewall is preventing this HTML saves into the database.</div>
+<div class="tm"></div>
+<div class="tm">To test this you can navigate to Setup-&gt;Settings-&gt;Email and<strong> leave blank the predefined header and footer options </strong>then try to save the settings to see if this will work fine.</div>
+<div class="tm"></div>
+<div class="tm">If the save is successful, you should try to consult with your hosting provider to disable such firewall rules, in most cases, this can happen because of the <b>mod_security </b>or <b>Suhosin.</b></div>
+<h3>Failed to connect to server: 111 Connection refused</h3>
+<p><strong>Connection refused</strong> error is thrown directly from your mail server and may happen if your hosting provider is blocking outbound ports, SMTP, in most cases happens because of blocked ports via a firewall.</p>
+<p>If you are configuring SMTP on ports 465 or 587, make sure that the ports 465 and 587 are open, if you are not managing the server, <strong>contact your hosting provider to check this</strong> directly.</p>
+<p>More information:</p>
+<p><a href="https://github.com/PHPMailer/PHPMailer/issues/295#issuecomment-155147551">https://github.com/PHPMailer/PHPMailer/issues/295#issuecomment-155147551</a></p>
+<p><a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting">https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting</a></p>
+<h3>Connection Timeout Error and DNS Failures</h3>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#dns-failures">here</a> to read more.</p>
+<h3>GoDaddy Email Config Issues</h3>
+<p>GoDaddy blocks outbound SMTP; you have to use GoDaddy&#8217;s own mail servers.</p>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#godaddy">here</a> to read more.</p>
+<h3>Authentication failures</h3>
+<p>If your authentication is failing, there are several likely causes:</p>
+<ul>
+<li>You have the wrong username or password</li>
+<li>Your connection is being diverted to a different server (as above)</li>
+<li>You have specified authentication without encryption</li>
+</ul>
+<p>Generally, you do not want to send username or password over an unencrypted link. Some SMTP authentication schemes do add a minimal level of security (sending short hashes rather than clear text), but these provide only minimal protection, and so most servers do not allow authentication without encryption. Fix this by setting SMTP Encryption to TLS and Port to 587 as well as filling the Email and Password field.</p>
+<h3><strong>Common issues with Gmail or G Suite &#8211; Invalid username or password</strong></h3>
+<p>Invalid username or password when use Gmail or G-Suite can be a common error if you haven&#8217;t turned Less Secure Apps to ON, however, it&#8217;s recommended first to check if your password is correct.</p>
+<h4><strong>G-Suite</strong></h4>
+<ol>
+<li>Sign in to the Google Admin console.</li>
+<li>Click Security &gt; Basic settings.</li>
+<li>Under Less secure apps, select Go to settings for less secure apps.</li>
+<li>In the subwindow, select the Allow users to manage their access to less secure apps radio button.</li>
+<li>In case you are not receiving the emails and your SMTP configuration test email is showing that the configuration is working properly, take a look at the following articles:
+<ol>
+<li><a href="https://productforums.google.com/forum/#!topic/Apps/M7TiKQAWhq4">https://productforums.google.com/forum/#!topic/Apps/M7TiKQAWhq4</a></li>
+<li><a href="https://support.google.com/a/answer/55299?hl=en">https://support.google.com/a/answer/55299?hl=en</a></li>
+</ol>
+</li>
+</ol>
+<h4><strong>Gmail Regular Account</strong></h4>
+<ol>
+<li>Log in to your user account.</li>
+<li>Visit: <a href="https://www.google.com/settings/security/lesssecureapps" target="_blank" rel="nofollow noopener noreferrer">https://www.google.com/settings/security/lesssecureapps</a></li>
+<li>Toggle on.</li>
+</ol>
+<h4><strong>2 Factor Authentication Enabled</strong></h4>
+<p>If you are<strong> have enabled 2-factor authentication</strong> on your Google Account, you <strong>MUST</strong> generate application password and add the password in the password field in Perfex CRM located in Setup-&gt;Settings-&gt;Email</p>
+<p>Click <a href="https://support.google.com/accounts/answer/185833?hl=en">here</a> to read how to generate App Password.</p>
+<hr />
+<p>If you are still getting <strong>invalid username or password and you are managing the server</strong> try this:</p>
+<ol>
+<li>Log in as cPanel user, go to MX Entry, select domain, set to the remote exchanger.</li>
+<li>Log into WHM, go to Tweak Settings, disable &#8220;Restrict outgoing SMTP&#8221;</li>
+</ol>
+<p><img decoding="async" class="alignnone size-large wp-image-26" src="https://help.perfexcrm.com/wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-1024x56.png" alt="Restrict outgoing smtp to root exim" width="980" height="54" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-300x16.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-768x42.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-60x3.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/02/restroct-outgoing-smtp-to-root-exim-150x8.png 150w" sizes="(max-width: 980px) 100vw, 980px" /></p>
+<h3>Could not instantiate mail function</h3>
+<p>This error is also known as &#8220;<strong>Unable to send email using PHP mail()</strong>&#8221; if you are using the Codeigniter mail engine and means that your PHP installation is not configured to call the <strong>mail()</strong> function correctly (e.g. sendmail_path is not set correctly in your php.ini), or you have no local mail server installed and configured.</p>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#could-not-instantiate-mail-function">here</a> to read more.</p>
+<p>However, the error may be shown if you are trying to configure the <strong>Mail</strong> protocol, which is not recommended.</p>
+<h3>SELinux blocking</h3>
+<p>If you see an error like <strong>SMTP -&gt; ERROR: Failed to connect to server: Permission denied (13)</strong>, you may be running into SELinux preventing PHP or the web server from sending an email.</p>
+<p>Click <a href="https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting#selinux-blocking">here</a> to read more.</p>The post <a href="https://help.perfexcrm.com/smtp-configuration/">Email/SMTP Configuration</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>AWS Email SMTP Setup</title>
+		<link>https://help.perfexcrm.com/aws-email-smtp-setup/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Fri, 10 Feb 2017 14:10:15 +0000</pubDate>
+				<category><![CDATA[Email Config & Templates]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=18</guid>
+
+					<description><![CDATA[<p>When using AWS for email sending additional steps are required to perform in order to be able to send emails from Perfex CRM. Follow the steps below to to configure SMTP with AWS. First make sure that you followed AWS Steps (1 and 2) &#8211; http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-smtp-php.html Make sure you verified your domain name Additional info &#8211; http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-an-email-using-smtp.html [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/aws-email-smtp-setup/">AWS Email SMTP Setup</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>When using AWS for email sending additional steps are required to perform in order to be able to send emails from Perfex CRM. Follow the steps below to to configure SMTP with AWS.</p>
+<ol>
+<li>First make sure that you followed AWS Steps (1 and 2) &#8211; <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-smtp-php.html">http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-smtp-php.html</a></li>
+<li>Make sure you verified your domain name</li>
+<li>Additional info &#8211; <a href="http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-an-email-using-smtp.html">http://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-an-email-using-smtp.html</a></li>
+<li>If you are using version 2 or above, make sure that in Setup-&gt;Settings-&gt;Email you selected <strong>PHPMailer</strong> as mail engine.</li>
+</ol>
+<p>The email you will enter will be used as FROM email which when using AWS is required. Find the configuration below.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-3626 size-large" src="https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup-1024x794.png" alt="AWS Email SMTP Setup" width="980" height="760" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup-1024x794.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup-300x233.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup-768x596.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup-60x47.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup-150x116.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/02/aws-email-smtp-setup.png 1207w" sizes="auto, (max-width: 980px) 100vw, 980px" /></p>The post <a href="https://help.perfexcrm.com/aws-email-smtp-setup/">AWS Email SMTP Setup</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Invoices | Perfex CRM</title>
+	<atom:link href="https://help.perfexcrm.com/category/sales/invoices/feed/" rel="self" type="application/rss+xml" />
+	<link>https://help.perfexcrm.com</link>
+	<description>Help Center</description>
+	<lastBuildDate>Fri, 14 Aug 2020 10:01:46 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-32x32.jpg</url>
+	<title>Invoices | Perfex CRM</title>
+	<link>https://help.perfexcrm.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Merging Invoices</title>
+		<link>https://help.perfexcrm.com/merging-invoices/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 13:02:18 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<category><![CDATA[Sales]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=903</guid>
+
+					<description><![CDATA[<p>Merging invoices is feature in Perfex CRM that allows you to merge/include already created invoices into 1 invoice by passing all the invoice info to new invoice. This feature is used if your customer have other unpaid invoices but you need to create another invoice for the customer and you want to prevent your customer to [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/merging-invoices/">Merging Invoices</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Merging invoices is feature in Perfex CRM that allows you to merge/include already created invoices into 1 invoice by passing all the invoice info to new invoice. This feature is used if your customer have other unpaid invoices but you need to create another invoice for the customer and you want to prevent your customer to pay multiple invoices, in this case your customer will only need to pay 1 invoice.</p>
+<h4>How to check if there is available invoices to be merged?</h4>
+<p>Available invoices to merge are showing in different places.</p>
+<ol>
+<li>When create new invoice &#8211; Available invoices to merge are shown after selecting customer, the system will check if there is available invoices to be merged into the invoice you are creating for the selected customer.</li>
+<li>When you preview existing invoice from admin area &#8211; Available invoices will be shown on top and you can click on the edit button to apply the necessary action.</li>
+<li>When you edit existing invoice &#8211; Available invoices for merging are shown imidiately after entering the edit invoice area.</li>
+</ol>
+<p><strong><div class="st-alert st-alert- ">You can merge invoices only that belongs to the following</strong> <strong>statuses</strong>: Unpaid, Overdue, Draft.</div></p>
+<p>Eq. If the invoice you edit is with status Partialy Paid you wont be able to merge exisiting invoices in this invoice with status Partialy Paid.</p>
+<h4>How to merge the invoices?</h4>
+<p>When you create/edit invoice on the top a message will be shown if there is invoices available for merging.</p>
+<p><img fetchpriority="high" decoding="async" class="alignnone size-full wp-image-904" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/merge-invoices-768x476.png" alt="merge invoice" width="768" height="476" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/merge-invoices-768x476.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/merge-invoices-768x476-300x186.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/merge-invoices-768x476-60x37.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/merge-invoices-768x476-150x93.png 150w" sizes="(max-width: 768px) 100vw, 768px" /></p>
+<p><strong>You can merge multiple invoices by clicking on the checkbox on the left side from the invoice number.</strong></p>
+<p>After the field is checked the <strong>invoice items will be auto added in your existing invoice</strong> that you are currently creating or edit.</p>
+<p>Additionaly you can mark the merged invoices as cancelled instead of deleting because merging invoices will create gaps in invoice numbers. Please do not merge invoices if you want no gaps in your invoice history. You also have the option of manually adjusting invoice numbers if you want to fill the gaps.</p>
+<div class="st-alert st-alert-danger ">Cancelled invoices are excluded from the reports and overdue reminders are disabled.</div>
+<p>&nbsp;</p>
+<p>&nbsp;</p>The post <a href="https://help.perfexcrm.com/merging-invoices/">Merging Invoices</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Invoice Overdue Notices</title>
+		<link>https://help.perfexcrm.com/invoice-overdue-notices/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 13:00:08 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<category><![CDATA[Sales]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=902</guid>
+
+					<description><![CDATA[<p>You can send invoice overdue notice manually or automatically with cron job. Sending with cron job To setup automatically overdue notice go to Setup -&#62; Settings -&#62; Cron Job -&#62; Invoices If you want to send overdue notice the same day when the invoice is overdue set the field Automatically send reminder after to 0, otherwise [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/invoice-overdue-notices/">Invoice Overdue Notices</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>You can send invoice overdue notice manually or automatically with cron job.</p>
+<p><b>Sending with cron job</b></p>
+<p>To setup automatically overdue notice go to <strong>Setup</strong><b> -&gt; Settings -&gt; Cron Job -&gt; Invoices</b></p>
+<p>If you want to send overdue notice the same day when the invoice is overdue set the field <strong>Automatically send reminder after</strong> to 0, otherwise set it according to your needs.</p>
+<p>The second field is about resending the overdue notice based on the last notice date. <b>If you want to disable resending the overdue notice</b> set this field to 0</p>
+<p><strong><div class="st-alert st-alert-info "></strong>The overdue notices will be sent at specific hour based <strong>Hour of day to perform automatic operations </strong>value that is set in <strong>Setup-&gt;Settings-&gt;Cron Job-&gt;Invoices</strong></div></p>The post <a href="https://help.perfexcrm.com/invoice-overdue-notices/">Invoice Overdue Notices</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Record Invoice Payment</title>
+		<link>https://help.perfexcrm.com/record-invoice-payment/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 12:58:15 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<category><![CDATA[Sales]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=900</guid>
+
+					<description><![CDATA[<p>While viewing the invoice from the admin area click on the + Payment button to record a new invoice payment, after you click on the button new view will be shown including the record payment form. Keep in mind that the + Payment button will be shown only if the user has permissions for payments [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/record-invoice-payment/">Record Invoice Payment</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>While viewing the invoice from the admin area click on the <strong>+ Payment </strong>button to record a new invoice payment, after you click on the button new view will be shown including the record payment form.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="956" height="640" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/qmVKIVA.png" alt="Record Invoice Payment" class="wp-image-4205" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/qmVKIVA.png 956w, https://help.perfexcrm.com/wp-content/uploads/2017/03/qmVKIVA-300x201.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/qmVKIVA-768x514.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/qmVKIVA-60x40.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/qmVKIVA-150x100.png 150w" sizes="(max-width: 956px) 100vw, 956px" /></figure>
+
+
+
+<p>Keep in mind that the <strong>+ Payment</strong> button will be shown only if the user has permissions for payments CREATE, also<strong> this button may be disabled in the invoice is with status Paid or Cancelled.</strong></p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="986" height="422" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/record-payment.png" alt="Record Invoice Payment" class="wp-image-2163" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/record-payment.png 986w, https://help.perfexcrm.com/wp-content/uploads/2017/03/record-payment-300x128.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/record-payment-768x329.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/record-payment-60x26.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/record-payment-150x64.png 150w" sizes="(max-width: 986px) 100vw, 986px" /></figure>
+
+
+
+<ol class="wp-block-list"><li><strong>Amount Received</strong> &#8211; The total amount that is paid for this invoice, this field will be auto-populated based on the invoice due amount.</li><li><strong>Payment Date</strong> &#8211; Select date for the payment, by default current date will be selected.</li><li><strong>Payment Mode</strong> &#8211; You need to select one of the available payment modes for this invoice. Is payment mode not shown on the list? Click <a href="https://help.perfexcrm.com/payment-modes-not-shown-on-invoice/">here </a>to read more.</li><li>Additional you can add<strong> payment note</strong>.</li><li><strong>Do not send invoice payment recorded email to customer contacts</strong> &#8211; If checked no email will be sent to customer contacts that payment is recorded for this invoice. In case you want to disable this option you can disable the email template in Setup-&gt;Settings-&gt;Invoice Payment Recorded (Sent to customer contacts), after the template is disabled this field won&#8217;t be shown and no email will be sent to the customer.</li><li>Click Save</li></ol>
+
+
+
+<p>After the payment is recorded the invoice status will be automatically updated based on the total amount. If the full amount is recorded for this invoice, the status will be updated to <strong>Paid</strong> otherwise will be updated to&nbsp;<strong>Partially Paid</strong>.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>Email sent to customer contacts</strong></h4>
+
+
+
+<p>If<strong>&nbsp;&#8220;<strong>Do not send invoice payment recorded email to customer contacts</strong>&#8220;</strong> is unchecked after payment is recorded email (with PDF payment attachment) will be sent directly to the customer contacts to inform that payment is recorded for this invoice.</p>
+
+
+
+<p>To edit the email content go to <strong>Setup</strong><b>&nbsp;-&gt; Email Templates -&gt; Invoice Payment Recorded (Sent to customer contacts).</b></p>
+
+
+
+<h4 class="wp-block-heading"><strong>Email sent to staff</strong></h4>
+
+
+
+<p>Additionally, the system will send another email (<b>Invoice Payment Recorded (Sent to staff</b>) to invoice <strong>sale agent</strong> and <strong>invoice creator</strong>, this email will be sent too when the customer pays the invoice online via an online payment gateway.</p>
+
+
+
+<p><strong>Keep in mind if the payment is recorded via the admin area from staff member this (currently logged in) staff member won&#8217;t receive an email.</strong></p>
+
+
+
+<h3 class="wp-block-heading"><strong>Troubleshooting</strong></h3>
+
+
+
+<h4 class="wp-block-heading"><strong>Payment modes not shown on invoice</strong></h4>
+
+
+
+<p>You can read more about this <a href="https://help.perfexcrm.com/payment-modes-not-shown-on-invoice/">here</a></p>The post <a href="https://help.perfexcrm.com/record-invoice-payment/">Record Invoice Payment</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Send Invoice to Email</title>
+		<link>https://help.perfexcrm.com/send-invoice-to-email/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 12:53:57 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<category><![CDATA[Sales]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=897</guid>
+
+					<description><![CDATA[<p>Perfex have the option to send this invoice to a customer which is related.  Also, the PDF invoice will be attached to the email. If you want to do not attach the PDF invoice simple uncheck the checkbox Attach Invoice PDF After sending the invoice to the customer if you want to send again the [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/send-invoice-to-email/">Send Invoice to Email</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Perfex have the option to send this invoice to a customer which is related.  Also, the PDF invoice will be attached to the email. If you want to do not attach the PDF invoice simple uncheck the checkbox <b>Attach Invoice PDF</b></p>
+<p><img loading="lazy" decoding="async" class="size-full wp-image-899 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/send-invoice-to-client-1.png" alt="send invoice to mail" width="666" height="963" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/send-invoice-to-client-1.png 666w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-invoice-to-client-1-207x300.png 207w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-invoice-to-client-1-41x60.png 41w, https://help.perfexcrm.com/wp-content/uploads/2017/03/send-invoice-to-client-1-104x150.png 104w" sizes="auto, (max-width: 666px) 100vw, 666px" /></p>
+<p>After sending the invoice to the customer if you want to send again the invoice there will be another email content. Becuase the initial invoice is already sent. Now the customer  maybe want the invoice again and in all cases this content will be different. Go to <b>Setup-&gt; Email Templates -&gt; Invoice Already Send to Client</b> to edit the email content when sending the invoice to your customer for second time.</p>
+<p><div class="st-alert st-alert-info ">By default <strong>all contacts with enabled email notifications for invoices will be selected</strong> you can adjust to your needs.</div></p>
+<p><strong><div class="st-alert st-alert- "></strong> When <a href="https://help.perfexcrm.com/setup-cpanel-cron-job/">cron job</a> will try to send the invoice eq. for expiration reminders<strong> will be sent to</strong> <strong>all contacts with enabled email notifications for invoices</strong>.</div></p>The post <a href="https://help.perfexcrm.com/send-invoice-to-email/">Send Invoice to Email</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Recurring Invoice</title>
+		<link>https://help.perfexcrm.com/recurring-invoice/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 12:49:45 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<category><![CDATA[Sales]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=893</guid>
+
+					<description><![CDATA[<p>Settings Navigate to Settings Menu -&#62; Settings -&#62; Cron Job Create a new invoice from the main recurring invoice only if the main invoice is with status paid? If this field is set to No the recurring invoice is not with status paid the new invoice won&#8217;t be created Hour of day to perform automatic [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/recurring-invoice/">Recurring Invoice</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<h4 class="wp-block-heading"><strong>Settings</strong></h4>
+
+
+
+<p>Navigate to <strong>Settings Menu -&gt; Settings -&gt; Cron Job</strong></p>
+
+
+
+<p><b>Create a new invoice from the main recurring invoice only if the main invoice is with status paid?</b></p>
+
+
+
+<p>If this field is set to No the recurring invoice is not with status paid the new invoice won&#8217;t be created</p>
+
+
+
+<p><strong>Hour of day to perform automatic operations (24 hours format eq. 9 for 9am or 15 for 3pm.)</strong></p>
+
+
+
+<p>The invoice will be re-created at a specific time of the day, based on the hour you have configured in this option.</p>
+
+
+
+<p>Example if the invoice should be re-created at 1st of May if you set here 09 the invoice will be re-created 1st of May 9 AM.</p>
+
+
+
+<p><b>Action to take after invoice is re-created</b></p>
+
+
+
+<ul class="wp-block-list"><li>Generate and Autosend the renewed invoice to the customer &#8211; <strong>NOTE:</strong> The customer contacts must configured <strong>email notification for invoices</strong> in order to receive the email.</li><li>Generate a Unpaid Invoice</li><li>Generate a Draft Invoice</li></ul>
+
+
+
+<h4 class="wp-block-heading"><strong>Create&nbsp;recurring invoice</strong></h4>
+
+
+
+<p>When you add/edit invoice you have an option to set this invoice to be recurring.</p>
+
+
+
+<p>That&nbsp;means that the invoice will be re-created&nbsp;automatically based on your setup for recurring invoice (every X months). You can set recurring starting from 1 month to 12 months or select custom to fit your needs.</p>
+
+
+
+<p><strong>How are the recurring days calculated?</strong></p>
+
+
+
+<p>The date when the invoice needs to be re-created(renewed) is calculated from the <strong>invoice date.</strong></p>
+
+
+
+<p><strong>The dates in the examples are shown in Y-m-d format.</strong></p>
+
+
+
+<p><strong>Example 1:</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Invoice date is XXXX-08-17</li><li>Recurring is <strong>every 1 month</strong></li><li>The invoice will be re-created (renewed) on XXXX-09-17</li></ul>
+
+
+
+<p><strong>Example 2:</strong></p>
+
+
+
+<ul class="wp-block-list"><li>Invoice date is XXXX-03-01</li><li>Recurring is <strong>every month</strong></li><li>The invoice will be re-created (renewed) on XXXX-04-01</li></ul>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="836" height="230" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/configure-recurring-invoice.png" alt="" class="wp-image-2532" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/configure-recurring-invoice.png 836w, https://help.perfexcrm.com/wp-content/uploads/2017/03/configure-recurring-invoice-300x83.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/configure-recurring-invoice-768x211.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/configure-recurring-invoice-60x17.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/configure-recurring-invoice-150x41.png 150w" sizes="auto, (max-width: 836px) 100vw, 836px" /></figure>
+
+
+
+<p>When the invoices from this invoice will be generated you will have an overview which invoices are generated from this invoice at the <strong>Child Invoices</strong> tab.</p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="987" height="351" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/recurring-child-invoices-1.png" alt="" class="wp-image-2533" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/recurring-child-invoices-1.png 987w, https://help.perfexcrm.com/wp-content/uploads/2017/03/recurring-child-invoices-1-300x107.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/recurring-child-invoices-1-768x273.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/recurring-child-invoices-1-60x21.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/recurring-child-invoices-1-150x53.png 150w" sizes="auto, (max-width: 987px) 100vw, 987px" /></figure>
+
+
+
+<h4 class="wp-block-heading"><strong>Stop a Recurring Invoice</strong></h4>
+
+
+
+<p>In order to stop recurring invoice, you will need to go to the invoice edit area and set the <strong>Recurring Invoice</strong> drop-down field to NO.</p>
+
+
+
+<p><strong>NOTES</strong>:</p>
+
+
+
+<ul class="wp-block-list"><li>You need to have<a href="https://help.perfexcrm.com/setup-cpanel-cron-job/"> setup cron job</a> for this feature.</li><li>Recurring Draft invoices <strong>won&#8217;t be re-created.</strong></li><li>Recurring invoices with status <span style="color: #ff0000;">Cancelled</span> (canceled invoices) <strong>will be</strong> still re-created when the date for the next recurring invoice comes. In case you don&#8217;t want the invoice to be re-created from canceled invoice you must edit the invoice and set Recurring to No.</li></ul>The post <a href="https://help.perfexcrm.com/recurring-invoice/">Recurring Invoice</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Create Invoice</title>
+		<link>https://help.perfexcrm.com/create-invoice/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 10:06:31 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=882</guid>
+
+					<description><![CDATA[<p>To create new invoice go to Sales -&#62; Invoices and click on the button Create new invoice Select Customer, when selecting a Client the customer informations will be fetched directly from the customer’s profile. Another option is that you can click on the edit icon and directly add the desired customer informations, this also is applied for the billing informations they are [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/create-invoice/">Create Invoice</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>To create new invoice go to <b>Sales -&gt; Invoices </b>and click on the button<b> Create new invoice</b></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-883" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Create-Invoice-768x508.png" alt="Create new invoice" width="768" height="508" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Create-Invoice-768x508.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Create-Invoice-768x508-300x198.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Create-Invoice-768x508-60x40.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Create-Invoice-768x508-150x99.png 150w" sizes="auto, (max-width: 768px) 100vw, 768px" /></p>
+<p>Select <strong>Customer, </strong>when selecting a Client the <strong>customer informations will be fetched directly from the customer’s profile. </strong>Another option is that you can click on the edit icon and directly add the desired customer informations, this also is applied for the billing informations they are also fetched when selecting a customer.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-884" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-768x252.png" alt="" width="768" height="252" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-768x252.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-768x252-300x98.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-768x252-60x20.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-768x252-150x49.png 150w" sizes="auto, (max-width: 768px) 100vw, 768px" /></p>
+<p><strong>NOTE:</strong> If you want the billing details to be auto populated when selecting the customer you need previously to have added Billing details in the customer profile.</p>
+<p><strong>Billing and Shipping – </strong>If you change the billing and shipping informations after selecting a client and click on the edit icon, this will be changed for the Invoice but in the customer profile the informations will remain the same.</p>
+<p>&nbsp;</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-885" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-Edit-768x281.png" alt="" width="768" height="281" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-Edit-768x281.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-Edit-768x281-300x110.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-Edit-768x281-60x22.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Customer-Full-Edit-768x281-150x55.png 150w" sizes="auto, (max-width: 768px) 100vw, 768px" /></p>
+<p><strong><label class="control-label" for="allowed_payment_modes">Allowed payment modes for this invoice</label> – </strong>Select allowed payment modes for the invoice you are creating, if you customers pays online using Perfex CRM payment gateways they will be <a href="https://help.perfexcrm.com/payment-modes-not-shown-on-invoice/">visible in the invoice html</a> area and when <a href="https://www.perfexcrm.com/documentation/invoices/record-invoice-payment/">recording payment</a> for invoice from admin area.</p>
+<p><strong>Currency</strong> – The currency is automatically selected based on your default currency or currency set for the selected Customer you selected previously in the customer profile. If the currency for this customer is <strong>USD</strong> it will be automaticly selected and cannot be changed, read more <a href="https://help.perfexcrm.com/currencies/">here</a></p>
+<p><strong>INVOICE Number </strong>– Number is automatically populated Eq. 00012 next will be 00013.</p>
+<p>This number its fetched from <strong>Setup-&gt;Settings-&gt;Finance-&gt;Invoice</strong>– Next <strong> </strong>Number the number its auto increment but you can change the next number in <strong>Setup-&gt;Settings-&gt;Finance-&gt;Invoice.</strong></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-886" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Number-Ooder-768x404.png" alt="Changing next invoice number" width="768" height="404" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Number-Ooder-768x404.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Number-Ooder-768x404-300x158.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Number-Ooder-768x404-60x32.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Number-Ooder-768x404-150x79.png 150w" sizes="auto, (max-width: 768px) 100vw, 768px" /></p>
+<p><strong>Customer note</strong> is visible to client side also, on the HTML invoice and PDF invoice.</p>
+<p>You can setup terms directly in the invoice or you can have predefined terms which will be auto populated. To setup predefined terms go to <strong>Setup -&gt; Settings -&gt; Finance -&gt; Invoice </strong>scroll down and you can populate the fields as it fits you.</p>
+<p><strong>Recurring Invoice</strong> – Read more <a href="https://www.perfexcrm.com/documentation/invoices/recurring-invoice/">here</a> about how to setup recurring invoice.</p>
+<p><strong>Sale Agent</strong> – You can select sale agent for this invoice then then generate reports in <strong>Reports-&gt;Sales-&gt;Invoices Report</strong>. Note that the sale agent full name will be shown on the invoice  if in<strong> Setup-&gt;Settings-&gt;Finance-&gt;Invoice</strong>-&gt; Show sale agent on invoice is set to yes, see picture.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-887" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Predefined-and-Sale-Agent-768x352.png" alt="Invoice Sale Agent" width="768" height="352" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Predefined-and-Sale-Agent-768x352.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Predefined-and-Sale-Agent-768x352-300x138.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Predefined-and-Sale-Agent-768x352-60x28.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Predefined-and-Sale-Agent-768x352-150x69.png 150w" sizes="auto, (max-width: 768px) 100vw, 768px" /></p>
+<p>You can add<strong> Invoice items</strong>, when adding make sure u click on the blue check icon in order the item to be added you can also select tax options see shown in picture.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-888" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Items-768x395.png" alt="Invoice Items" width="768" height="395" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Items-768x395.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Items-768x395-300x154.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Items-768x395-60x31.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Invoice-Items-768x395-150x77.png 150w" sizes="auto, (max-width: 768px) 100vw, 768px" /></p>
+<p>The items will be stored separately for each invoice and changing the items informations in Sales-&gt;Items wont affect the already created invoices with specific item/s.</p>
+<p><strong>Admin</strong> note is only for admins/staff members.</p>
+<p><strong>Customer note</strong> is visible to client side also, on the HTML invoice and PDF invoice.</p>
+<p>Click Save.</p>
+<p>While editing/creating invoice the <b>adjustment option</b> is always available if you want to +- the total amount</p>The post <a href="https://help.perfexcrm.com/create-invoice/">Create Invoice</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Exporting Customers Invoices/Estimates/Payment to ZIP</title>
+		<link>https://help.perfexcrm.com/exporting-customers-invoicesestimatespayment-to-zip/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Thu, 09 Mar 2017 21:36:58 +0000</pubDate>
+				<category><![CDATA[Invoices]]></category>
+		<category><![CDATA[Estimates]]></category>
+		<category><![CDATA[Customers]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=372</guid>
+
+					<description><![CDATA[<p>Go to the customer profile and click on the tab you want to export data eq. invoices Select status or just leave it All and click Submit. All invoices based on your selected options will be added to .zip file. &#160; &#160;</p>
+The post <a href="https://help.perfexcrm.com/exporting-customers-invoicesestimatespayment-to-zip/">Exporting Customers Invoices/Estimates/Payment to ZIP</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Go to the customer profile and click on the tab you want to export data eq. invoices</p>
+<p>Select status or just leave it All and click Submit. All invoices based on your selected options will be added to .zip file.</p>
+<p><div class="st-alert st-alert-info ">You can choose start and end date, <b>the date is based on invoice/estimate/payment date</b></div></p>
+<p><img loading="lazy" decoding="async" class="alignnone  wp-image-373" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/Zip-Invoices-768x516-300x202.png" alt="Exporting Customers Invoices/Estimates/Payment to ZIP" width="684" height="461" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/Zip-Invoices-768x516-300x202.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Zip-Invoices-768x516.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Zip-Invoices-768x516-60x40.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/Zip-Invoices-768x516-150x101.png 150w" sizes="auto, (max-width: 684px) 100vw, 684px" /></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>The post <a href="https://help.perfexcrm.com/exporting-customers-invoicesestimatespayment-to-zip/">Exporting Customers Invoices/Estimates/Payment to ZIP</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

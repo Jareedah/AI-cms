@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Projects | Perfex CRM</title>
+	<atom:link href="https://help.perfexcrm.com/category/projects/feed/" rel="self" type="application/rss+xml" />
+	<link>https://help.perfexcrm.com</link>
+	<description>Help Center</description>
+	<lastBuildDate>Mon, 31 Aug 2020 11:51:17 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-32x32.jpg</url>
+	<title>Projects | Perfex CRM</title>
+	<link>https://help.perfexcrm.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Add New Project Status</title>
+		<link>https://help.perfexcrm.com/add-new-project-status/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Mon, 17 Apr 2017 06:49:05 +0000</pubDate>
+				<category><![CDATA[Setup & Configuration]]></category>
+		<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=1046</guid>
+
+					<description><![CDATA[<p>NOTE: This feature is available starting from version 1.6.2 By default Perfex CRM ships with 5 predefined statuses, Not Started, In Progress, On Hold, Cancelled, Finished&#160;but you can inject new statuses with simple action hook to fit for your needs. We assume that you have some basic knowledge of reading php code for this article [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/add-new-project-status/">Add New Project Status</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<h4 class="wp-block-heading"><strong>NOTE: This feature is available starting from version 1.6.2</strong></h4>
+
+
+
+<p>By default Perfex CRM ships with 5 predefined statuses, Not Started, In Progress, On Hold, Cancelled, Finished&nbsp;but you can inject new statuses with simple action hook to fit for your needs.</p>
+
+
+<div class="st-alert st-alert-info ">The statuses <strong>Not Started</strong> and <strong>Finished </strong>are core statuses and should remain untouched in order everything to works well.</div>
+
+
+
+<p>We assume that you have some basic knowledge of reading php code for this article but wont be that hard if you don&#8217;t have. You can just copy and paste the code and adjust the keys for your needs (see below keys explanation).</p>
+
+
+
+<p>In this example you will add 1&nbsp;new project status&nbsp;with name <strong>Planning</strong></p>
+
+
+
+<p>In <strong>application/helpers</strong> create file <strong>my_functions_helper.php</strong> and add the following code:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php
+
+hooks()->add_filter('before_get_project_statuses','my_add_custom_project_status');
+
+function my_add_custom_project_status($current_statuses){
+    // Push new status to the current statuses
+    $current_statuses[] = array(
+           'id'=>50, // new status with id 50
+           'color'=>'#989898',
+           'name'=>'Planning',
+           'order'=>10,
+           'filter_default'=>true, // true or false
+        );
+    // Return the statuses
+    return $current_statuses;
+}</code></pre>
+
+
+<div class="st-alert st-alert- ">The ID for each status must to be unique.</div>
+
+
+
+<ul class="wp-block-list"><li><strong>id</strong> &#8211; The id of the project status, its recommended to <strong>add higher id number</strong> to prevent overlapping the default system id&#8217;s for the project statuses. Eq now currently there is projects statuses with id 1, 2, 3, 4 and 5 and in a future if new default project statuses is added with an id 6 and you already have injected your own status with id 6 can cause issues. <strong>Its not recommended to change the ID after there is project that are using the status id.</strong></li><li><strong>color</strong> &#8211; Color for this status in hex format.</li><li><strong>name</strong> &#8211; The name of the status that will be displayed to users.</li><li><strong>order</strong> &#8211; The order of the status.</li><li><strong>filter_default</strong> &#8211; This option is used if you want to exclude the projects that are using this status by default to be included in the lists tables. Eq if this option is false when you access the projects lists area by default the projects that are using to this status wont be shown and you will neeed manually to use the filters to include in the table.</li></ul>
+
+
+
+<p>After you adjust the code to fit for your needs save the file my_functions_helper.php and you will be able to see your new project status.</p>
+
+
+
+<figure class="wp-block-image"><img fetchpriority="high" decoding="async" width="1024" height="140" src="https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning-1024x140.png" alt="Project Status Planning" class="wp-image-1047" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning-1024x140.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning-300x41.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning-768x105.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning-60x8.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning-150x20.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/04/project-status-planning.png 1673w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>The post <a href="https://help.perfexcrm.com/add-new-project-status/">Add New Project Status</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Pin Projects</title>
+		<link>https://help.perfexcrm.com/pin-projects/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 22 Mar 2017 12:35:18 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=935</guid>
+
+					<description><![CDATA[<p>If you are working on specific projects everyday and you need to access them everyday there is an option to pin the project. The pinned projects will be shown on the bottom left side from the admin main menu. To pin a project from the main menu navigate to Project and open the project you [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/pin-projects/">Pin Projects</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>If you are working on specific projects everyday and you need to access them everyday there is an option to pin the project. The pinned projects will be shown on the bottom left side from the admin main menu.</p>
+<p><img decoding="async" class="size-full wp-image-936 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/pinned-project.png" alt="Pinned Project" width="259" height="178" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/pinned-project.png 259w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pinned-project-60x41.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pinned-project-150x103.png 150w" sizes="(max-width: 259px) 100vw, 259px" /></p>
+<p>To pin a project from the main menu navigate to Project and open the project you want to open. On the top right side there is an <strong>Action</strong> button, click it and then click on <strong>Pin Project</strong> dropdown link.</p>
+<p><img decoding="async" class="size-large wp-image-937 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1-1024x557.png" alt="Pin Project" width="980" height="533" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1-1024x557.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1-300x163.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1-768x418.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1-60x33.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1-150x82.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/pin-project-1.png 1921w" sizes="(max-width: 980px) 100vw, 980px" /></p>
+<p>After pinning the project you will be able to see it and access directly on the left side of the admin menu.</p>
+<p>Keep in mind that you will want to unpin this project after is marked as finished.</p>The post <a href="https://help.perfexcrm.com/pin-projects/">Pin Projects</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Project Discussions</title>
+		<link>https://help.perfexcrm.com/project-discussions/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 19 Mar 2017 09:48:34 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=877</guid>
+
+					<description><![CDATA[<p>Projects discussion is a feature in Perfex CRM which will give you ability to start various discussions with your customer or project member for a specific project. To create new project discussion open the desired project and click on the discussions tab then click on the create discussion button. Discussion Subject Discussion Description Visible to [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/project-discussions/">Project Discussions</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Projects discussion is a feature in Perfex CRM which will give you ability to start various discussions with your customer or project member for a specific project.</p>
+<p>To create new project discussion open the desired project and click on the discussions tab then click on the <strong>create discussion</strong> button.</p>
+<p><img loading="lazy" decoding="async" class="alignnone wp-image-878 size-large" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions-1024x144.png" alt="project discussions" width="980" height="138" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions-1024x144.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions-300x42.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions-768x108.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions-60x8.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions-150x21.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-discussions.png 1693w" sizes="auto, (max-width: 980px) 100vw, 980px" /></p>
+<ul>
+<li>Discussion Subject</li>
+<li>Discussion Description</li>
+<li>Visible to customer &#8211; If this field is checked the customer will be able to see this disucussion in the customers area also will receive new email that new project discussion is created. All customer contacts that have permission for projects will be receive this email.</li>
+</ul>The post <a href="https://help.perfexcrm.com/project-discussions/">Project Discussions</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Disallow project members to see all project tasks</title>
+		<link>https://help.perfexcrm.com/disallow-project-members-to-see-all-project-tasks/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Thu, 16 Mar 2017 10:37:28 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<category><![CDATA[Tasks]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=873</guid>
+
+					<description><![CDATA[<p>By the default all project related tasks are visible to all project members. If you want only to show the tasks where the staff member is assigned/added as follower you need to turn off Allow all staff to see all tasks related to projects To achieve this go to Setup-&#62;Settings-&#62;Tasks and set Allow all staff [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/disallow-project-members-to-see-all-project-tasks/">Disallow project members to see all project tasks</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>By the default all project related tasks are visible to all project members.<br />
+If you want only to show the tasks where the staff member is assigned/added as follower you need to turn off <strong>Allow all staff to see all tasks related to projects</strong></p>
+<p>To achieve this go to <strong>Setup-&gt;Settings-&gt;Tasks</strong> and set Allow all staff to see all tasks related to projects to <strong>NO</strong></p>
+<p><div class="st-alert st-alert-info ">If the staff member have permission for tasks VIEW or is admin then this member will be still able to see all tasks.</div></p>The post <a href="https://help.perfexcrm.com/disallow-project-members-to-see-all-project-tasks/">Disallow project members to see all project tasks</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Project Activity</title>
+		<link>https://help.perfexcrm.com/project-activity/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 20:01:26 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=829</guid>
+
+					<description><![CDATA[<p>Project activity is feature where can be track the activity of the project. There is a way to turn off project activity from being visible to customer. You can just toggle the OFF button on the right side of the activity. Project actvitity works smart and auto turn the on/off visible to customer. How this [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/project-activity/">Project Activity</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Project activity is feature where can be track the activity of the project.</p>
+<p>There is a way to turn off project activity from being visible to customer. You can just toggle the OFF button on the right side of the activity.</p>
+<p>Project actvitity works smart and auto turn the on/off visible to customer.<br />
+<strong>How this work?</strong></p>
+<p><div class="st-alert st-alert-info ">Example: Not visible to customer discussion is created. After that all project activity logged by this discussion will be marked as not visible to customer. This logic is applied also on tasks,files and timesheets.</div></p>The post <a href="https://help.perfexcrm.com/project-activity/">Project Activity</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Invoicing Project</title>
+		<link>https://help.perfexcrm.com/invoicing-project/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 19:59:59 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=827</guid>
+
+					<description><![CDATA[<p>Invoicing project is recomended to do only from the project area via the Invoice Project button on the top right side to keep track of all invoices created for&#160;the project. Project Invoice Info There is 3 types of how the invoice items will be structure when invoicing the project. Single Line &#8211; Not applied if [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/invoicing-project/">Invoicing Project</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Invoicing project is recomended to do only from the project area via the Invoice Project button on the top right side to keep track of all invoices created for&nbsp;the project.</p>
+
+
+
+<h4 class="modal-title wp-block-heading">Project Invoice Info</h4>
+
+
+
+<p>There is 3 types of how the invoice items will be structure when invoicing the project.</p>
+
+
+
+<ol class="wp-block-list"><li>Single Line &#8211; <strong>Not applied if project Billing Type is Task Hours</strong>
+<ol>
+<li><b>Item name:</b> Project name</li>
+<li><b>Description:</b> All tasks + total logged time per task</li>
+</ol>
+</li><li>Task Per Item &#8211; All billable tasks per item &#8211;<strong>&nbsp;(Not applied if Billing type is Fixed Cost)</strong>
+<ol>
+<li><b>Item name:</b> Project name + Task name</li>
+<li><b>Description:</b> Total logged time</li>
+</ol>
+</li><li>All timesheets individualy &#8211; Applied all billable timesheets from tasks &#8211;&nbsp;<strong>(Not applied if Billing type is Fixed Cost)</strong>
+<ol>
+<li><b>Item name:</b> Project name + Task name</li>
+<li><b>Description:</b> Timesheet start time + end time + total logged time</li>
+</ol>
+</li></ol>
+
+
+
+<p><strong>Tasks that&nbsp;will be billed</strong></p>
+
+
+
+<p>With Perfex CRM you have the ability to chose what tasks to bill when invoicing project.</p>
+
+
+
+<p>To see the tasks that&nbsp;will be billed click on&nbsp;<strong>See tasks that will be billed on this invoice</strong>, you can adjust per your requirements.</p>
+
+
+
+<p>If task is note complete when you click See tasks that will be on this invoice on the right side you can see a message Not Complete. Another message is auto added there with red if the task dont have any timers but you want to bill the task. Check the image below.</p>
+
+
+
+<div class="wp-block-image is-style-default"><figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoicing-project-tasks.png" alt="invoicing project" class="wp-image-828" width="580" height="475" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoicing-project-tasks.png 614w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoicing-project-tasks-300x246.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoicing-project-tasks-60x49.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoicing-project-tasks-150x123.png 150w" sizes="auto, (max-width: 580px) 100vw, 580px" /></figure></div>
+
+
+
+<p><strong><div class="st-alert st-alert- ">Tasks with future start date cannot be billed.</div></strong></p>
+
+
+
+<p>Actually they can if you check them. By default the tasks with future start date wont be checked which is logical.</p>
+
+
+
+<h4 class="wp-block-heading"><strong>Notes</strong></h4>
+
+
+
+<ul class="wp-block-list"><li><strong>All billed tasks will be marked as finished</strong> (If any tasks found not finished) &#8211; No notification sent to assigned staff members.</li><li><strong>After the task is billed you cannot start timers or bill the task again</strong>. If is required to bill&nbsp;again you need to re-create the task.</li><li>If customer have different currency set then default currency the project currency will be the currency of the customer.</li></ul>The post <a href="https://help.perfexcrm.com/invoicing-project/">Invoicing Project</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Finance Overview</title>
+		<link>https://help.perfexcrm.com/finance-overview/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 19:54:09 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=824</guid>
+
+					<description><![CDATA[<p>Finance Overview is showcase of all logged project timesheets together including project expenses. Logged Hours &#8211; Shows total logged project hours Billable and Not Billable Billable Hours &#8211; Shows total billable hours &#8211; All time Billed Hours &#8211; Shows total invoiced hours. Unbillable Hours &#8211; Shows total unbilled hours. Ex. Means that the project have 3 [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/finance-overview/">Finance Overview</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p><img loading="lazy" decoding="async" class="wp-image-825 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-1-300x107.png" alt="finance overview tasks" width="726" height="259" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-1-300x107.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-1.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-1-60x21.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-1-150x53.png 150w" sizes="auto, (max-width: 726px) 100vw, 726px" /></p>
+<p>Finance Overview is showcase of all logged project timesheets together including project expenses.</p>
+<ul>
+<li>Logged Hours &#8211; Shows total logged project hours Billable and Not Billable</li>
+<li>Billable Hours &#8211; Shows total billable hours &#8211; All time</li>
+<li>Billed Hours &#8211; Shows total invoiced hours.</li>
+<li>Unbillable Hours &#8211; Shows total unbilled hours. Ex. Means that the project have 3 unbilled hours from the last project invoice (If any).</li>
+</ul>
+<p><strong><div class="st-alert st-alert-info ">The total values are calculated based on the Billing Type</div></strong></p>
+<p><strong>Example billing type Project Hours</strong></p>
+<p><img loading="lazy" decoding="async" class=" wp-image-826 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-2-300x46.png" alt="finance overview billing hours" width="711" height="109" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-2-300x46.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-2-768x119.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-2-60x9.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-2-150x23.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/finance-overview-2.png 971w" sizes="auto, (max-width: 711px) 100vw, 711px" /></p>
+<p>Project have logged total 3 hours and Rate per hours in project settings is set 40$ the calculation will go like this:</p>
+<p><strong>40$ x 3 = Total 120$</strong></p>
+<p><strong>Example billing type Task Hours</strong></p>
+<p>The total per hour in this case is taken from the task <strong>Total Per Hour</strong></p>
+<p>Example:</p>
+<p><strong>Fix firefox bug</strong> &#8211; Total per hour is 25$</p>
+<p><strong>Create new table in database</strong> &#8211; Total Per hour is 40$</p>
+<p>Task 1 (<strong>Fix firefox bug</strong>) have logged 1 hour and Task 2 (<strong>Create new table in database</strong>) have logged 2 hours.</p>
+<p><strong>The calculation goes like this:</strong></p>
+<p>25$ x 1 hours (Task 1 &#8211; <strong>Fix firefox bug</strong>)</p>
+<p>40$ x 2 hours (Task 2 &#8211; <strong>Create new table in database</strong>)</p>
+<p><strong>Equal to 105$</strong></p>The post <a href="https://help.perfexcrm.com/finance-overview/">Finance Overview</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>New Project</title>
+		<link>https://help.perfexcrm.com/new-project/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 19:49:59 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=821</guid>
+
+					<description><![CDATA[<p>To create new project go to Projects from the aside menu and click New Project on the top left button. Project Name &#8211; The name of the project &#8211; Visible to customer Select customer Billing Type &#8211; there are 3 billing types for the projects. (auto-selected from the most used billing type) Fixed Cost Project [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/new-project/">New Project</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>To create new project go to Projects from the aside menu and click <strong>New Project</strong> on the top left button.</p>
+
+
+
+<ul class="wp-block-list"><li>Project Name &#8211; The name of the project &#8211; Visible to customer</li><li>Select customer</li><li>Billing Type &#8211; there are 3 billing types for the projects. (auto-selected from the most used billing type) </li></ul>
+
+
+<div class="st-alert st-alert-danger "><strong> Billing type cant be changed if any billed tasks found for the project.</div>
+
+
+
+<ul class="wp-block-list"><li>Fixed Cost</li><li>Project Hours &#8211; Based on project total billable hours</li><li>Tasks Hours &#8211; Based on tasks total billable hours &#8211; Total is calculated per task Hourly Rate (When creating task you need to set hourly rate for these tasks if billable.</li><li>Select project members &#8211; Only project members and staff who has permission Manage Projects will be able to access the project.</li><li>Start Date</li><li>End Date</li><li>Project Description</li></ul>
+
+
+
+<p><strong>Project Settings</strong></p>
+
+
+
+<p>Each project can have own settings based on the customer.</p>
+
+
+
+<ul class="wp-block-list"><li>Allow customer to view tasks</li><li>Allow customer to comment on project tasks &#8211; Not applied if&nbsp;Allow customer to view tasks is <strong>unchecked</strong>.</li><li>Allow customer to view task comments- Not applied if&nbsp;Allow customer to view tasks is <strong>unchecked</strong>.</li><li>Allow customer to view task attachments- Not applied if&nbsp;Allow customer to view tasks is <strong>unchecked</strong>.</li><li>Allow customer to view task checklist items- Not applied if&nbsp;Allow customer to view tasks is <strong>unchecked</strong>.</li><li>Allow customer to upload attachments on tasks- Not applied if&nbsp;Allow customer to view tasks is <strong>unchecked</strong>.</li><li>Allow customer to view task total logged time</li><li>Allow customer to view finance&nbsp;overview &#8211; &nbsp;<strong>(Finance overview for tasks is not&nbsp;shown if project Billing Type is Fixed Cost)<img loading="lazy" decoding="async" class="wp-image-823 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/projects-finance-overview-768x234-300x91.png" alt="Creating new project" width="781" height="237" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/projects-finance-overview-768x234-300x91.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/projects-finance-overview-768x234.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/projects-finance-overview-768x234-60x18.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/projects-finance-overview-768x234-150x46.png 150w" sizes="auto, (max-width: 781px) 100vw, 781px" /></strong></li><li>Allow customer to upload files</li><li>Allow customer to open discussions</li><li>Allow customer to view milestones</li><li>Allow customer to view Gantt</li><li>Allow customer to view timesheets</li><li>Allow customer to view activity log</li><li>Allow customer to view team members</li></ul>
+
+
+
+<p><strong>Notes:</strong></p>
+
+
+
+<ul class="wp-block-list"><li>When creating new project initialy the default <strong>project settings will be taken from the last project</strong>. You can adjust if any changes are required.</li><li><strong>Project currency will be your base currency or the customer currency</strong>. If the customer have setup currency different then the base currency the currency will be used from the customer profile.</li><li>If your staff members are able to see all projects make sure that the member dont have permissions for projects VIEW.&nbsp;<strong>VIEW allows staff member to see ALL projects. If you only want them to see projects they are assigned (added as members), do not give VIEW permissions.</strong></li></ul>The post <a href="https://help.perfexcrm.com/new-project/">New Project</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Timesheets</title>
+		<link>https://help.perfexcrm.com/timesheets/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 19:45:34 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=817</guid>
+
+					<description><![CDATA[<p>Project timesheets are all started timers for tasks related to specific project. To view all project timesheets while viewing the project click on the timesheets tab. You can view and sort all timers that are in progress or stopped, all timesheets are linked to staff member and task. Add new timesheet manually While you are in [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/timesheets/">Timesheets</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Project timesheets are all started timers for tasks related to specific project.</p>
+<p>To view all project timesheets while viewing the project click on the <strong>timesheets</strong> tab.</p>
+<p><img loading="lazy" decoding="async" class="wp-image-818 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab-300x38.png" alt="project timesheets" width="600" height="76" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab-300x38.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab-60x8.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab-150x19.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab.png 533w" sizes="auto, (max-width: 600px) 100vw, 600px" /></p>
+<p>You can view and sort all timers that are in progress or stopped, all timesheets are linked to staff member and task.</p>
+<p><strong>Add new timesheet manually</strong></p>
+<p>While you are in the timesheets follow the steps:</p>
+<ul>
+<li>Click on the button <strong>Timesheet<br />
+<img loading="lazy" decoding="async" class="wp-image-819 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab2-300x202.png" alt="project timesheets" width="716" height="482" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab2-300x202.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab2-60x40.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab2-150x101.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheets-tab2.png 658w" sizes="auto, (max-width: 716px) 100vw, 716px" /><br />
+</strong></li>
+<li>Select start time and end time from the calendar.</li>
+<li>Select task where this timesheet will be linked.</li>
+<li>Select staff member
+<ul>
+<li>By default the logged in user will be auto selected</li>
+<li>If the user dont have permission for projects EDIT or CREATE only logged in user will be available to select as timesheet staff in the dropdown<br />
+<img loading="lazy" decoding="async" class="wp-image-820 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheettab3-300x176.png" alt="project timesheets" width="719" height="422" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheettab3-300x176.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheettab3-60x35.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheettab3-150x88.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/project-timesheettab3.png 592w" sizes="auto, (max-width: 719px) 100vw, 719px" /></li>
+</ul>
+</li>
+</ul>
+<p>&nbsp;</p>The post <a href="https://help.perfexcrm.com/timesheets/">Timesheets</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Manually linking invoice to project</title>
+		<link>https://help.perfexcrm.com/manually-linking-invoice-to-project/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 19:40:34 +0000</pubDate>
+				<category><![CDATA[Projects]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=815</guid>
+
+					<description><![CDATA[<p>Go to Menu -&#62; Sales -&#62; Invoices and click Create New Invoice Select customer. A dropdown with projects will be shown below the customers select field (if no projects associated with the selected customer the dropdown with projects wont be shown) Select the project Configure the invoice for your needs Save the invoice Navigate to the [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/manually-linking-invoice-to-project/">Manually linking invoice to project</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<ol>
+<li>Go to<strong> Menu -&gt; Sales -&gt; Invoices</strong> and click <strong>Create</strong> <strong>New Invoice</strong></li>
+<li>Select customer.</li>
+<li>A dropdown with projects will be shown below the customers select field <strong>(if no projects associated with the selected customer the dropdown with projects wont be shown)</strong></li>
+<li>Select the project</li>
+<li>Configure the invoice for your needs</li>
+<li><strong>Save the invoice</strong></li>
+<li>Navigate to the project area and click on the tab <strong>Sales-&gt;Invoices </strong>you will be able to see the newly created invoice associated with your selected project.</li>
+</ol>
+<p><img loading="lazy" decoding="async" class="wp-image-816 aligncenter" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/link-invoice-to-project-300x94.png" alt="link invoice to project" width="689" height="216" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/link-invoice-to-project-300x94.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/link-invoice-to-project-1024x319.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/03/link-invoice-to-project-60x19.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/link-invoice-to-project-150x47.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/link-invoice-to-project.png 1662w" sizes="auto, (max-width: 689px) 100vw, 689px" /></p>The post <a href="https://help.perfexcrm.com/manually-linking-invoice-to-project/">Manually linking invoice to project</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

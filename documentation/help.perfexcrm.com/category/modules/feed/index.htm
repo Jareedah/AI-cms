@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Modules | Perfex CRM</title>
+	<atom:link href="https://help.perfexcrm.com/category/modules/feed/" rel="self" type="application/rss+xml" />
+	<link>https://help.perfexcrm.com</link>
+	<description>Help Center</description>
+	<lastBuildDate>Wed, 19 Jan 2022 10:28:29 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-32x32.jpg</url>
+	<title>Modules | Perfex CRM</title>
+	<link>https://help.perfexcrm.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Introduction to Perfex CRM modules</title>
+		<link>https://help.perfexcrm.com/introduction-to-perfex-crm-modules/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:25:24 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4086</guid>
+
+					<description><![CDATA[<p>Perfex CRM version 2.3.0 comes with a built-in feature to create modules and integrate additional features into the core functionalities. If you are eager to create modules for Perfex CRM to sell them on CodeCanyon or create your own features that you need for your requirements you are in the right place. Modules are packages [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/introduction-to-perfex-crm-modules/">Introduction to Perfex CRM modules</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<div class="st-alert st-alert-info ">The modules documentation is valid starting from version <b>2.3.2</b></div>
+
+
+
+<p>Perfex CRM <a href="https://help.perfexcrm.com/version-2-3-0/">version 2.3.0</a> comes with a built-in feature to create modules and integrate additional features into the core functionalities.<br><br>If you are eager to create modules for Perfex CRM to sell them on CodeCanyon or create your own features that you need for your requirements you are in the right place.</p>
+
+
+
+<p>Modules are packages of code that extend the core functionality of Perfex CRM , by making your own module you are extending Perfex CRM or integrating brand new features.</p>
+
+
+
+<p>The modules can consist of action <a href="https://help.perfexcrm.com/module-basics/#adding-hooks">hooks</a>, filters, <a href="https://help.perfexcrm.com/module-controllers/">controllers</a>, models, custom php classes/libraries, <a href="https://help.perfexcrm.com/module-language/">language files,</a> <a href="https://help.perfexcrm.com/module-views/">views</a>, this code base is already used in Perfex CRM.</p>
+
+
+
+<h2 class="wp-block-heading">What should you know before start creating modules? </h2>
+
+
+
+<h3 class="wp-block-heading">Maintaining Modules</h3>
+
+
+
+<p><strong>It&#8217;s your responsibility</strong> to maintain the modules you will be creating when there will be Perfex CRM major changes and make them compatible with the latest version.</p>
+
+
+
+<p>Perfex CRM is still <strong>a new modular application</strong>, in each update, we will try to enhance the code and make it more modular and for this reason, there will be breaking changes which you will need to adapt your modules to those breaking changes.</p>
+
+
+
+<h3 class="wp-block-heading">Modules Security</h3>
+
+
+
+<p>Perfex CRM is built with the Codeigniter PHP framework which we follow security practices in order to make Perfex CRM reliable.</p>
+
+
+
+<p>When creating new modules, <strong>you must ensure</strong> that your modules are <a href="https://help.perfexcrm.com/module-security/">secure</a> and use already existing functions and methods that exist in the Codeigniter PHP framework.</p>
+
+
+
+<h3 class="wp-block-heading">Selling modules on CodeCanyon</h3>
+
+
+
+<p>If you want to create modules and sell them as an <a href="https://author.envato.com/join">author </a>on <a href="https://1.envato.market/Y0GEe">CodeCanyon</a>, you are free to do so, keep in mind that because of our Exclusivity agreement, you can <strong>ONLY </strong>sell the modules on CodeCanyon.</p>
+
+
+
+<p>Selling Perfex CRM modules CodeCanyon means that you are responsible for setting the appropriate price of the module, the way you will present the module, offering support, ensuring that your module is compatible with latest version changes and your marketing strategy.</p>
+
+
+
+<p>You can&#8217;t present us as a partner to you as an individual or company, publishing a module from your Envato account, means that you own all the copyright to the module and the code.</p>
+
+
+
+<p>Under our own discretion, we may decide to market your module or recommend it to our customers.</p>
+
+
+
+<h3 class="wp-block-heading">Support for creating modules</h3>
+
+
+
+<p><strong>We won&#8217;t offer you support for creating modules</strong>, if you are certain that something does not work right and it&#8217;s a bug, you can open a support ticket at <a href="https://my.perfexcrm.com">https://my.perfexcrm.com</a> and provide more information, we will be happy to take a look.</p>
+
+
+
+<p>However, you should not expect on How To&#8217;s to create a specific feature, modules development is not included in support, try to figure on your own, or if you need any specific functions, you should explore the code.</p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Ok, that&#8217;s enough with introduction, let&#8217;s start developing some modules, <strong>read the module basics by clicking </strong><a href="https://help.perfexcrm.com/module-basics/"><strong>here</strong></a>.</p>The post <a href="https://help.perfexcrm.com/introduction-to-perfex-crm-modules/">Introduction to Perfex CRM modules</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Module Basics</title>
+		<link>https://help.perfexcrm.com/module-basics/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:24:28 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4087</guid>
+
+					<description><![CDATA[<p>Perfex CRM modules use the Codeigniter PHP framework code base like controllers, models, language files, libraries, views etc&#8230; if you are already familiar with the Codeigniter framework, you will be able to easily get started, if not we recommend you to visit their official website and documentation. Additionally, we added a bunch of helper functions, [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/module-basics/">Module Basics</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<div class="st-alert st-alert-info ">The modules documentation is valid starting from version <b>2.3.2</b></div>
+
+
+
+<p></p>
+
+
+
+<p>Perfex CRM modules use the Codeigniter PHP framework code base like controllers, models, language files, libraries, views etc&#8230; if you are already familiar with the Codeigniter framework, you will be able to easily get started, if not we recommend you to visit their official <a href="https://codeigniter.com/">website </a>and <a href="https://codeigniter.com/docs">documentation</a>.</p>
+
+
+
+<p>Additionally, we added a bunch of helper functions, features, action hooks and filters that will make the process of creating and integrating modules easier.</p>
+
+
+
+<h3 class="wp-block-heading">Modules location &amp; Name</h3>
+
+
+
+<p>All modules should be added in the <strong>modules </strong>folder in your root directory where Perfex CRM is installed and <strong>each module must have unique folder name and init file with the same name as your module folder name</strong>.</p>
+
+
+
+<h3 class="wp-block-heading"> Creating your first module</h3>
+
+
+
+<div class="st-alert st-alert-info ">Before start to develop a module, make sure that you set <a href="https://help.perfexcrm.com/faq/how-to-set-debug-mode/">development mode</a> in order to see any errors and functions/hooks deprecation warnings.</div>
+
+
+
+<p>To get started and create your first module, follow the steps below.</p>
+
+
+
+<ul class="wp-block-list"><li>Navigate to Perfex CRM installation and open the <strong>modules </strong>directory</li><li>Create a new directory and name it after your module (e.q. <strong>sample_module</strong>)</li><li>Create a new PHP file <strong>with the same name as the module directory</strong>, in this case, <strong>sample_module.php,&nbsp;</strong>this&nbsp;file&nbsp;will&nbsp;act&nbsp;as&nbsp;&#8220;<strong>init file&#8221;</strong>&nbsp;for&nbsp;this&nbsp;module.</li></ul>
+
+
+
+<p>In this case, the module is already created and registered but it does not do anything yet nor have any name or descriptions added, we will add the module metadata like name, description, URL, author via a PHP block comment which will act as module headers.</p>
+
+
+
+<p>The module headers should be added only in the init module file.</p>
+
+
+
+<p>Now open the sample_module.php file we created before and add the following comment at the top of the file:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php
+
+/**
+ * Ensures that the module init file can't be accessed directly, only within the application.
+ */
+defined('BASEPATH') or exit('No direct script access allowed');
+
+/*
+Module Name: Sample Perfex CRM Module
+Description: Sample module description.
+Version: 2.3.0
+Requires at least: 2.3.*
+*/</code></pre>
+
+
+
+<p>After you save the file, you can navigate in your Perfex CRM admin area to <strong>Setup-&gt;Modules</strong> and you will be able to see your module listed.</p>
+
+
+
+<p>The comment will act as a file header for the module, you should check the <a href="https://help.perfexcrm.com/module-file-headers/">file headers guide</a> if you want to get more familiar.</p>
+
+
+
+<div class="st-alert st-alert-warning ">Make sure that you always add the <b>Module Name</b> header</div>
+
+
+
+<figure class="wp-block-image"><img fetchpriority="high" decoding="async" width="1024" height="57" src="https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module-1024x57.png" alt="" class="wp-image-4089" srcset="https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module-1024x57.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module-300x17.png 300w, https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module-768x42.png 768w, https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module-60x3.png 60w, https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module-150x8.png 150w, https://help.perfexcrm.com/wp-content/uploads/2019/02/sample-module.png 1067w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<div class="st-alert st-alert-warning ">It&#8217;s very important to <strong>make sure that your module folder name and the .php file name are the same</strong>, otherwise, your module won&#8217;t be shown in the modules list</div>
+
+
+
+<h3 class="wp-block-heading">Basic Hooks</h3>
+
+
+
+<p>You will need to implement few basic hooks when creating new module, like <a href="https://help.perfexcrm.com/common-module-functions/#register_activation_hook">register_activation_hook(),</a> <a href="https://help.perfexcrm.com/common-module-functions/#register_deactivation_hook">register_deactivation_hook()</a> and <a href="https://help.perfexcrm.com/common-module-functions/#register_uninstall_hook">register_uninstall_hook()</a></p>
+
+
+
+<p>If you are familiar with WordPress, you will probably know the work that these hooks do.</p>
+
+
+
+<h3 class="wp-block-heading">Adding Hooks</h3>
+
+
+
+<p>You can add hooks in your module .php files with:</p>
+
+
+
+<pre class="wp-block-code"><code>hooks()->add_action($tag, $function_to_add, $priority = 10, $accepted_args = 1);
+hooks()->add_filter($tag, $function_to_add, $priority = 10, $accepted_args = 1);
+hooks()->do_action($tag, $arg = '');
+hooks()->apply_filters($tag, $value, $additionalParams);</code></pre>
+
+
+
+<p>You can add your own filters and actions so you can use them in your module implementation also, adding actions and filters will help other modules to interact with your module and extend the module functionalities.</p>
+
+
+
+<h3 class="wp-block-heading">Prefix Custom Functions</h3>
+
+
+
+<p>You should <strong>always prefix any custom functions</strong> and classes to prevent any conflicts with Perfex CRM default functions or classes or with any other modules.</p>
+
+
+
+<h3 class="wp-block-heading">Using Codeigniter Instance in module files</h3>
+
+
+
+<p>Probably you will want to use the Codeigniter framework instance in your module init file or any other modules files that are not extending the framework base classes. </p>
+
+
+
+<p><strong>$this</strong>, only works within your controllers, your models, or your views.</p>
+
+
+
+<p>You can achieve this anywhere in your files with the following code:</p>
+
+
+
+<p>First, assign the CodeIgniter object to a variable:</p>
+
+
+
+<pre class="wp-block-code"><code>$CI = &amp;get_instance();</code></pre>
+
+
+
+<p>Once you’ve assigned the object to a variable, you’ll use that variable&nbsp;<em>instead</em>&nbsp;of<strong> $this</strong></p>
+
+
+
+<pre class="wp-block-code"><code>$CI  =&amp;get_instance();
+
+$CI->load->helper('module_name/helper_name');
+$CI->load->library('module_name/library_name');</code></pre>
+
+
+
+<h3 class="wp-block-heading">Database Prefix</h3>
+
+
+
+<p>From version 2.3.0 Perfex CRM have option to define custom database tables prefix.</p>
+
+
+
+<p>The default table prefix in Perfex CRM is <strong>tbl</strong></p>
+
+
+
+<p>You should always use our custom function <strong>db_prefix()</strong> to get the database prefix when querying the database, this will ensure that in case the user changed the database prefix, your module will still work with the new user prefix.</p>
+
+
+
+<p>Here is an example from the <strong>Goals Tracking</strong> module <strong>install.php</strong> file.</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php
+
+defined('BASEPATH') or exit('No direct script access allowed');
+
+if (!$CI->db->table_exists(db_prefix() . 'goals')) {
+    $CI->db->query('CREATE TABLE `' . db_prefix() . "goals` (
+  `id` int(11) NOT NULL,
+  `subject` varchar(191) NOT NULL,
+  `description` text NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `goal_type` int(11) NOT NULL,
+  `contract_type` int(11) NOT NULL DEFAULT '0',
+  `achievement` int(11) NOT NULL,
+  `notify_when_fail` tinyint(1) NOT NULL DEFAULT '1',
+  `notify_when_achieve` tinyint(1) NOT NULL DEFAULT '1',
+  `notified` int(11) NOT NULL DEFAULT '0',
+  `staff_id` int(11) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=" . $CI->db->char_set . ';');</code></pre>
+
+
+
+<h3 class="wp-block-heading">Create Module Options</h3>
+
+
+
+<p>Perfex CRM has <g class="gr_ gr_7 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar only-ins replaceWithoutSep" id="7" data-gr-id="7">table</g> in database <strong>options </strong>for storing various settings for internal usage and settings that are used in features. We have developed custom PHP functions that will perform queries to fetch options from database.</p>
+
+
+
+<p>Option names are strings, and they must be unique so that they do not conflict with either Perfex CRM or other Modules. </p>
+
+
+
+<pre class="wp-block-code"><code>add_option($name, $value, $autoload)</code></pre>
+
+
+
+<p><strong>$name<br></strong>Required (string). The name of the option to be added, make sure it&#8217;s unique and prefixed with E.q. your module name.<br><br><strong>$value<br></strong>The option value (string)</p>
+
+
+
+<p><strong>$autoload</strong><br>(integer) 1 or 0<br>Whether this option should be autoloaded with all other options, if you are using the option too much time in the view, the best is to autoload it to prevent multiple queries in order to get the option. Defaults to 1</p>
+
+
+
+<p>Keep in mind that <strong>add_option  </strong>function won&#8217;t create the option if the option name already exists in the options table.</p>
+
+
+
+<pre class="wp-block-code"><code>get_option($option_name);</code></pre>
+
+
+
+<p>Retrieve an option from database, <strong>$option_name</strong> (string) your option name.</p>
+
+
+
+<pre class="wp-block-code"><code>update_option($option_name, $new_value);</code></pre>
+
+
+
+<p>The <strong>update_option </strong>function will update the option value, since version 2.3.3, when you call <strong>update_option if the option not exists, Perfex CRM will create this option.</strong></p>The post <a href="https://help.perfexcrm.com/module-basics/">Module Basics</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Module File Headers</title>
+		<link>https://help.perfexcrm.com/module-file-headers/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:23:32 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4110</guid>
+
+					<description><![CDATA[<p>Each module in Perfex CRM consist of init file which contains the general module configuration and includes headers containing meta-information regarding the module. Module init file headers example The follow example is taken from the default Perfex CRM module Menu Setup that comes with the installation. Available Headers You can find below the list of [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/module-file-headers/">Module File Headers</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Each module in Perfex CRM consist of init file which contains the general module configuration and includes headers containing meta-information regarding the module.</p>
+
+
+
+<h3 class="wp-block-heading">Module init file headers example </h3>
+
+
+
+<p>The follow example is taken from the default Perfex CRM module Menu Setup that comes with the installation.</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php
+
+defined('BASEPATH') or exit('No direct script access allowed');
+
+/*
+Module Name: Menu Setup
+Description: Default module to apply changes to the menus
+Version: 2.3.0
+Requires at least: 2.3.*
+*/</code></pre>
+
+
+
+<h3 class="wp-block-heading">Available Headers</h3>
+
+
+
+<p>You can find below the list of available headers that can be added to module init file.</p>
+
+
+
+<ul class="wp-block-list"><li><strong>Module Name</strong> &#8211; <strong>required</strong></li><li><strong>Module URI</strong> &#8211; module URL</li><li><strong>Version</strong> &#8211; the version of the module</li><li><strong>Description</strong> &#8211; <g class="gr_ gr_88 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="88" data-gr-id="88">the</g> description of the module, you can explain what does the module do.</li><li><strong>Author </strong>&#8211; module author name</li><li><strong>Author URI </strong>&#8211; module author URL</li><li><strong>Requires at least</strong> &#8211; what version of Perfex CRM the module requires at least</li></ul>The post <a href="https://help.perfexcrm.com/module-file-headers/">Module File Headers</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Create Menu Items</title>
+		<link>https://help.perfexcrm.com/create-menu-items/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:22:55 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4113</guid>
+
+					<description><![CDATA[<p>If you are creating your custom modules, probably you will want to create menu items that will be shown on admin area sidebar or clients area navigation. With Perfex CRM you can easily achieve this with few lines of code. The code samples below, should be places in the module init file. Admin Area Item [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/create-menu-items/">Create Menu Items</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>If you are creating your custom modules, probably you will want to create menu items that will be shown on admin area sidebar or clients area navigation.</p>
+
+
+
+<p>With Perfex CRM you can easily achieve this with few lines of code.</p>
+
+
+
+<p><strong>The code samples below, should be places in the module init file.</strong></p>
+
+
+
+<h2 class="wp-block-heading">Admin Area</h2>
+
+
+
+<pre class="wp-block-code"><code>hooks()->add_action('admin_init', 'my_module_init_menu_items');
+
+function my_module_init_menu_items(){
+    $CI = &amp;get_instance();
+
+    $CI->app_menu->add_sidebar_menu_item('custom-menu-unique-id', [
+        'name'     => 'Custom Menu Item', // The name if the item
+        'href'     => 'https://perfexcrm.com/', // URL of the item
+        'position' => 10, // The menu position, see below for default positions.
+        'icon'     => 'fa fa-question-circle', // Font awesome icon
+    ]);
+}</code></pre>
+
+
+
+<h3 class="wp-block-heading">Item With SubMenu Items</h3>
+
+
+
+<pre class="wp-block-code"><code>hooks()->add_action('admin_init', 'my_module_menu_item_collapsible');
+
+function my_module_menu_item_collapsible()
+{
+    $CI = &amp;get_instance();
+
+    $CI->app_menu->add_sidebar_menu_item('custom-menu-unique-id', [
+        'name'     => 'Parent Item', // The name if the item
+        'collapse' => true, // Indicates that this item will have submitems
+        'position' => 10, // The menu position
+        'icon'     => 'fa fa-question-circle', // Font awesome icon
+    ]);
+
+    // The first paremeter is the parent menu ID/Slug
+    $CI->app_menu->add_sidebar_children_item('custom-menu-unique-id', [
+        'slug'     => 'child-to-custom-menu-item', // Required ID/slug UNIQUE for the child menu
+        'name'     => 'Sub Menu', // The name if the item
+        'href'     => 'https://perfexcrm.com/', // URL of the item
+        'position' => 5, // The menu position
+        'icon'     => 'fa fa-exclamation', // Font awesome icon
+    ]);
+}</code></pre>
+
+
+
+<div class="st-alert st-alert- ">Make sure to replace the <b>my_module</b> functions prefix with your own <b>unique</b> function prefix.</div>
+
+
+
+<h3 class="wp-block-heading">Default Admin Menu Items Positions</h3>
+
+
+
+<p>The&nbsp;<strong>default menu items have different positions, so you can hook your new items in the middle</strong>, find below the default position, based on where you want to add your custom item, you can adjust the position attribute.</p>
+
+
+
+<ul class="wp-block-list"><li>Dashboard – 1</li><li>Customers – 5</li><li>Sales – 10</li><li>Subscriptions – 15</li><li>Expenses – 20</li><li>Contracts – 25</li><li>Projects – 30</li><li>Tasks – 35</li><li>Tickets – 40</li><li>Leads – 45</li><li>Knowledge Base – 50</li><li>Utilities – 55</li><li>Reports – 60</li></ul>
+
+
+
+<h2 class="wp-block-heading">Clients Area</h2>
+
+
+
+<pre class="wp-block-code"><code>hooks()->add_action('clients_init', 'my_module_clients_area_menu_items');
+
+function my_module_clients_area_menu_items()
+{   
+    // Item for all clients
+    add_theme_menu_item('unique-item-id', [
+            'name'     => 'Custom Clients Area',
+            'href'     => site_url('my_module/acme'),
+            'position' => 10,
+        ]);
+
+    // Show menu item only if client is logged in
+    if (is_client_logged_in()) {
+        add_theme_menu_item('unique-logged-in-item-id', [
+                    'name'     => 'Only Logged In',
+                    'href'     => site_url('my_module/only_logged_in'),
+                    'position' => 15,
+        ]);
+    }
+}</code></pre>
+
+
+
+<h3 class="wp-block-heading">Default Clients Area Menu Items Positions</h3>
+
+
+
+<ul class="wp-block-list"><li>Knowledge Base 5</li><li>Register &#8211; 99</li><li>Login &#8211; 100</li><li>Projects &#8211; 10</li><li>Invoices &#8211; 15</li><li>Contracts &#8211; 20</li><li>Estimates &#8211; 25</li><li>Proposals &#8211; 30</li><li>Subscriptions &#8211; 40</li><li>Support  &#8211; 45</li></ul>The post <a href="https://help.perfexcrm.com/create-menu-items/">Create Menu Items</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Common Module Functions</title>
+		<link>https://help.perfexcrm.com/common-module-functions/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:22:51 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4102</guid>
+
+					<description><![CDATA[<p>register_activation_hook register_deactivation_hook register_uninstall_hook register_cron_task register_payment_gateway register_language_files module_dir_url module_dir_path module_libs_path</p>
+The post <a href="https://help.perfexcrm.com/common-module-functions/">Common Module Functions</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<h4 class="wp-block-heading">register_activation_hook</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Register module activation hook
+ * @param  string $module   module system name
+ * @param  mixed $function  function for the hook
+ * @return mixed
+ */
+
+register_activation_hook($module, $function)</code></pre>
+
+
+
+<h4 class="wp-block-heading">register_deactivation_hook</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Register module deactivation hook
+ * @param  string $module   module system name
+ * @param  mixed $function  function for the hook
+ * @return mixed
+ */
+
+register_deactivation_hook($module, $function)</code></pre>
+
+
+
+<h4 class="wp-block-heading">register_uninstall_hook</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Register module uninstall hook
+ * @param  string $module   module system name
+ * @param  mixed $function  function for the hook
+ * @return mixed
+ */
+
+register_uninstall_hook($module, $function)</code></pre>
+
+
+
+<h4 class="wp-block-heading">register_cron_task</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Register module cron task, the cron task is executed after the core cron tasks are finished
+ * @param  mixed $function  function/class parameter for the hook
+ * @return null
+ */
+
+register_cron_task($function)</code></pre>
+
+
+
+<h4 class="wp-block-heading">register_payment_gateway</h4>
+
+
+
+<pre class="wp-block-code"><code> /**
+     * Inject custom payment gateway into the payment gateways array
+     * @param string $idpayment gateway id, should equal like the libraries/classname e.q. gateways/New_gateway
+     * @param string $module       module name to load the gateway if not already loaded
+     */
+
+register_payment_gateway($id, $module)
+</code></pre>
+
+
+
+<h4 class="wp-block-heading">register_language_files</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Register module language files to support custom_lang.php file
+ * @param  string $module    module system name
+ * @param  array  $languages array of language file names without the _lang.php
+ * @return null
+ */
+
+register_language_files($module, $languages)</code></pre>
+
+
+
+<h4 class="wp-block-heading">module_dir_url</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Module URL
+ * e.q. https://crm-installation.com/module_name/
+ * @param  string $module  module system name
+ * @param  string $segment additional string to append to the URL
+ * @return string
+ */
+
+module_dir_url($module, $segment = '')</code></pre>
+
+
+
+<h4 class="wp-block-heading">module_dir_path</h4>
+
+
+
+<pre class="wp-block-code"><code> /**
+ * Module directory absolute path
+ * @param  string $module module system name
+ * @param  string $concat append additional string to the path
+ * @return string
+ */
+
+module_dir_path($module, $concat = '')</code></pre>
+
+
+
+<h4 class="wp-block-heading">module_libs_path</h4>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * Module libraries path
+ * e.q. modules/module_name/libraries
+ * @param  string $module module name
+ * @param  string $concat append additional string to the path
+ * @return string
+ */
+
+module_libs_path($module, $concat = '')</code></pre>The post <a href="https://help.perfexcrm.com/common-module-functions/">Common Module Functions</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Module Security</title>
+		<link>https://help.perfexcrm.com/module-security/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:21:49 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4117</guid>
+
+					<description><![CDATA[<p>So, you created your module and works fine, but is it secure? You must ensure that your module is secure and is not vulnerable to any SQL Injections are directory traversing. You can find below best practices to ensure that your module will be secure. Feel free to apply your own best practices for your [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/module-security/">Module Security</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>So, you created your module and works fine, but is it secure? You must ensure that your module is secure and is not vulnerable to any SQL Injections are directory traversing.</p>
+
+
+
+<p>You can find below best practices to ensure that your module will be secure. Feel free to apply your own best practices for your module security.</p>
+
+
+
+<h3 class="wp-block-heading">Gather user data from requests</h3>
+
+
+
+<p>When a user is filling forms, the data is sent e.q. via a POST request to the <a href="https://help.perfexcrm.com/module-controllers/">controller</a> after <g class="gr_ gr_142 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="142" data-gr-id="142">that</g> you gather this data and insert into the database.</p>
+
+
+
+<p>To ensure that this data is escaped, you should gather the data with the built-in CodeIgniter framework input class.</p>
+
+
+
+<pre class="wp-block-code"><code>// Get data from POST request
+
+$data = $this->input->post();
+$client_id = $this->input->post('client_id');
+
+// Get data from GET request
+
+$data = $this->input->get();
+$client_id = $this->input->get('client_id');</code></pre>
+
+
+
+<h3 class="wp-block-heading">Do Not Allow Direct Access the Module Files</h3>
+
+
+
+<p>For each .php file you created for your module, you must add the code below at the top of the file to prevent the file to be accessed directly.</p>
+
+
+
+<pre class="wp-block-code"><code>defined('BASEPATH') or exit('No direct script access allowed');</code></pre>
+
+
+
+<h3 class="wp-block-heading">Include empty index.html files</h3>
+
+
+
+<p>Always add <strong><g class="gr_ gr_8 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Grammar only-ins doubleReplace replaceWithoutSep" id="8" data-gr-id="8">empty</g></strong> <strong>index.html </strong>file <strong>in each folder you will create </strong>in your module directory including your module root directory.</p>
+
+
+
+<p>E.q. in modules/[your-module]/</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="858" height="168" src="https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-file.png" alt="" class="wp-image-4118" srcset="https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-file.png 858w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-file-300x59.png 300w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-file-768x150.png 768w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-file-60x12.png 60w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-file-150x29.png 150w" sizes="(max-width: 858px) 100vw, 858px" /></figure>
+
+
+
+<p>E.q. in modules[your-module]/views</p>
+
+
+
+<figure class="wp-block-image"><img decoding="async" width="704" height="92" src="https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-in-views.png" alt="" class="wp-image-4119" srcset="https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-in-views.png 704w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-in-views-300x39.png 300w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-in-views-60x8.png 60w, https://help.perfexcrm.com/wp-content/uploads/2019/03/index-html-in-views-150x20.png 150w" sizes="(max-width: 704px) 100vw, 704px" /></figure>The post <a href="https://help.perfexcrm.com/module-security/">Module Security</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Module as Payment Gateway</title>
+		<link>https://help.perfexcrm.com/module-as-payment-gateway/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:20:37 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4131</guid>
+
+					<description><![CDATA[<p>Before the start, we assume that you are already familiar with the modules basics,&#160;you created a blank module with all the required headers, and the module is activated and shown in the modules list. In modules/[module_name]/ create folder named libraries In modules/[module_name]/libraries create a class name e.q. Example_gateway.php, the filename must end with _gateway.php See [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/module-as-payment-gateway/">Module as Payment Gateway</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<div class="st-alert st-alert- ">This feature is available from version 2.3.4</div>
+
+
+
+<p>Before the start, we assume that you are already familiar with the <a href="https://help.perfexcrm.com/module-basics/">modules basics</a>,&nbsp;you created a blank module with all the required <a href="https://help.perfexcrm.com/module-file-headers/">headers</a>, and <strong>the module is activated</strong> and shown in the modules list.</p>
+
+
+
+<ul class="wp-block-list"><li>In <strong>modules/[module_name]/</strong> create folder named <strong>libraries</strong></li><li>In modules/[module_name]/<strong>libraries </strong>create a class name e.q. <strong>Example_gateway.php</strong>, the <strong>filename must end with _gateway.php</strong></li><li>See below <strong><a href="https://help.perfexcrm.com/module-as-payment-gateway/#sample-implementation">Sample implementation</a></strong></li><li>In your module init file, register the payment gateway with the following code:</li></ul>
+
+
+
+<pre class="wp-block-code"><code>register_payment_gateway('example_gateway', '&#091;module_name]');</code></pre>
+
+
+
+<p>Replace <strong>[module_name] </strong>with your actual module system name and <strong>example_gateway </strong>with your module class name (in lowercase).</p>
+
+
+
+<p>If you configured everything as it should, navigate to <strong>Setup-&gt;Settings-&gt;Payment Gateways</strong>, you will be able to see your <strong>Example </strong>gateway listed there with the options you specified.</p>
+
+
+
+<p>Additionally, depends on the gateway API, you can create <a href="https://help.perfexcrm.com/module-controllers/">a controller </a>to redirect from the <strong>process_payment </strong>gateway class method.</p>
+
+
+
+<h3 class="wp-block-heading">Sample Implementation</h3>
+
+
+
+<p>Because Perfex CRM uses Codeigniter framework to integrate the payment gateway you will need to create 1 gateway library (gateway config and process method) and 1 gateway controller (for HTTP requests, show form <g class="gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="4" data-gr-id="4">etc</g>..), you can also take a look at the other gateways files in order to get the idea. </p>
+
+
+
+<p>In the invoice HTML area when a customer clicks on the button <strong>PAY NOW</strong>, <strong>we call 1 method from the gateway library</strong> which will process everything additional that is required for this gateway eq redirect to gateway website and pass parameters or redirect to&nbsp;<a href="https://help.perfexcrm.com/module-controllers/">controller&nbsp;</a>and show form etc… </p>
+
+
+
+<p>We have simplified a little the process for creating new gateways e.q. the gateway will be auto showed in <strong>Setup-&gt;Settings-&gt;Payment Gateways</strong>, encrypting fields, 1 unique function from each gateway library to call <g class="gr_ gr_7 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="7" data-gr-id="7"><g class="gr_ gr_7 gr-alert gr_gramm gr_inline_cards gr_run_anim Punctuation only-ins replaceWithoutSep" id="7" data-gr-id="7">etc</g></g>… but this will still require effort to get started.</p>
+
+
+
+<div class="st-alert st-alert-info ">Before start, make sure that you set <a href="https://help.perfexcrm.com/faq/how-to-set-debug-mode/">development mode</a> in order to see any errors and functions/hooks deprecation warnings.</div>
+
+
+
+<p>Let&#8217;s assume for this example your gateway name is <strong>Example</strong></p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php
+
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Example_gateway extends App_gateway
+{
+&nbsp; &nbsp; public function __construct()
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; /**
+&nbsp; &nbsp; &nbsp; &nbsp; * Call App_gateway __construct function
+&nbsp; &nbsp; &nbsp; &nbsp; */
+&nbsp; &nbsp; &nbsp; &nbsp; parent::__construct();
+
+&nbsp; &nbsp; &nbsp; &nbsp; /**
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Gateway unique id - REQUIRED
+	 * 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* * The ID must be alphanumeric
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* * The filename (Example_gateway.php) and the class name must contain the id as ID_gateway
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* * In this case our id is "example"
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* * Filename will be Example_gateway.php (first letter is uppercase)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* * Class name will be Example_gateway (first letter is uppercase)
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/
+&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;setId('example');
+
+&nbsp; &nbsp; &nbsp; &nbsp; /**
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* REQUIRED
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Gateway name
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/
+&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;setName('Example');
+
+&nbsp; &nbsp; &nbsp; &nbsp; /**
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Add gateway settings
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* You can add other settings here 
+         * to fit for your gateway requirements
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* Currently only 3 field types are accepted for gateway
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* 'type'=&gt;'yes_no'
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;* 'type'=&gt;'input'
+         * 'type'=&gt;'textarea'
+         *
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;*/
+&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;setSettings(array(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name' =&gt; 'api_secret_key',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'encrypted' =&gt; true,
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'label' =&gt; 'API KEY',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'type'=&gt;'input',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name' =&gt; 'api_publishable_key',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'label' =&gt; 'SECRET KEY',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'type'=&gt;'input'
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; array(
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'name' =&gt; 'currencies',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'label' =&gt; 'settings_paymentmethod_currencies',
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'default_value' =&gt; 'USD,CAD'
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),
+&nbsp; &nbsp; &nbsp; &nbsp; ));
+
+&nbsp; &nbsp; }
+
+&nbsp; &nbsp; /**
+&nbsp; &nbsp; &nbsp;* Each time a customer click PAY NOW button on the invoice HTML area, the script will process the payment via this function.
+&nbsp; &nbsp; &nbsp;* You can show forms here, redirect to gateway website, redirect to Codeigniter controller etc..
+&nbsp; &nbsp; &nbsp;* @param&nbsp; array $data - Contains the total amount to pay and the invoice information
+&nbsp; &nbsp; &nbsp;* @return mixed
+&nbsp; &nbsp; &nbsp;*/
+&nbsp; &nbsp; public function process_payment($data)
+&nbsp; &nbsp; {
+&nbsp; &nbsp; &nbsp; &nbsp; var_dump($data);
+&nbsp; &nbsp; &nbsp; &nbsp; die;
+&nbsp; &nbsp; }
+}</code></pre>
+
+
+
+<p><strong>There are comments on the functions and variables, you should spend some time to read them because they are important if you want to help you get started.</strong></p>
+
+
+
+<p>Additionally, you can take a look at the other gateway example in <strong>application/libraries/gateways</strong> or <strong>application/controllers/gateways</strong>. </p>
+
+
+
+<h3 class="wp-block-heading">Excluding URL from CSRF</h3>
+
+
+
+<p>If the module payment gateway is using webhooks and makes a POST request to a URL in Perfex CRM to notify about the payment updates, you will need to exclude this URL from CSRF in order for the request to pass.</p>
+
+
+
+<p>You can follow <a href="https://help.perfexcrm.com/working-with-forms/#exclude-url-from-csrf-v2-9-0" title="this">this</a> guide in order to achieve this. </p>The post <a href="https://help.perfexcrm.com/module-as-payment-gateway/">Module as Payment Gateway</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Working With Forms</title>
+		<link>https://help.perfexcrm.com/working-with-forms/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:19:19 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4120</guid>
+
+					<description><![CDATA[<p>Perfex CRM by default has enabled CSRF protection, there is ability to disable this protection by the user but you must make sure that your module forms works fine when CSRF protection is enabled. To get more familiar how this works, visit this link: https://codeigniter.com/userguide3/general/security.html?highlight=csrf#csrf-protection More information about CSRF can be found here: https://en.wikipedia.org/wiki/Cross-site_request_forgery HTML [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/working-with-forms/">Working With Forms</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Perfex CRM by default has enabled <strong>CSRF</strong> protection, there is ability to disable this protection by the user but you must make sure that your module forms works fine when <strong>CSRF</strong> protection is enabled.</p>
+
+
+
+<p>To get more familiar how this works, visit this link:  </p>
+
+
+
+<p><a href="https://codeigniter.com/userguide3/general/security.html?highlight=csrf#csrf-protection">https://codeigniter.com/userguide3/general/security.html?highlight=csrf#csrf-protection</a></p>
+
+
+
+<p>More information about <strong>CSRF</strong> can be found here:  <br><a href="https://en.wikipedia.org/wiki/Cross-site_request_forgery">https://en.wikipedia.org/wiki/Cross-site_request_forgery</a> </p>
+
+
+
+<h3 class="wp-block-heading">HTML Forms</h3>
+
+
+
+<p><strong>You must use the CodeIgniter helper function for forms to open a form in order for the function to generate the CSRF form token.</strong></p>
+
+
+
+<p>All Perfex CRM forms that comes with the installation uses<a href="https://www.codeigniter.com/user_guide/helpers/form_helper.html"> </a><strong><a href="https://codeigniter.com/userguide3/helpers/form_helper.html?highlight=form_open#form_open">form_open()</a> </strong>functions to open a form element.<br></p>
+
+
+
+<p> Find below an example form that use form_open().</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php echo form_open(admin_url('departments/department')); ?&gt;
+&lt;!-- Your form input fields goes here --&gt;
+&lt;?php echo form_close(); ?&gt;</code></pre>
+
+
+
+<h2 class="wp-block-heading">AJAX Request</h2>
+
+
+
+<p>Perfex CRM comes with jQuery on both clients and customers area, if you are submitting a form via AJAX Request and you are using the jQuery help functions e.q. $.post or $.ajax, you won&#8217;t need to perform any additional actions because the CSRF keys are already configured.</p>
+
+
+
+<p>However, if you are using any external library for requests, you must include the CSRF key manually.</p>
+
+
+
+<h2 class="wp-block-heading">Exclude URL from CSRF (&gt;= v2.9.0)</h2>
+
+
+
+<p>If the module is in need to exclude URL from a CSRF protection, you can achieve this by creating a configuration file <strong>[MODULE_NAME]/config/csrf_exclude_uris.php</strong></p>
+
+
+
+<p>The file <strong>must return an array</strong> with excluded URI&#8217;s.</p>
+
+
+
+<pre class="wp-block-code"><code>return &#91;
+  'mypos/webhook',
+  'api/other-uri',
+  ...etc
+];</code></pre>
+
+
+
+<p>Note that you can add regex matching to the URI&#8217;s as well, read more here in the Codeigniter <a href="https://www.codeigniter.com/userguide3/libraries/security.html?highlight=csrf#cross-site-request-forgery-csrf">guides</a>.</p>The post <a href="https://help.perfexcrm.com/working-with-forms/">Working With Forms</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Preparing Module Upgrade</title>
+		<link>https://help.perfexcrm.com/preparing-module-upgrade/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:15:58 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4114</guid>
+
+					<description><![CDATA[<p>To resolve an issue or improve your module, you want to create updates for your module so your customers can benefit from the enhancements. Perfex CRM will determine whether there is a new upgrade for your module by the init file version header. For example, you released a version 1.0.0 and the users are using [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/preparing-module-upgrade/">Preparing Module Upgrade</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>To resolve an issue or improve your module, you want to create updates for your module so your customers can benefit from the enhancements.</p>
+
+
+
+<p>Perfex CRM will determine whether there is a new upgrade for your module by the init file <a href="https://help.perfexcrm.com/module-file-headers/">version header</a>.</p>
+
+
+
+<p>For example, you released a version 1.0.0 and the users are using this version, at the time the user will install your 1.0.0 version and and activate the module, Perfex CRM will store the activated module version number in database.</p>
+
+
+
+<p>Then you release version 1.1.0 and the user re-upload/install the module files, Perfex CRM will determine that <strong>the version from the file header is not the same like the one stored in the database and will show a message to the user to upgrade the database.</strong></p>
+
+
+
+<figure class="wp-block-image"><img loading="lazy" decoding="async" width="983" height="440" src="https://help.perfexcrm.com/wp-content/uploads/2019/03/migration-module.png" alt="" class="wp-image-4116" srcset="https://help.perfexcrm.com/wp-content/uploads/2019/03/migration-module.png 983w, https://help.perfexcrm.com/wp-content/uploads/2019/03/migration-module-300x134.png 300w, https://help.perfexcrm.com/wp-content/uploads/2019/03/migration-module-768x344.png 768w, https://help.perfexcrm.com/wp-content/uploads/2019/03/migration-module-60x27.png 60w, https://help.perfexcrm.com/wp-content/uploads/2019/03/migration-module-150x67.png 150w" sizes="auto, (max-width: 983px) 100vw, 983px" /></figure>
+
+
+
+<p>Perfex CRM modules migration extends the CodeIgniter framework migration library and uses the <strong>Sequential</strong> migration type, keep in mind that there is no ability to change the Sequential type to Timestamp.</p>
+
+
+
+<p>If you are not familiar with the CodeIgniter migration library, the best is to check their <a href="https://www.codeigniter.com/user_guide/libraries/migration.html">documentation</a>.</p>
+
+
+
+<p>Each migration is numbered in sequence, starting with <strong>001</strong>. Each number must be three digits, and there must not be any gaps in the sequence.</p>
+
+
+
+<p>Create (if not exists) a folder name <strong>migrations</strong> in the module directory, after you create the folder the location will be: <strong>modules/[module-name]/migrations</strong></p>
+
+
+
+<p>For our example, you must create a migration file e.q.  <strong>110_version_110.php</strong> with the following contents:</p>
+
+
+
+<pre class="wp-block-code"><code>&lt;?php
+
+defined('BASEPATH') or exit('No direct script access allowed');
+
+class Migration_Version_110 extends App_module_migration
+{
+    public function up()
+    {
+        // Perform database upgrade here
+    }
+}
+</code></pre>
+
+
+
+<p>The <strong>110_version_110.php</strong> file will perform an upgrade for your module version  <strong>1.1.0.</strong></p>
+
+
+
+<p>Keep in mind that <strong>in your activation hook</strong>, <strong>you still must have the latest changes for the database</strong>, the migration files will run only for existing installation who are using an older version, the new module installation must get these DB changes from the install hook.</p>
+
+
+
+<h2 class="wp-block-heading">Caveats</h2>
+
+
+
+<h3 class="wp-block-heading">Downgrade</h3>
+
+
+
+<p>There is no ability to downgrade to previous versions, for this reason, always just add the <strong>up</strong> method in your migration files.</p>
+
+
+
+<h3 class="wp-block-heading">Create m<g class="gr_ gr_6 gr-alert gr_gramm gr_inline_cards gr_run_anim Grammar only-ins replaceWithoutSep" id="6" data-gr-id="6">igration</g> file whenever the module header version is changed.</h3>
+
+
+
+<p><strong>You must create a migration file each time you change the module version number even if there are no changes in the database.</strong></p>
+
+
+
+<p>Perfex CRM can&#8217;t determine if you have or not have a database upgrades but the migration file must be executed in order just to upgrade the version number in database.</p>
+
+
+
+<p>In cases like this when there <g class="gr_ gr_4 gr-alert gr_gramm gr_inline_cards gr_disable_anim_appear Grammar multiReplace" id="4" data-gr-id="4">is</g> no queries to perform in the migration file, just <strong>leave the</strong> <strong>method</strong> <strong>up</strong> <strong>empty</strong> e.q. as shown in the example above.</p>
+
+
+
+<p>The user will see that there is database upgrade required, will click &#8220;Upgrade Database&#8221;, an empty migration will run and the database number will be successfully updated.</p>
+
+
+
+<p></p>The post <a href="https://help.perfexcrm.com/preparing-module-upgrade/">Preparing Module Upgrade</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Module Language</title>
+		<link>https://help.perfexcrm.com/module-language/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sun, 24 Mar 2019 18:02:34 +0000</pubDate>
+				<category><![CDATA[Modules]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=4098</guid>
+
+					<description><![CDATA[<p>Each module can have separate language files to prevent messing up with the system language files. To add language files to your module so users can translate it, you must create a folder in modules/[module_name]/language/[language_name_folder] At this time the [language_name_folder] must exist in the core language files located in application/language﻿ For example, if you want [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/module-language/">Module Language</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Each module can have separate language files to prevent messing up with the <a href="https://help.perfexcrm.com/system-language/">system language</a> files. </p>
+
+
+
+<p>To add language files to your module so users can translate it, you must create a folder in <strong>modules/</strong>[module_name]<strong>/language/</strong>[language_name_folder]</p>
+
+
+
+<p><strong>At this time the [language_name_folder] must exist in the core language files located in application/language</strong>﻿<br></p>
+
+
+
+<p>For example, if you want to create English language translations, you will create the following folder(s): <strong>/modules/[module_name]/language/<g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_disable_anim_appear ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">english</g></strong></p>
+
+
+
+<h3 class="wp-block-heading">Language Files</h3>
+
+
+
+<p>In each language, you can create unlimited number of files e.q. if you want to separate specific features language files or you can include them in one general language file.</p>
+
+
+
+<p>The <strong>file name must end with _lang.php</strong>, you should check the Codeigniter framework <a href="https://www.codeigniter.com/userguide3/libraries/language.html">documentation </a>for more info about the language file name and it&#8217;s usage.</p>
+
+
+
+<p>In this example we will create <strong>sample_module_lang.php</strong> file in /modules/<strong>[module_name]</strong>/language/english/</p>
+
+
+
+<p>For each additional language you want to have translations, you must include all files from your general language e.q. in this case English</p>
+
+
+
+<p>For example, if you have 3 language files in the /<g class="gr_ gr_3 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="3" data-gr-id="3">english</g> folder and you want to include new Spanish language, you must create new folder for the Spanish language and copy those 3 language files in the /<g class="gr_ gr_4 gr-alert gr_spell gr_inline_cards gr_run_anim ContextualSpelling ins-del multiReplace" id="4" data-gr-id="4">spanish</g> folder.</p>
+
+
+
+<h3 class="wp-block-heading">Registering Language Files</h3>
+
+
+
+<p>Instead of loading the language files directly there is a helper function to register the language files and allow your language to support using<strong> </strong> a<strong> custom_lang.php</strong> file so the end users can overwrite the translations.</p>
+
+
+
+<p>More info about custom_lang.php file in the language directory can be found <a href="https://help.perfexcrm.com/overwrite-translation-text/">here</a></p>
+
+
+
+<p>In your <strong>module init file</strong> add the following code:</p>
+
+
+
+<pre class="wp-block-code"><code>register_language_files('module_name', &#91;'sample_module']);</code></pre>
+
+
+
+<p>The first parameter to the <strong>register_language_files </strong>function is the module name, don&#8217;t forget to replace <strong>module_name </strong>with your actual module name.</p>
+
+
+
+<p>The second parameter must be an array with language files names <strong>without the _lang.php.</strong></p>
+
+
+
+<h3 class="wp-block-heading">Fetching a Line of Text</h3>
+
+
+
+<p>Instead of using the Codeigniter framework default method to fetch translation line of text, you can use Perfex CRM custom function:</p>
+
+
+
+<pre class="wp-block-code"><code>/**
+ * @param  string $line   language line key
+ * @param  mixed $label   label e.q. if you have $lang&#91;'sample_module_create_new'] = 'Create New %s';
+ * @return string         language text
+ */
+_l($line, $label = '', $log_errors = true);</code></pre>
+
+
+
+<h3 class="wp-block-heading">Conflicts</h3>
+
+
+
+<p>Make sure that your language keys you add in the language files do not conflict with Perfex CRM language keys that are added in <strong>application/language</strong> or with any other modules.</p>
+
+
+
+<p><strong>For this reason, we recommend to add unique language keys or prefix them with your module name.</strong></p>The post <a href="https://help.perfexcrm.com/module-language/">Module Language</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>

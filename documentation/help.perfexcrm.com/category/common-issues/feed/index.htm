@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Common Issues &amp; Troubleshooting | Perfex CRM</title>
+	<atom:link href="https://help.perfexcrm.com/category/common-issues/feed/" rel="self" type="application/rss+xml" />
+	<link>https://help.perfexcrm.com</link>
+	<description>Help Center</description>
+	<lastBuildDate>Fri, 11 Jun 2021 06:57:13 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	
+
+<image>
+	<url>https://help.perfexcrm.com/wp-content/uploads/2017/02/cropped-favicon-32x32.jpg</url>
+	<title>Common Issues &amp; Troubleshooting | Perfex CRM</title>
+	<link>https://help.perfexcrm.com</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Tables Are Not Loading</title>
+		<link>https://help.perfexcrm.com/tables-are-not-loading/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Mon, 21 May 2018 07:53:09 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=3617</guid>
+
+					<description><![CDATA[<p>Mostly this issue may happen after an update, in case you are experiencing an issue where the tables are not properly loading, you may want to re-check the steps mentioned below. If you are using Cloudflare, please purge your Cloudflare cache Clear your browser cache If you are using my_ prefixed files, try to revert [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/tables-are-not-loading/">Tables Are Not Loading</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>Mostly this issue may happen after an update, in case you are experiencing an issue where the tables are not properly loading, you may want to re-check the steps mentioned below.</p>
+
+
+
+<ol class="wp-block-list"><li>If you are using Cloudflare, please purge your Cloudflare cache</li><li>Clear your browser cache</li><li>If you are using <a href="https://help.perfexcrm.com/edit-view-files-without-messing-the-core-view-files/">my_ prefixed files</a>, try to revert to the core Perfex CRM files, we often perform changes in the tables files, if major changes occurred, then your tables won&#8217;t load. It&#8217;s your responsibility to maintain this, my_ prefixed files are not our responsibility.</li><li>If you are using php lower than 5.6, you should consider upgrading your php version, Perfex CRM minimum required php version is 5.5, you can check the requirements <a href="https://help.perfexcrm.com/server-requirements/">here</a></li><li>If the steps above didn&#8217;t help you and you are using the latest version, <a href="https://help.market.envato.com/hc/en-us/articles/202501014-How-To-Download-Your-Items">download</a> the files again from Codecanyon and try to replace the&nbsp;<strong>assets</strong> folder again in your installation, and repeat the steps from 1 to 3</li><li>Deactivate any third-party modules to see if the issue will be resolved</li></ol>
+
+
+
+<p>If this is still not working, feel free to open a support ticket at <a href="https://my.perfexcrm.com">https://my.perfexcrm.com</a> or if your support is expired you can contact us at info@perfexcrm.com and provide FTP details, we will be happy to take a look and give you further instructions.</p>The post <a href="https://help.perfexcrm.com/tables-are-not-loading/">Tables Are Not Loading</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Contacts Do Not Receive Notifications of Task Updates</title>
+		<link>https://help.perfexcrm.com/contacts-do-not-receive-notifications-of-task-updates/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Tue, 30 Jan 2018 16:37:32 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=2793</guid>
+
+					<description><![CDATA[<p>This depends on how the task/project is configured. There are various reasons when no email will be sent to the customer contacts. The task is marked as not visible to client &#8211; http://prntscr.com/hxjs26 keep in mind that this checkbox may not be shown if project option Allow customer to view tasks is unchecked (see #2) The project [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/contacts-do-not-receive-notifications-of-task-updates/">Contacts Do Not Receive Notifications of Task Updates</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<div>This depends on how the task/project is configured.</div>
+<div></div>
+<div>There are various reasons when no email will be sent to the customer contacts.</div>
+<ol>
+<li>The task is marked as not visible to client &#8211; <a href="http://prntscr.com/hxjs26" target="_blank" rel="nofollow noopener">http://prntscr.com/hxjs26</a> keep in mind that this checkbox may not be shown if project option Allow customer to view tasks is unchecked (see #2)</li>
+<li>The project option for customer to see tasks is unchecked &#8211; <a href="http://prntscr.com/hxjrw4" target="_blank" rel="nofollow noopener">http://prntscr.com/hxjrw4</a></li>
+<li>The email templates in Setup-&gt;Email Templates for task updates is disabled.</li>
+<li>Navigate to the customer profile in admin area click on the <strong>Contacts</strong> tab and open the contact(s), make sure that this contact has <strong>Tasks email notifications</strong> enabled, project notifications are different from tasks.</li>
+</ol>The post <a href="https://help.perfexcrm.com/contacts-do-not-receive-notifications-of-task-updates/">Contacts Do Not Receive Notifications of Task Updates</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Console Error &#8211; CONTENT_DECODING_FAILED</title>
+		<link>https://help.perfexcrm.com/console-error-content-decoding-failed/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 09:35:34 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=786</guid>
+
+					<description><![CDATA[<p>If you are getting this error please enable zlib.output_compression in php.ini.</p>
+The post <a href="https://help.perfexcrm.com/console-error-content-decoding-failed/">Console Error – CONTENT_DECODING_FAILED</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p><img fetchpriority="high" decoding="async" class="alignnone size-large wp-image-787" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/errr_content_decoded_failed-1024x252-1024x252.png" alt="" width="980" height="241" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/errr_content_decoded_failed-1024x252.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/03/errr_content_decoded_failed-1024x252-300x74.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/errr_content_decoded_failed-1024x252-768x189.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/errr_content_decoded_failed-1024x252-60x15.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/errr_content_decoded_failed-1024x252-150x37.png 150w" sizes="(max-width: 980px) 100vw, 980px" /></p>
+<p>If you are getting this error please enable <strong>zlib.output_compression</strong> in <strong>php.ini</strong>.</p>The post <a href="https://help.perfexcrm.com/console-error-content-decoding-failed/">Console Error – CONTENT_DECODING_FAILED</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>403 Forbidden When Uploading Files</title>
+		<link>https://help.perfexcrm.com/403-forbidden-when-uploading-files/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 09:35:01 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=785</guid>
+
+					<description><![CDATA[<p>This error may happen for 2 reasons. You have WordPress installation 1 folder back from where Perfex CRM is installed and you are using Wordfence plugin. Read how to fix here Your hosting provider have forbidden uploading in the folder. Contact them for to fix the problem.</p>
+The post <a href="https://help.perfexcrm.com/403-forbidden-when-uploading-files/">403 Forbidden When Uploading Files</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>This error may happen for 2 reasons.</p>
+<ol>
+<li>You have WordPress installation 1 folder back from where Perfex CRM is installed and you are using Wordfence plugin. Read how to fix <a href="https://wordpress.org/support/topic/403-potentially-unsafe-error/">here</a></li>
+<li>Your hosting provider have forbidden uploading in the folder. Contact them for to fix the problem.</li>
+</ol>The post <a href="https://help.perfexcrm.com/403-forbidden-when-uploading-files/">403 Forbidden When Uploading Files</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Unable to allocate memory for pool – error</title>
+		<link>https://help.perfexcrm.com/unable-to-allocate-memory-for-pool-error/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Wed, 15 Mar 2017 09:34:30 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=784</guid>
+
+					<description><![CDATA[<p>If you are experiencing this problem you need to adjust the .htaccess to prevent this error thrown in Perfex CRM Navigate in your server (via ftp or cPanel) in the Perfex CRM installation folder and open the main .htaccess. On the top of the .htaccess add the following code: php_flag apc.cache_by_default Off Save the file and clear [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/unable-to-allocate-memory-for-pool-error/">Unable to allocate memory for pool – error</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>If you are experiencing this problem you need to adjust the .htaccess to prevent this error thrown in Perfex CRM</p>
+<p>Navigate in your server (via ftp or cPanel) in the Perfex CRM installation folder and open the main .htaccess.</p>
+<p>On the top of the .htaccess add the following code:</p>
+<pre class="lang:php decode:true ">php_flag apc.cache_by_default Off</pre>
+<p>Save the file and clear browser cache.</p>The post <a href="https://help.perfexcrm.com/unable-to-allocate-memory-for-pool-error/">Unable to allocate memory for pool – error</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Can’t Login to Admin Area?</title>
+		<link>https://help.perfexcrm.com/cant-login-to-admin-area/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sat, 11 Mar 2017 08:51:25 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=619</guid>
+
+					<description><![CDATA[<p>Wrong URL access Perfex CRM admin area is separated from the customers area. Often happen Perfex CRM buyers to get confused and trying to login as admin in the customers area. Admins need to log in at yourdomain.com/crm/adminCustomers login at yourdomain.com/crm/clients Resetting password via phpmyadmin</p>
+The post <a href="https://help.perfexcrm.com/cant-login-to-admin-area/">Can’t Login to Admin Area?</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<h3 class="wp-block-heading">Wrong URL access</h3>
+
+
+
+<p>Perfex CRM admin area is separated from the customers area.</p>
+
+
+
+<p>Often happen Perfex CRM buyers to get confused and <strong>trying to login as admin in the customers area</strong>.</p>
+
+
+
+<p><strong>Admins need</strong> to log in at yourdomain.com/crm/<strong>admin</strong><br><strong>Customers login</strong> at yourdomain.com/crm/<strong>clients</strong></p>
+
+
+
+<h3 class="wp-block-heading">Resetting password via phpmyadmin</h3>
+
+
+
+<figure class="wp-block-embed is-type-rich is-provider-perfex-crm"><div class="wp-block-embed__wrapper">
+<blockquote class="wp-embedded-content" data-secret="5Lr4R8QFca"><a href="https://help.perfexcrm.com/reset-my-password-from-phpmyadmin/">Reset my password from phpmyadmin</a></blockquote><iframe class="wp-embedded-content" sandbox="allow-scripts" security="restricted"  src="https://help.perfexcrm.com/reset-my-password-from-phpmyadmin/embed/#?secret=5Lr4R8QFca" data-secret="5Lr4R8QFca" width="600" height="338" title="&#8220;Reset my password from phpmyadmin&#8221; &#8212; Perfex CRM" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div></figure>The post <a href="https://help.perfexcrm.com/cant-login-to-admin-area/">Can’t Login to Admin Area?</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Payment Modes Not Shown on Invoice</title>
+		<link>https://help.perfexcrm.com/payment-modes-not-shown-on-invoice/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sat, 11 Mar 2017 08:37:39 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=617</guid>
+
+					<description><![CDATA[<p>1. Make sure that you have checked the payment mode for this invoice. 2. If the payment mode is online payment gateway make sure that the invoice currency matches the comma separated currencies in Setup-&#62;Settings-&#62;Payment Gateways and the payment gateway is active. Navigate to Setup-&#62;Finance-&#62;Currencies and check if the Currency code matches the comma separated [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/payment-modes-not-shown-on-invoice/">Payment Modes Not Shown on Invoice</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>1. Make sure that you have checked the payment mode for this invoice.</p>
+<p><img decoding="async" class="alignnone size-large wp-image-2060" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes-1024x404.png" alt="" width="980" height="387" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes-1024x404.png 1024w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes-300x118.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes-768x303.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes-60x24.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes-150x59.png 150w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-allowed-payment-modes.png 1096w" sizes="(max-width: 980px) 100vw, 980px" /></p>
+<p>2. If the payment mode is online payment gateway make sure that the invoice currency matches the comma separated currencies in <strong>Setup-&gt;Settings-&gt;Payment Gateways</strong> and the payment gateway is active.</p>
+<p>Navigate to <strong>Setup-&gt;Finance-&gt;Currencies</strong> and check if the <strong>Currency code</strong> matches the comma separated currencies like in the second picture example.</p>
+<p><img loading="lazy" decoding="async" class="alignnone size-full wp-image-1479" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-code.png" alt="" width="661" height="373" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-code.png 661w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-code-300x169.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-code-60x34.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-code-150x85.png 150w" sizes="auto, (max-width: 661px) 100vw, 661px" /></p>
+<p><img loading="lazy" decoding="async" class="alignnone size-large wp-image-1480" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-paypal.png" alt="" width="519" height="646" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-paypal.png 519w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-paypal-241x300.png 241w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-paypal-48x60.png 48w, https://help.perfexcrm.com/wp-content/uploads/2017/03/invoice-currency-paypal-121x150.png 121w" sizes="auto, (max-width: 519px) 100vw, 519px" /></p>
+<div>Perfex CRM is not responsible in what currency the payment gateway will bill, in most cases the payment gateway use their supported currencies and account currency. In the request, Perfex CRM is passing the currency but this not means that the gateway will do a conversion.</div>
+<div></div>
+<div>You as administrator/invoice creator are responsible to make sure that you gave your customer the correct available gateways for the invoices. You must know in what currency your customer will pay so you can adjust the invoice.</div>The post <a href="https://help.perfexcrm.com/payment-modes-not-shown-on-invoice/">Payment Modes Not Shown on Invoice</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Security Header Not Valid When Setting up Paypal</title>
+		<link>https://help.perfexcrm.com/security-header-not-valid-when-setting-up-paypal/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sat, 11 Mar 2017 08:36:30 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=615</guid>
+
+					<description><![CDATA[<p>Paypal security header is not valid error message can be shown because of the following reasons: You have set up live credentials and you have turned Test mode to ON. If you want to test you need to set TEST credentials and have Paypal Sandbox Account You have white spaces in your credentials. Eq.     [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/security-header-not-valid-when-setting-up-paypal/">Security Header Not Valid When Setting up Paypal</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p><span class="keyword">Paypal security header is not valid error message can be shown because of the following reasons:</span></p>
+<ol>
+<li>You have set up live credentials and you have turned Test mode to ON. If you want to test you need to set TEST credentials and have <a href="https://developer.paypal.com/developer/accounts/">Paypal Sandbox Account</a></li>
+<li>You have white spaces in your credentials.<strong> Eq.</strong>               api_username_1a242jdj2455 – You see how much whitespaces after the <strong>Eq.</strong></li>
+<li>You put wrong API credential in wrong place ex. API Signature data you put in the API Username field inside Perfex CRM Paypal fields.</li>
+</ol>The post <a href="https://help.perfexcrm.com/security-header-not-valid-when-setting-up-paypal/">Security Header Not Valid When Setting up Paypal</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>TCPDF ERROR: [Image] Unable to Get the Size of the Image</title>
+		<link>https://help.perfexcrm.com/tcpdf-error-image-unable-to-get-the-size-of-the-image/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Sat, 11 Mar 2017 08:34:24 +0000</pubDate>
+				<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=612</guid>
+
+					<description><![CDATA[<p>Unable to get the size of the image is an error thrown if TCPDF can&#8217;t fetch the image when using an absolute path. The problem starts showing after you add a custom absolute URL in Setup-&#62;Settings-&#62;PDF, in this case, the TCPDF is trying to fetch the image with a cURL request but the request is [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/tcpdf-error-image-unable-to-get-the-size-of-the-image/">TCPDF ERROR: [Image] Unable to Get the Size of the Image</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p><strong>Unable to get the size of the image</strong> is an error thrown if <strong>TCPDF</strong> can&#8217;t fetch the image when using an absolute path.</p>
+<p>The problem starts showing after you add a custom absolute URL in <strong>Setup-&gt;Settings-&gt;PDF</strong>, in this case, the TCPDF is trying to fetch the image with a cURL request but the request is unsuccessful, you can contact your hosting provider to make sure that your cURL extension is properly configured and it&#8217;s up to date, otherwise try to follow the steps below and add the relative path to your logo image.</p>
+<p>Before start, the workaround for this problem makes sure that the URL you have added in <strong>Setup-&gt;Settings-&gt;PDF</strong> for the custom pdf logo image is valid and the image exists if the problem still exists try to add a relative path like mentioned below.</p>
+<p>Upload the image to the<strong> folder where Perfex CRM is installed</strong> for example <strong>mylogo.jpg</strong></p>
+<p>Go to Setup -&gt; Settings -&gt; PDF -&gt; <strong>Custom PDF Company Logo URL</strong> and <strong>only</strong> add mylogo<strong>.jpg<img loading="lazy" decoding="async" class="alignnone size-full wp-image-613" src="https://help.perfexcrm.com/wp-content/uploads/2017/03/custom-pdf-logo-image.png" alt="" width="825" height="88" srcset="https://help.perfexcrm.com/wp-content/uploads/2017/03/custom-pdf-logo-image.png 825w, https://help.perfexcrm.com/wp-content/uploads/2017/03/custom-pdf-logo-image-300x32.png 300w, https://help.perfexcrm.com/wp-content/uploads/2017/03/custom-pdf-logo-image-768x82.png 768w, https://help.perfexcrm.com/wp-content/uploads/2017/03/custom-pdf-logo-image-60x6.png 60w, https://help.perfexcrm.com/wp-content/uploads/2017/03/custom-pdf-logo-image-150x16.png 150w" sizes="auto, (max-width: 825px) 100vw, 825px" /></strong></p>
+<p>In this case, the relative path (crm_installation_path/mylogo.jpg) for the image will be used and the script will be able to fetch the image.</p>
+<p><div class="st-alert st-alert-info ">The logo image must be in the folder where Perfex CRM is installed.</div></p>The post <a href="https://help.perfexcrm.com/tcpdf-error-image-unable-to-get-the-size-of-the-image/">TCPDF ERROR: [Image] Unable to Get the Size of the Image</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+		<item>
+		<title>Staff Members Not Receiving Email When New Ticket Is Created or Reply Is Posted</title>
+		<link>https://help.perfexcrm.com/staff-members-not-receiving-email-when-new-ticket-is-created-or-reply-is-posted/</link>
+		
+		<dc:creator><![CDATA[MSTdev]]></dc:creator>
+		<pubDate>Thu, 09 Mar 2017 16:38:30 +0000</pubDate>
+				<category><![CDATA[General Informations]]></category>
+		<category><![CDATA[Common Issues & Troubleshooting]]></category>
+		<guid isPermaLink="false">https://help.perfexcrm.com/?p=355</guid>
+
+					<description><![CDATA[<p>If you are experiencing this problem make sure that you/other staff members belong to the department in which this ticket is assigned. Only the staff members that belong to the ticket department will receive a notification when a new ticket is created or a ticket reply has been posted by a customer. Additionally, you can [&#8230;]</p>
+The post <a href="https://help.perfexcrm.com/staff-members-not-receiving-email-when-new-ticket-is-created-or-reply-is-posted/">Staff Members Not Receiving Email When New Ticket Is Created or Reply Is Posted</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></description>
+										<content:encoded><![CDATA[<p>If you are experiencing this problem make sure that you/other staff members belong to the department in which this ticket is assigned.</p>
+
+
+
+<p><strong>Only the staff members that belong to the ticket department will receive a notification when a new ticket is created or a ticket reply has been posted by a customer.</strong></p>
+
+
+
+<p>Additionally, you can navigate to <strong>Setup->Email Templates</strong> and re-check all ticket available email templates to make sure that they are <strong>not disabled</strong>.</p>
+
+
+
+<hr class="wp-block-separator"/>
+
+
+
+<p>Please keep in mind that when you are replying to a ticket or creating a ticket from the admin area, the staff members won&#8217;t receive any notification that e.q. new reply is posted from the admin area, only the customer will receive an email notification.</p>The post <a href="https://help.perfexcrm.com/staff-members-not-receiving-email-when-new-ticket-is-created-or-reply-is-posted/">Staff Members Not Receiving Email When New Ticket Is Created or Reply Is Posted</a> first appeared on <a href="https://help.perfexcrm.com">Perfex CRM</a>.]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
