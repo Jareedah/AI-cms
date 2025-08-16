@@ -43,7 +43,9 @@ register_uninstall_hook(PROJECT_ENHANCEMENT_MODULE_NAME, 'project_enhancement_un
 /**
  * Register language files
  */
-register_language_files(PROJECT_ENHANCEMENT_MODULE_NAME, [PROJECT_ENHANCEMENT_MODULE_NAME]);
+if (function_exists('register_language_files')) {
+    register_language_files(PROJECT_ENHANCEMENT_MODULE_NAME, [PROJECT_ENHANCEMENT_MODULE_NAME]);
+}
 
 /**
  * Admin area initialization
@@ -92,14 +94,25 @@ function project_enhancement_activation_hook()
 {
     $CI = &get_instance();
     
-    // Include installation script
-    require_once(PROJECT_ENHANCEMENT_PATH . 'install.php');
-    
-    // Set module version
-    add_option('project_enhancement_version', PROJECT_ENHANCEMENT_VERSION);
-    add_option('project_enhancement_installed', '1');
-    
-    log_activity('Project Enhancement Module Activated');
+    try {
+        // Include installation script
+        if (file_exists(PROJECT_ENHANCEMENT_PATH . 'install.php')) {
+            require_once(PROJECT_ENHANCEMENT_PATH . 'install.php');
+        } else {
+            throw new Exception('Installation file not found');
+        }
+        
+        // Set module version and status
+        add_option('project_enhancement_version', PROJECT_ENHANCEMENT_VERSION, 1);
+        add_option('project_enhancement_installed', '1', 1);
+        add_option('project_enhancement_active', '1', 1);
+        
+        log_activity('Project Enhancement Module Activated Successfully');
+        
+    } catch (Exception $e) {
+        log_activity('Project Enhancement Module Activation Failed: ' . $e->getMessage());
+        throw $e;
+    }
 }
 
 /**
@@ -107,10 +120,15 @@ function project_enhancement_activation_hook()
  */
 function project_enhancement_deactivation_hook()
 {
-    // Update module status
-    update_option('project_enhancement_active', '0');
-    
-    log_activity('Project Enhancement Module Deactivated');
+    try {
+        // Update module status
+        update_option('project_enhancement_active', '0');
+        
+        log_activity('Project Enhancement Module Deactivated Successfully');
+        
+    } catch (Exception $e) {
+        log_activity('Project Enhancement Module Deactivation Failed: ' . $e->getMessage());
+    }
 }
 
 /**
@@ -120,12 +138,17 @@ function project_enhancement_uninstall_hook()
 {
     $CI = &get_instance();
     
-    // Include uninstallation script
-    if (file_exists(PROJECT_ENHANCEMENT_PATH . 'uninstall.php')) {
-        require_once(PROJECT_ENHANCEMENT_PATH . 'uninstall.php');
+    try {
+        // Include uninstallation script
+        if (file_exists(PROJECT_ENHANCEMENT_PATH . 'uninstall.php')) {
+            require_once(PROJECT_ENHANCEMENT_PATH . 'uninstall.php');
+        }
+        
+        log_activity('Project Enhancement Module Uninstalled Successfully');
+        
+    } catch (Exception $e) {
+        log_activity('Project Enhancement Module Uninstall Failed: ' . $e->getMessage());
     }
-    
-    log_activity('Project Enhancement Module Uninstalled');
 }
 
 /**
@@ -133,7 +156,17 @@ function project_enhancement_uninstall_hook()
  */
 function project_enhancement_init_admin_menu()
 {
+    // Check if module is active
+    if (!is_project_enhancement_active()) {
+        return;
+    }
+    
     $CI = &get_instance();
+    
+    // Check if user has permission
+    if (!staff_can('view', 'project_enhancement')) {
+        return;
+    }
     
     // Main menu item with submenu
     $CI->app_menu->add_sidebar_menu_item('project-enhancement', [
@@ -194,6 +227,16 @@ function project_enhancement_init_admin_menu()
  */
 function project_enhancement_init_client_menu()
 {
+    // Check if module is active
+    if (!is_project_enhancement_active()) {
+        return;
+    }
+    
+    // Check if client features are enabled
+    if (!get_option('project_enhancement_client_access')) {
+        return;
+    }
+    
     // Project Progress menu for clients
     add_theme_menu_item('project-progress', [
         'name'     => _l('project_progress'),
@@ -250,6 +293,16 @@ function project_enhancement_permissions()
  */
 function project_enhancement_dashboard_widgets($widgets)
 {
+    // Check if module is active
+    if (!is_project_enhancement_active()) {
+        return $widgets;
+    }
+    
+    // Check if user has permission
+    if (!staff_can('view', 'project_enhancement')) {
+        return $widgets;
+    }
+    
     // Project Progress Widget
     $widgets[] = [
         'path'      => 'project_enhancement/widgets/project_progress',
@@ -282,40 +335,53 @@ function project_enhancement_dashboard_widgets($widgets)
  */
 function project_enhancement_global_search($result, $q, $limit)
 {
+    // Check if module is active
+    if (!is_project_enhancement_active()) {
+        return $result;
+    }
+    
     $CI = &get_instance();
     
     if (staff_can('view', 'project_enhancement')) {
-        // Search milestones
-        $CI->db->select('id, name, description, project_id, due_date')
-               ->from(db_prefix() . 'project_milestones')
-               ->like('name', $q)
-               ->or_like('description', $q)
-               ->limit($limit);
-        
-        $milestones = $CI->db->get()->result_array();
-        
-        if (!empty($milestones)) {
-            $result[] = [
-                'result'         => $milestones,
-                'type'           => 'project_milestones',
-                'search_heading' => _l('milestones'),
-            ];
-        }
-        
-        // Search time entries
-        $CI->db->select('id, description, project_id, staff_id, start_time, duration_minutes')
-               ->from(db_prefix() . 'time_entries')
-               ->like('description', $q)
-               ->limit($limit);
-        
-        $time_entries = $CI->db->get()->result_array();
-        
-        if (!empty($time_entries)) {
-            $result[] = [
-                'result'         => $time_entries,
-                'type'           => 'time_entries',
-                'search_heading' => _l('time_entries'),
-            ];
+        try {
+            // Search milestones
+            $CI->db->select('id, name, description, project_id, due_date')
+                   ->from(db_prefix() . 'project_milestones')
+                   ->where('name !=', '')
+                   ->group_start()
+                   ->like('name', $q)
+                   ->or_like('description', $q)
+                   ->group_end()
+                   ->limit($limit);
+            
+            $milestones = $CI->db->get()->result_array();
+            
+            if (!empty($milestones)) {
+                $result[] = [
+                    'result'         => $milestones,
+                    'type'           => 'project_milestones',
+                    'search_heading' => _l('milestones'),
+                ];
+            }
+            
+            // Search time entries
+            $CI->db->select('id, description, project_id, staff_id, date, duration')
+                   ->from(db_prefix() . 'time_entries')
+                   ->where('description !=', '')
+                   ->like('description', $q)
+                   ->limit($limit);
+            
+            $time_entries = $CI->db->get()->result_array();
+            
+            if (!empty($time_entries)) {
+                $result[] = [
+                    'result'         => $time_entries,
+                    'type'           => 'time_entries',
+                    'search_heading' => _l('time_entries'),
+                ];
+            }
+        } catch (Exception $e) {
+            log_activity('Project Enhancement Global Search Error: ' . $e->getMessage());
         }
     }
     
@@ -327,12 +393,16 @@ function project_enhancement_global_search($result, $q, $limit)
  */
 function project_enhancement_search_output($output, $data)
 {
-    if ($data['type'] == 'project_milestones') {
-        $output = '<a href="' . admin_url('project_enhancement/milestones/view/' . $data['result']['id']) . '">' 
-                . $data['result']['name'] . '</a>';
-    } elseif ($data['type'] == 'time_entries') {
-        $output = '<a href="' . admin_url('project_enhancement/time_tracking/view/' . $data['result']['id']) . '">' 
-                . $data['result']['description'] . '</a>';
+    try {
+        if ($data['type'] == 'project_milestones') {
+            $output = '<a href="' . admin_url('project_enhancement/milestones/view/' . $data['result']['id']) . '">' 
+                    . htmlspecialchars($data['result']['name']) . '</a>';
+        } elseif ($data['type'] == 'time_entries') {
+            $output = '<a href="' . admin_url('project_enhancement/time_tracking/view/' . $data['result']['id']) . '">' 
+                    . htmlspecialchars($data['result']['description']) . '</a>';
+        }
+    } catch (Exception $e) {
+        log_activity('Project Enhancement Search Output Error: ' . $e->getMessage());
     }
     
     return $output;
@@ -343,9 +413,22 @@ function project_enhancement_search_output($output, $data)
  */
 function project_enhancement_setup_default_milestones($project_id)
 {
-    // This will be implemented in the models phase
-    // For now, just log the action
-    log_activity('Project Enhancement: Default milestones setup triggered for project ' . $project_id);
+    if (!is_project_enhancement_active()) {
+        return;
+    }
+    
+    try {
+        $CI = &get_instance();
+        $CI->load->model('project_enhancement/milestones_model');
+        
+        if (method_exists($CI->milestones_model, 'create_default_milestones')) {
+            $CI->milestones_model->create_default_milestones($project_id);
+        }
+        
+        log_activity('Project Enhancement: Default milestones created for project ' . $project_id);
+    } catch (Exception $e) {
+        log_activity('Project Enhancement: Failed to create default milestones for project ' . $project_id . ' - ' . $e->getMessage());
+    }
 }
 
 /**
@@ -353,8 +436,22 @@ function project_enhancement_setup_default_milestones($project_id)
  */
 function project_enhancement_update_milestone_status($data)
 {
-    // This will be implemented in the models phase
-    log_activity('Project Enhancement: Milestone status update triggered for project ' . $data['project_id']);
+    if (!is_project_enhancement_active()) {
+        return;
+    }
+    
+    try {
+        $CI = &get_instance();
+        $CI->load->model('project_enhancement/milestones_model');
+        
+        if (method_exists($CI->milestones_model, 'update_milestones_on_project_status_change')) {
+            $CI->milestones_model->update_milestones_on_project_status_change($data);
+        }
+        
+        log_activity('Project Enhancement: Milestone status updated for project ' . $data['project_id']);
+    } catch (Exception $e) {
+        log_activity('Project Enhancement: Failed to update milestone status for project ' . $data['project_id'] . ' - ' . $e->getMessage());
+    }
 }
 
 /**
@@ -362,8 +459,22 @@ function project_enhancement_update_milestone_status($data)
  */
 function project_enhancement_update_milestone_progress($data)
 {
-    // This will be implemented in the models phase
-    log_activity('Project Enhancement: Milestone progress update triggered');
+    if (!is_project_enhancement_active()) {
+        return;
+    }
+    
+    try {
+        $CI = &get_instance();
+        $CI->load->model('project_enhancement/milestones_model');
+        
+        if (method_exists($CI->milestones_model, 'update_milestone_progress_from_tasks')) {
+            $CI->milestones_model->update_milestone_progress_from_tasks($data);
+        }
+        
+        log_activity('Project Enhancement: Milestone progress updated from task changes');
+    } catch (Exception $e) {
+        log_activity('Project Enhancement: Failed to update milestone progress from task changes - ' . $e->getMessage());
+    }
 }
 
 /**
@@ -371,7 +482,30 @@ function project_enhancement_update_milestone_progress($data)
  */
 function project_enhancement_add_time_entries_to_invoice($items)
 {
-    // This will be implemented in the models phase
+    if (!is_project_enhancement_active()) {
+        return $items;
+    }
+    
+    try {
+        $CI = &get_instance();
+        $CI->load->model('project_enhancement/time_tracking_model');
+        
+        if (method_exists($CI->time_tracking_model, 'get_billable_time_entries_for_invoice')) {
+            $time_entries = $CI->time_tracking_model->get_billable_time_entries_for_invoice();
+            // Add time entries to invoice items
+            foreach ($time_entries as $entry) {
+                $items[] = [
+                    'description' => $entry['description'],
+                    'qty'         => $entry['hours'],
+                    'rate'        => $entry['hourly_rate'],
+                    'unit'        => _l('hours'),
+                ];
+            }
+        }
+    } catch (Exception $e) {
+        log_activity('Project Enhancement: Failed to add time entries to invoice - ' . $e->getMessage());
+    }
+    
     return $items;
 }
 
@@ -380,8 +514,22 @@ function project_enhancement_add_time_entries_to_invoice($items)
  */
 function project_enhancement_mark_time_entries_invoiced($invoice_id)
 {
-    // This will be implemented in the models phase
-    log_activity('Project Enhancement: Time entries marked as invoiced for invoice ' . $invoice_id);
+    if (!is_project_enhancement_active()) {
+        return;
+    }
+    
+    try {
+        $CI = &get_instance();
+        $CI->load->model('project_enhancement/time_tracking_model');
+        
+        if (method_exists($CI->time_tracking_model, 'mark_time_entries_as_invoiced')) {
+            $CI->time_tracking_model->mark_time_entries_as_invoiced($invoice_id);
+        }
+        
+        log_activity('Project Enhancement: Time entries marked as invoiced for invoice ' . $invoice_id);
+    } catch (Exception $e) {
+        log_activity('Project Enhancement: Failed to mark time entries as invoiced for invoice ' . $invoice_id . ' - ' . $e->getMessage());
+    }
 }
 
 /**
@@ -389,14 +537,24 @@ function project_enhancement_mark_time_entries_invoiced($invoice_id)
  */
 function project_enhancement_cron_tasks()
 {
-    $CI = &get_instance();
+    if (!is_project_enhancement_active()) {
+        return;
+    }
     
-    // Load module library for cron tasks
-    $CI->load->library('project_enhancement/project_enhancement_module');
-    
-    // Run scheduled tasks
-    if (method_exists($CI->project_enhancement_module, 'run_cron_tasks')) {
-        $CI->project_enhancement_module->run_cron_tasks();
+    try {
+        $CI = &get_instance();
+        
+        // Load module library for cron tasks
+        $CI->load->library('project_enhancement/project_enhancement_module');
+        
+        // Run scheduled tasks
+        if (method_exists($CI->project_enhancement_module, 'run_cron_tasks')) {
+            $CI->project_enhancement_module->run_cron_tasks();
+        }
+        
+        log_activity('Project Enhancement: Cron tasks executed successfully');
+    } catch (Exception $e) {
+        log_activity('Project Enhancement: Cron tasks failed - ' . $e->getMessage());
     }
 }
 
@@ -405,7 +563,7 @@ function project_enhancement_cron_tasks()
  */
 function is_project_enhancement_active()
 {
-    return get_option('project_enhancement_active') == '1';
+    return get_option('project_enhancement_active') == '1' && get_option('project_enhancement_installed') == '1';
 }
 
 /**
@@ -426,4 +584,20 @@ function project_enhancement_log($message, $data = [])
     }
     
     log_activity('[Project Enhancement] ' . $message);
+}
+
+/**
+ * Helper function to check module requirements
+ */
+function project_enhancement_check_requirements()
+{
+    $requirements = [
+        'php_version' => version_compare(PHP_VERSION, '7.4.0', '>='),
+        'perfexcrm_version' => version_compare(get_option('perfexcrm_version'), '2.3.0', '>='),
+        'mysqli_extension' => extension_loaded('mysqli'),
+        'curl_extension' => extension_loaded('curl'),
+        'json_extension' => extension_loaded('json'),
+    ];
+    
+    return $requirements;
 }
