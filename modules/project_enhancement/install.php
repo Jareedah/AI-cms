@@ -24,23 +24,25 @@ try {
             `name` varchar(255) NOT NULL,
             `description` text,
             `start_date` date NOT NULL,
-            `due_date` date NOT NULL,
-            `completion_percentage` decimal(5,2) DEFAULT 0.00,
+            `due_date` date DEFAULT NULL,
+            `progress_percentage` decimal(5,2) DEFAULT 0.00,
             `status` enum("not_started","in_progress","completed","on_hold","cancelled") DEFAULT "not_started",
             `priority` enum("low","medium","high","critical") DEFAULT "medium",
-            `staff_id` int(11) NOT NULL,
-            `predecessor_milestone_id` int(11) DEFAULT NULL,
+            `assigned_to` int(11) DEFAULT NULL,
+            `estimated_hours` decimal(8,2) DEFAULT NULL,
+            `actual_hours` decimal(8,2) DEFAULT 0.00,
             `order_number` int(11) DEFAULT 0,
             `created_at` datetime NOT NULL,
             `updated_at` datetime DEFAULT NULL,
             PRIMARY KEY (`id`),
             KEY `project_id` (`project_id`),
-            KEY `staff_id` (`staff_id`),
+            KEY `assigned_to` (`assigned_to`),
             KEY `status` (`status`),
             KEY `due_date` (`due_date`),
             KEY `priority` (`priority`),
+            KEY `progress_percentage` (`progress_percentage`),
             FOREIGN KEY (`project_id`) REFERENCES `' . db_prefix() . 'projects`(`id`) ON DELETE CASCADE,
-            FOREIGN KEY (`staff_id`) REFERENCES `' . db_prefix() . 'staff`(`staffid`) ON DELETE RESTRICT
+            FOREIGN KEY (`assigned_to`) REFERENCES `' . db_prefix() . 'staff`(`staffid`) ON DELETE SET NULL
         ) ENGINE=InnoDB DEFAULT CHARSET=' . $CI->db->char_set . ';');
     }
     
@@ -88,9 +90,10 @@ try {
             `task_id` int(11) DEFAULT NULL,
             `milestone_id` int(11) DEFAULT NULL,
             `staff_id` int(11) NOT NULL,
-            `start_time` datetime NOT NULL,
-            `end_time` datetime DEFAULT NULL,
-            `duration_minutes` int(11) DEFAULT 0,
+            `date` date NOT NULL,
+            `start_time` time DEFAULT NULL,
+            `end_time` time DEFAULT NULL,
+            `duration` int(11) DEFAULT 0 COMMENT "Duration in seconds",
             `description` text,
             `billable` tinyint(1) DEFAULT 1,
             `hourly_rate` decimal(10,2) DEFAULT 0.00,
@@ -108,11 +111,12 @@ try {
             KEY `staff_id` (`staff_id`),
             KEY `status` (`status`),
             KEY `billable` (`billable`),
-            KEY `start_time` (`start_time`),
+            KEY `date` (`date`),
             KEY `category_id` (`category_id`),
             FOREIGN KEY (`project_id`) REFERENCES `' . db_prefix() . 'projects`(`id`) ON DELETE CASCADE,
             FOREIGN KEY (`staff_id`) REFERENCES `' . db_prefix() . 'staff`(`staffid`) ON DELETE RESTRICT,
-            FOREIGN KEY (`milestone_id`) REFERENCES `' . db_prefix() . 'project_milestones`(`id`) ON DELETE SET NULL
+            FOREIGN KEY (`milestone_id`) REFERENCES `' . db_prefix() . 'project_milestones`(`id`) ON DELETE SET NULL,
+            FOREIGN KEY (`category_id`) REFERENCES `' . db_prefix() . 'time_categories`(`id`) ON DELETE SET NULL
         ) ENGINE=InnoDB DEFAULT CHARSET=' . $CI->db->char_set . ';');
     }
     
@@ -276,7 +280,10 @@ try {
     add_option('project_enhancement_budget_tracking_enabled', '1', 1);
     add_option('project_enhancement_resource_management_enabled', '1', 1);
     add_option('project_enhancement_email_notifications', '1', 1);
-    add_option('project_enhancement_client_portal_enabled', '1', 1);
+    add_option('project_enhancement_client_access', '1', 1);
+    add_option('project_enhancement_client_time_visibility', '1', 1);
+    add_option('project_enhancement_client_budget_visibility', '0', 1);
+    add_option('project_enhancement_client_team_visibility', '1', 1);
     add_option('project_enhancement_dashboard_widgets_enabled', '1', 1);
     add_option('project_enhancement_api_enabled', '0', 0);
     add_option('project_enhancement_cron_enabled', '1', 1);
