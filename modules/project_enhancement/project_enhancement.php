@@ -137,7 +137,7 @@ function project_enhancement_init_admin_menu()
     
     // Main menu item with submenu
     $CI->app_menu->add_sidebar_menu_item('project-enhancement', [
-        'name'     => _l('project_enhancement'),
+        'name'     => _l('project_mgmt_plus'),
         'collapse' => true,
         'position' => 31, // After Projects (30)
         'icon'     => 'fa fa-project-diagram',

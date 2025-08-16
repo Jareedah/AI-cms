@@ -8,6 +8,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 // Module Name
 $lang['project_enhancement'] = 'Project Enhancement';
+$lang['project_mgmt_plus'] = 'Project Mgmt+';
 
 // Menu Items
 $lang['milestones'] = 'Milestones';
